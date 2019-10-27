@@ -1,0 +1,18 @@
+doctype html
+html
+	head 
+		meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' )
+		link(rel='stylesheet', type='text/css', href='styles/index.min.css')
+		link(rel='stylesheet', type='text/css', href='styles/header.min.css')
+		link(rel='stylesheet', type='text/css', href='styles/home.min.css')
+	body
+		include /src/pug/bases/header
+
+		//- divs of each page
+		#window
+			include /src/pug/modules/events
+			include /src/pug/modules/home
+			include /src/pug/modules/aboutus
+			include /src/pug/modules/sponsors
+		script
+			include /src/scripts/index.js

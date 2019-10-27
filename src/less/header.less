@@ -1,0 +1,30 @@
+header {
+	width: 100%;
+	height: fit-content;
+	background: #222;
+	display: flex;
+	justify-content: space-between;
+	overflow: visible;
+}
+
+header a{
+	color: white;
+	padding: 1em 4em;
+}
+
+header .active {
+	background: #101010;
+	transition: 0.5s;
+}
+
+@media only screen and (max-width: 700px) {
+	header {
+		width: fit-content;
+		transition: 0.5s;
+	}
+	header a {
+		text-align: center;
+		width: 33.3vw;
+		padding: 1em 0;
+	}
+}

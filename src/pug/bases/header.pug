@@ -1,0 +1,7 @@
+-
+	var links = ['Events','Home','About Us','Sponsors']
+
+header(id="navbar")
+	each link in links 
+		a(href='#' class='tab' onclick='setContent(event)')= link
+
