@@ -1,0 +1,37 @@
+doctype html
+html
+	head
+		title Prodyogiki 2020 | ISTE - NIT Hamirpur
+		// Responsiveness enabled
+		meta(name='viewport' content= 'width=device-width, initial-scale=1.0')
+		meta(charset='utf-8')
+
+		// Search Engine 
+		meta(name='description' content='Most unique and coherent Technical Festival')
+		meta(name='image' content='https://istenith.com/prodyogiki/prody_og.png')
+
+		// Schema.org for Google
+		meta(itemprop='name' content='Prodyogiki 2020 | ISTE - NIT Hamirpur')
+		meta(itemprop='description' content='Most unique and coherent Technical Festival')
+		meta(itemprop='image' content='https://istenith.com/prodyogiki/prody_og.png')
+
+		// Open Graph general (Facebook, Pinterest & Google+)
+		meta(name='og:title' content='Prodyogiki 2020 | ISTE - NIT Hamirpur')
+		meta(name='og:description' content='Most unique and coherent Technical Festival')
+		meta(name='og:image' content='https://istenith.com/prodyogiki/prody_og.png')
+		meta(name='og:url' content='https://istenith.com/prodyogiki')
+		meta(name='og:site_name' content='Prodyogiki 2020 | ISTE - NIT Hamirpur')
+		meta(name='og:type' content='website')
+
+	body
+		include modules/navbar.pug
+		section.page
+			include modules/account.pug
+		section.page.active
+			include modules/home.pug
+		section.page
+			include modules/events.pug
+		section.page
+			include modules/sponsors.pug
+		section.page
+			include modules/aboutus.pug
