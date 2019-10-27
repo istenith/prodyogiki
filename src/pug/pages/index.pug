@@ -30,9 +30,13 @@ html
 
 		//- divs of each page
 		#window
-			include /src/pug/modules/events
-			include /src/pug/modules/home
-			include /src/pug/modules/aboutus
-			include /src/pug/modules/sponsors
+			section
+				include /src/pug/modules/events
+			section
+				include /src/pug/modules/home
+			section
+				include /src/pug/modules/aboutus
+			section
+				include /src/pug/modules/sponsors
 		script
 			include /src/scripts/index.js
