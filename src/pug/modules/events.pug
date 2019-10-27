@@ -1,8 +1,54 @@
 -
-	var events = [
+	var eventList = [
 		{
-
+			'title':'Dash Crawler',
+			'desc':'Hai koi event mujhe abhi iske baare mein zyada pata nahi hai ajay se poochunga wo bata dega mujhe',
+			'image':'dc.svg'
+		},
+		{
+			'title':'ChemHunt 3.0',
+			'desc':'Ek hi cheez dobara kar rahe hain do saalon se, log daudte hain isme kuch kuch dhoondhne ke liye maza aayega bhot',
+			'image':'chemhunt.svg'
+		},
+		{
+			'title':'Tiny House Challenge',
+			'desc':'Ek chote se area mein poora ghar banana hai. koi bhi software use kar sakte ho',
+			'image':'thc.svg'
+		},
+		{
+			'title':'Perilioscope',
+			'desc':'Techfest ka event jaisa (WAHI HAI)',
+			'image':'peril.svg'
+		},
+		{
+			'title':'Far From Home',
+			'desc':'Har far from home spiderman nahi hota... abhay ka khilona hai bhot hi (enter word here)',
+			'image':'ffh.svg'
+		},
+		{
+			'title':'Rube Goldberg',
+			'desc':'Kuch bhi matlab',
+			'image':'rg.svg'
+		},
+		{
+			'title':'Egg Drop Challenge',
+			'desc':'Bhai jaldi bana de iska abstract bas yahi reh gaya hai baaki sab ho gaye hain',
+			'image':'edc.svg'
+		},
+		{
+			'title':'Code',
+			'desc':'Bas Code... aage apne aap dekh lena',
+			'image':'code.svg'
 		}
 	]
+
 .events 
 	h1 Events
+	.cards
+		each event in eventList
+			.card
+				.card-inner
+					.card-front
+						h3= event.title
+					.card-back
+						p= event.desc
