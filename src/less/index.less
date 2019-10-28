@@ -1,29 +1,53 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins|Staatliches&display=swap');
-
+@import (css) url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Righteous|Roboto+Slab:400,700&display=swap');
+@import (less) 'lib/colors';
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    overflow-x: hidden;
-    background: #101010;
-    font-family: 'Poppins',sans-serif;
-    color: #fff;
+	overflow-x: hidden;
+	background: #101010;
+	font-family: 'Roboto Slab', sans-serif;
+	color: #fff;
 }
 
 a {
-    outline: none;
-    text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
 
 #window {
-    display: flex;
-    transform: translateX(-100vw);
-    transition: 0.5s;
+	display: flex;
+	transform: translateX(-100vw);
+	transition: 0.5s;
 }
 
 #window section {
-    min-width: 100vw;
+	min-width: 100vw;
+	overflow-x: hidden;
 }
+
+.heading span {
+	font-family: 'Alfa Slab One', serif;
+	font-size: 36px;
+	color: @accent-green;
+	text-transform: capitalize;
+	margin-left: 1em;
+	font-weight: unset;
+	position: relative;
+	width: fit-content;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -0.1em;
+		left: -5%;
+		width: 115%;
+		height: 0.3em;
+		z-index: -1;
+		background-color: white;
+	}
+}
+

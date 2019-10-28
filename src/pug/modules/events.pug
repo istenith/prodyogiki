@@ -42,13 +42,15 @@
 		}
 	]
 
-.events 
-	h1 Events
-	.cards
-		each event in eventList
-			.card
-				.card-inner
-					.card-front
-						h3= event.title
-					.card-back
-						p= event.desc
+.heading
+	span events
+.card-holder
+	each event in eventList
+		.card
+			.inner
+				.front
+					h3= event.title
+					img(src=event.image)
+				.back
+					p= event.desc
+

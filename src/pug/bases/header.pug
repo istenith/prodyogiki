@@ -1,7 +1,7 @@
 -
-	var links = ['Events','Home','About Us','Sponsors']
+	var pages = ['events','home','about us','sponsors']
 
 header(id="navbar")
-	each link in links 
-		a(href='#' class='tab' onclick='setContent(event)')= link
+	each page in pages 
+		span.tab= page
 
