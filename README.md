@@ -1,4 +1,4 @@
-Pahal
+Prodyogiki
 ---
 The website is to help students seeking admission in NIT Hamirpur, to find there way through procedures and requirements.
 
