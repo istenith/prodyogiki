@@ -1,5 +1,7 @@
-@import (css) url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Righteous|Roboto+Slab:400,700&display=swap');
+@import (css)
+	url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Righteous|Montserrat|Roboto+Slab:400,700&display=swap');
 @import (less) 'lib/colors';
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -19,14 +21,29 @@ a {
 }
 
 #window {
-	display: flex;
-	transform: translateX(-100vw);
-	transition: 0.5s;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
 }
 
-#window section {
-	min-width: 100vw;
+section {
+	padding-top: 3em;
+	width: 100vw;
 	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	top: 52px;
+	left: -100vw;
+	transition: 0.25s;
+	visibility: hidden;
+	&.active {
+		left: 0;
+		visibility: visible;
+		& ~ section {
+			left: 100vw;
+			visibility: hidden;
+		}
+	}
 }
 
 .heading span {
@@ -43,11 +60,10 @@ a {
 		content: '';
 		position: absolute;
 		bottom: -0.1em;
-		left: -5%;
-		width: 115%;
+		left: -0.25em;
+		width: calc(100% + 0.6em);
 		height: 0.3em;
 		z-index: -1;
 		background-color: white;
 	}
 }
-
