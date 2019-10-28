@@ -1,17 +1,6 @@
 Prodyogiki
 ---
-The website is to help students seeking admission in NIT Hamirpur, to find there way through procedures and requirements.
-
-The proposed features of website in order of high to low priorities are:
-+ To do list : cookie based
-+ Document order list(Nested in todo list)
-+ All important forms and links
-+ An embeded map to show locations
-+ FAQ section
-
-The features listed below are good to have and should not be our primary concern:
-+ A splash screen cookie based (onetime only) to promote ISTE.
-+ ISTE's main site (abouts and history)
+The website is to promote a technocrat event with practical implementation of what has been learnt in NIT Hamirpur, with schedule and registration forms.
 
 To ease the development and maintainence following technologies will be used:
 + **NODE.JS**: To provide modules helpfull in developement. As the site will be static as of now no node features other than npm will be required.
