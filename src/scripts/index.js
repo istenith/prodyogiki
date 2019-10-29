@@ -25,10 +25,12 @@ window.addEventListener('load', () => {
 			tab.classList.add('active');
 
 			// center tab
-			navbar.style.left =
-				window.innerWidth / 2 -
-				(tab.offsetWidth / 2 + tab.offsetLeft) +
-				'px';
+			if (mobileWindow.matches) {
+				navbar.style.left =
+					window.innerWidth / 2 -
+					(tab.offsetWidth / 2 + tab.offsetLeft) +
+					'px';
+			}
 
 			document.getElementById(tab.dataset.toggles).classList.add('active');
 			document
