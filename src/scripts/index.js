@@ -26,10 +26,8 @@ window.addEventListener('load', () => {
 
 			// center tab
 			if (mobileWindow.matches) {
-				navbar.style.left =
-					window.innerWidth / 2 -
-					(tab.offsetWidth / 2 + tab.offsetLeft) +
-					'px';
+				navbar.style.transform = `translateX(${window.innerWidth / 2 -
+					(tab.offsetWidth / 2 + tab.offsetLeft)}px)`;
 			}
 
 			document.getElementById(tab.dataset.toggles).classList.add('active');
