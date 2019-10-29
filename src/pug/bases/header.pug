@@ -1,7 +1,13 @@
 -
-	var pages = ['events','home','about us','sponsors']
+	var options = [
+		{text:'events',   toggles:'events'},
+		{text:'home',     toggles:'home'},
+		{text:'about us', toggles:'about-us'},
+		{text:'sponsors', toggles:'sponsors'},
+	]
 
-header(id="navbar")
-	each page in pages 
-		span.tab= page
+header
+	#navbar
+		each option in options 
+			span.tab(data-toggles=option.toggles)= option.text
 
