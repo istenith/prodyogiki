@@ -12,4 +12,4 @@ To ease the development and maintainence following technologies will be used:
 
 DO READ
 ---
-getting_started.md and design_guide.md
+[getting_started.md](docs/getting_started.md) and [design_guide.md](docs/design_guide.md)
