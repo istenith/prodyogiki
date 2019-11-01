@@ -44,7 +44,7 @@
 
 				.front {
 					img {
-						width: 100%;
+						width: 80%;
 						height: @card-width;
 					}
 					h3 {
@@ -64,6 +64,10 @@
 			&.turned .inner {
 				transform: rotateY(-180deg);
 			}
+			transition: transform 0.1s;
+		}
+		.card:hover {
+			transform: scale(1.05);
 		}
 	}
 }
