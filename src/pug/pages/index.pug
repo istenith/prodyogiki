@@ -33,12 +33,17 @@ html
 		//- divs of each page
 		#window
 			section#events
-				include /src/pug/modules/events
+				.content
+					include /src/pug/modules/events
 			section#home
 				include /src/pug/modules/home
 			section#about-us
-				include /src/pug/modules/aboutus
+				.content
+					include /src/pug/modules/aboutus
 			section#sponsors
-				include /src/pug/modules/sponsors
+				.content
+					include /src/pug/modules/sponsors
 		script
 			include /src/scripts/index.js
+		script
+			include /src/scripts/vanilla-tilt.min.js
