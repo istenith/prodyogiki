@@ -1,48 +1,48 @@
--
-	var toolList = [
-		{
-			'logo': 'resources/logos/pug.png',
-			'name': 'pug.js',
-			'func': 'HTML preprocessor',
-			'link': 'https://pugjs.org'
-		},
-		{
-			'logo': 'resources/logos/less.svg',
-			'name': 'less',
-			'func': 'CSS preprocessor',
-			'link': 'http://lesscss.org'
-		},
-		{
-			'logo': 'resources/logos/js.svg',
-			'name': 'JavaScript',
-			'func': 'Makes pages alive',
-			'link': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
-		},
-		{
-			'logo': 'resources/logos/npm.svg',
-			'name': 'npm',
-			'func': 'Node.js tools',
-			'link': 'https://www.npmjs.com'
-		},
-		{
-			'logo': 'resources/logos/inkscape.svg',
-			'name': 'Inkscape',
-			'func': 'Graphics: Map and logos',
-			'link': 'https://inkscape.org'
-		},
-		{
-			'logo': 'resources/logos/git.svg',
-			'name': 'git',
-			'func': 'Source code management',
-			'link': 'https://git-scm.com'
-		},
-		{
-			'logo': 'resources/logos/github.svg',
-			'name': 'GitHub',
-			'func': 'Hosting and collaboration',
-			'link': 'https://github.com'
-		},
-	]
+// -
+// 	var toolList = [
+// 		{
+// 			'logo': 'resources/logos/pug.png',
+// 			'name': 'pug.js',
+// 			'func': 'HTML preprocessor',
+// 			'link': 'https://pugjs.org'
+// 		},
+// 		{
+// 			'logo': 'resources/logos/less.svg',
+// 			'name': 'less',
+// 			'func': 'CSS preprocessor',
+// 			'link': 'http://lesscss.org'
+// 		},
+// 		{
+// 			'logo': 'resources/logos/js.svg',
+// 			'name': 'JavaScript',
+// 			'func': 'Makes pages alive',
+// 			'link': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+// 		},
+// 		{
+// 			'logo': 'resources/logos/npm.svg',
+// 			'name': 'npm',
+// 			'func': 'Node.js tools',
+// 			'link': 'https://www.npmjs.com'
+// 		},
+// 		{
+// 			'logo': 'resources/logos/inkscape.svg',
+// 			'name': 'Inkscape',
+// 			'func': 'Graphics: Map and logos',
+// 			'link': 'https://inkscape.org'
+// 		},
+// 		{
+// 			'logo': 'resources/logos/git.svg',
+// 			'name': 'git',
+// 			'func': 'Source code management',
+// 			'link': 'https://git-scm.com'
+// 		},
+// 		{
+// 			'logo': 'resources/logos/github.svg',
+// 			'name': 'GitHub',
+// 			'func': 'Hosting and collaboration',
+// 			'link': 'https://github.com'
+// 		},
+// 	]
 
 
 .topic
@@ -57,16 +57,15 @@
 			br
 			a(href="https://istenith.com") Click here to go to our official website.
  
-.topic
-	.heading
-		span Our Arsenal
+// .topic
+// 	.heading
+// 		span Our Arsenal
 
-.card-holder
-	each tool in toolList
-		.card
-			.image
-				img(src=tool.logo)
-			.about
-				a(href=tool.link)=tool.name
-				br
-				h3=tool.func
+// 	each tool in toolList
+// 		.card
+// 			.image
+// 				img(src=tool.logo)
+// 			.about
+// 				a(href=tool.link)=tool.name
+// 				br
+// 				h3=tool.func
