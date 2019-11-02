@@ -1,7 +1,28 @@
 @import (reference) 'lib/colors.less';
 @import (reference) 'lib/helpers.less';
 #events {
-
+	.band {
+		position: absolute;
+		left: 0;
+		top: 100px;
+		width: fit-content;
+		padding: 0.3em 0.7em;
+		background: linear-gradient(to right, @accent-green,@accent-blue);
+		color: black;
+		font-weight: 400;
+		border-radius: 0 20px 20px 0;
+	}
+	&:active {
+		animation: slide 1s ease;
+		}
+	@keyframes slide {
+		0% {
+			left: 0;
+		}
+		100% {
+			left: -100%;
+		}
+	}
 	.card-holder {
 		display: flex;
 		justify-content: center;
@@ -46,6 +67,7 @@
 					flex-direction: column;
 					align-content: center;
 					justify-content: center;
+					
 				}
 
 				.front {
@@ -71,9 +93,6 @@
 				transform: rotateY(-180deg);
 			}
 			transition: transform 0.1s;
-		}
-		.card:hover {
-			transform: scale(1.05);
 		}
 	}
 }
