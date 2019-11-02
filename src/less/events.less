@@ -2,27 +2,44 @@
 @import (reference) 'lib/helpers.less';
 #events {
 	.band {
-		position: absolute;
+		position: fixed;
 		left: 0;
 		top: 100px;
-		width: fit-content;
+		transform: translateX(-100%);
 		padding: 0.3em 0.7em;
-		background: linear-gradient(to right, @accent-green,@accent-blue);
-		color: black;
+		border-top: 3px solid transparent; 
+		border-right: 3px solid transparent; 
+		border-bottom: 3px solid transparent; 
+		border-image: linear-gradient(to bottom right, @accent-green, @accent-blue);
+		border-image-slice: 1;
 		font-weight: 400;
-		border-radius: 0 20px 20px 0;
+		animation-play-state: paused;
+		animation-name: pardesi;
+		animation-duration: 5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+		&.active {
+			animation-play-state: running;
+		}
+		@keyframes pardesi {
+			0% {
+				transform: translateX(-100%);
+			}	
+			20% {
+				transform: translateX(-100%);
+			}		
+			30% {
+				transform: translateX(0);
+			}
+			90% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
 	}
-	&:active {
-		animation: slide 1s ease;
-		}
-	@keyframes slide {
-		0% {
-			left: 0;
-		}
-		100% {
-			left: -100%;
-		}
-	}
+
 	.card-holder {
 		display: flex;
 		justify-content: center;
