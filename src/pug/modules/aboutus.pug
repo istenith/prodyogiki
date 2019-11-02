@@ -45,28 +45,25 @@
 	]
 
 
-.aboutus
+.header
+	.image
+		img(src="resources/logos/ISTE_hollow.svg", alt="")
+	.desc
+		h1 About Us
+		p The Indian Society for Technical Education (ISTE) is a national, professional, non-profit organisation for the Technical Education System in our country. ISTE has the motto of the promoting Career development of Teachers and personality development of Students. The major objective of ISTE is to provide quality training programmes for teachers and administrators of technical Institutions to update their knowledge and skills in their fields of activity and to assist the production and development of high quality professional engineers.
+			br
+			a(href="https://istenith.com") Click here to go to our official website.
+ 
+.topic
+	.heading
+		span Our Arsenal
 
-	.header
-		.image
-			img(src="resources/logos/ISTE.svg", alt="")
-		.desc
-			h1 About Us
-			p The Indian Society for Technical Education (ISTE) is a national, professional, non-profit organisation for the Technical Education System in our country. ISTE has the motto of the promoting Career development of Teachers and personality development of Students. The major objective of ISTE is to provide quality training programmes for teachers and administrators of technical Institutions to update their knowledge and skills in their fields of activity and to assist the production and development of high quality professional engineers.
+.card-holder
+	each tool in toolList
+		.card
+			.image
+				img(src=tool.logo)
+			.about
+				a(href=tool.link)=tool.name
 				br
-				a(href="https://istenith.com") Click here to go to our official website.
-
-	//- .arsenal
-	//- 	h3 Our Arsenal
-
-	//- .card-holder
-	//- 	each tool in toolList
-	//- 		.card
-	//- 			.image
-	//- 				img(src=tool.logo)
-	//- 			.about
-	//- 				h3=tool.name
-	//- 				br
-	//- 				p=tool.func
-	//- 				br
-	//- 				p=tool.link
+				h3=tool.func
