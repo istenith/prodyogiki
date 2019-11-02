@@ -43,8 +43,7 @@
 		}
 	]
 
-.band
-	p Tap to Flip
+.band Tap to Flip
 
 .card-holder
 	each event in eventList
@@ -57,3 +56,10 @@
 				.back
 					p= event.descr
 
+script.
+	let events_band = document.querrySelector('#events .band');
+	let events_tab = document.querrySelector('.tab');
+	events_tab.addEventListener('click', (eve) => {
+		events_band.style.transform = 'translateX(0)';
+		events_band.classList.add('active');
+	});
