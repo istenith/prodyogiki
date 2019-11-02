@@ -1,5 +1,5 @@
 @import (css)
-	url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Righteous|Montserrat:600|Roboto+Slab:400,700&display=swap');
+	url('https://fonts.googleapis.com/css?family=Zilla+Slab:700|Righteous|Montserrat:600|Roboto+Slab:400,700&display=swap');
 @import (less) 'lib/colors';
 @import (less) 'lib/helpers.less';
 
@@ -57,30 +57,32 @@ section {
 }
 
 .topic {
-	// .heading span {
-	// 	.no-select();
-	// 	font-family: 'Alfa Slab One', serif;
-	// 	font-size: 30px;
-	// 	color: @accent-green;
-	// 	margin-left: 1em;
-	// 	font-weight: unset;
-	// 	position: relative;
+	.heading {
+		margin: 2em;
+		span {
+			.no-select();
+			font-family: 'Zilla Slab', serif;
+			font-size: 36px;
+			color: @accent-green;
+			font-weight: unset;
+			position: relative;
 
-	// 	// &::first-letter {
-	// 		//	 text-transform: uppercase;
-	// 	// }
+			//	 // &::first-letter {
+			//		 //	 text-transform: uppercase;
+			//	 // }
 
-	// 	&::after {
-	// 		content: '';
-	// 		position: absolute;
-	// 		bottom: -0.1em;
-	// 		left: -0.25em;
-	// 		width: calc(100% + 0.6em);
-	// 		height: 0.3em;
-	// 		z-index: -1;
-	// 		background-color: white;
-	// 	}
-	// }
+			// &::after {
+			// 	content: '';
+			// 	position: absolute;
+			// 	bottom: 0em;
+			// 	left: -0.25em;
+			// 	width: calc(100% + 0.6em);
+			// 	height: 0.2em;
+			// 	z-index: -1;
+			// 	background-color: white;
+			// }
+		}
+	}
 
 	.desc {
 		padding: 2em;
@@ -91,4 +93,8 @@ section {
 .page {
 	width: 100vw;
 	height: 100vh;
+}
+
+@media screen and (max-width: 900px) {
+
 }
