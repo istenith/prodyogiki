@@ -15,6 +15,7 @@
 		animation-duration: 10s;
 		animation-iteration-count: 1;
 		animation-fill-mode: forwards;
+		animation-play-state: paused;
 		z-index: 6;
 
 		&::after {
@@ -65,16 +66,16 @@
 			0% {
 				transform: translateX(calc(-100% - @border-thickness));
 			}
-			30% {
+			15% {
 				transform: translateX(calc(-100% - @border-thickness));
 			}
-			35% {
+			20% {
 				transform: translateX(0);
 			}
-			55% {
+			40% {
 				transform: translateX(0);
 			}
-			60% {
+			45% {
 				transform: translateX(calc(-100% - @border-thickness));
 			}
 			100% {
