@@ -13,7 +13,32 @@
 	// border-image: linear-gradient(to bottom right, @accent-green, @accent-blue);
 	// border-image-slice: 1;
 
-	color: @accent-green;
+	padding-top: 1em;
+	color: white;
+	
+	span {
+		animation: blink 1s infinite;	
+		@keyframes blink {
+			0% {
+				opacity: 1;
+			}
+			50% {
+				opacity: 1;
+
+			}
+			51% {
+				opacity: 0;
+
+			}
+			99% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+	}
+
 }
 
 #home {
