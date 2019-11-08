@@ -70,9 +70,22 @@ if [[ ! -z ${CUSTOM_BUILD_DIR} && "${WATCH}" == "1" ]]; then
 fi
 
 if [[ "${WATCH}" == "1" ]]; then
-  pug -w src/pug/pages/ --basedir ./ --out ${BUILD_DIR}/ &
+  if [[ "${VERBOSE}" == "1" ]]; then
+    echo "Compiling pug -> html"
+    pug -w src/pug/pages/ --basedir ./ --out ${BUILD_DIR}/ &
+  else
+    pug -s -w src/pug/pages/ --basedir ./ --out ${BUILD_DIR}/ &
+  fi
+  if [[ "${VERBOSE}" == "1" ]]; then
+    echo "Starting less watch compiler"
+  fi
   less-watch-compiler &
-  live-server --port=9600 ./${BUILD_DIR} &
+  if [[ "${VERBOSE}" == "1" ]]; then
+    echo "Starting live server"
+    live-server --verbose --port=9600 ./${BUILD_DIR} &
+  else
+    live-server --port=9600 ./${BUILD_DIR} &
+  fi
 fi
 
 if [[ "${WATCH}" == "0" ]]; then
