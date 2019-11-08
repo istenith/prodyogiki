@@ -85,7 +85,9 @@ if [[ "${WATCH}" == "0" ]]; then
   if [[ "${VERBOSE}" == "1" ]]; then
     echo "Compiling less -> css"
   fi
-  lessc -x ./src/less/index.less ${BUILD_DIR}/styles/index.min.css
+  lessc ./src/less/index.less ${BUILD_DIR}/styles/index.css
+  cleancss --inline all -o ${BUILD_DIR}/styles/index.min.css ${BUILD_DIR}/styles/index.css
+  rm ${BUILD_DIR}/styles/index.css
 fi
 wait
 
