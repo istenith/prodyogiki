@@ -22,7 +22,7 @@ a {
 }
 
 #window {
-	position: fixed;
+	position: relative;
 	width: 100vw;
 	height: 100vh;
 }
@@ -66,21 +66,6 @@ section {
 			color: @accent-green;
 			font-weight: unset;
 			position: relative;
-
-			//	 // &::first-letter {
-			//		 //	 text-transform: uppercase;
-			//	 // }
-
-			// &::after {
-			// 	content: '';
-			// 	position: absolute;
-			// 	bottom: 0em;
-			// 	left: -0.25em;
-			// 	width: calc(100% + 0.6em);
-			// 	height: 0.2em;
-			// 	z-index: -1;
-			// 	background-color: white;
-			// }
 		}
 	}
 
@@ -96,12 +81,8 @@ section {
 	position: relative;
 }
 
-
-@media screen and (max-width: 900px) {
-
-}
-
 @import 'events.less';
 @import 'home.less';
 @import 'aboutus.less';
 @import 'header.less';
+@import 'footer.less';
