@@ -1,56 +1,63 @@
 -
 	var eventList = [
 		{
-			'title': 'Dash Crawler',
-			'image': 'dc.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Crazy Crawler',
+			'image': 'resources/img/cc.svg',
+			'descr': 'Build a legged bot (crawler) that can move in a straight line to dash through a track in minimum time',
+			'pdf': 'resources/pdfs/cc.pdf'
 		},
 		{
-			'title': 'ChemHunt 3.0',
-			'image': 'chemhunt.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Molecular Mystery',
+			'image': 'resources/img/mm.svg',
+			'descr': 'A treasure hunt which has questions related to all topics which have to be answered by teams of 4. Solutions are all around the campus.'
 		},
 		{
-			'title': 'Tiny House Challenge',
-			'image': 'thc.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Compact Condominium',
+			'image': 'resources/img/ccondo.svg',
+			'descr': 'Design a tiny house with different features in a defined area. You can use any means for designing.'
 		},
 		{
-			'title': 'Perilioscope',
-			'image': 'peril.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Risk Reduction',
+			'image': 'resources/img/rr.svg',
+			'descr': 'Buy virtual assets to ideate a solution to protect against virtual perils and calamities.'
 		},
 		{
-			'title': 'Far From Home',
-			'image': 'ffh.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Lost Lander',
+			'image': 'resources/img/ll.svg',
+			'descr': 'Build a bot which can sense obstacles in an obstacle course and clear that obstacle course in minimum time. The course cannot be seen by the operator.'
 		},
 		{
-			'title': 'Rube Goldberg',
-			'image': 'rg.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Goofy Gizmos',
+			'image': 'resources/img/gg.svg',
+			'descr': 'You will be provided various materials from which you have to make a complex contraption to achieve a simple goal.'
 		},
 		{
-			'title': 'Egg Drop Challenge',
-			'image': 'edc.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Humpty Dumpty',
+			'image': 'resources/img/ee.svg',
+			'descr': "'Humpty Dumpty' sat on a wall, 'Humpty Dumpty' had a great fall!. Save Mr. Humpty Dumpty from falling and exploding by covering with various materials."
 		},
 		{
-			'title': 'Code',
-			'image': 'code.svg',
-			'descr': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+			'title': 'Dev Dash',
+			'image': 'resources/img/dd.svg',
+			'descr': 'There are 2 rounds in this code marathon. A short code competition followed by code relay event. Solo event for all the enthusiastic coders'
 		}
 	]
 
-.heading
-	span events
+
 .card-holder
 	each event in eventList
 		.card
 			.inner
 				.front
 					h3= event.title
-					img(src=event.image)
+					center
+						img(src=event.image)
 				.back
 					p= event.descr
 
+script.
+	let events_band = document.querySelector('#events .band');
+	let events_tab = document.querySelector('.tab');
+	events_tab.addEventListener('click', (eve) => {
+		events_band.classList.add('active');
+	});
