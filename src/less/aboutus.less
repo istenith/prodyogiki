@@ -3,11 +3,15 @@
 
 #about-us {
 	padding-bottom: 6em;
+	padding-top:2em;
 	.topic {
 		.heading {
 			text-align: center;
 			span {
 				color: @accent-blue;
+				font-size: 5em;
+				letter-spacing: 15px;
+				margin-left:60px;
 			}
 		}
 	}
@@ -19,6 +23,7 @@
 	margin: auto;
 	.image {
 		padding: 24px;
+		padding-top:0;
 		text-align: center;
 		img {
 			width: 240px;
@@ -26,6 +31,9 @@
 	}
 	.desc {
 		padding: 0.7em;
+		#iste{
+			color:#00ff00
+		}
 	}
 	p {
 		text-align: justify;
@@ -34,6 +42,54 @@
 	}
 	a {
 		color: #03a9f4;
+	}
+}
+
+.arsenal{
+	text-align: center;
+
+	#arsenal{
+		font-size: 30px;
+		color: #00ff00;
+	}
+
+	.cardHolder{
+		//border: 2px solid white;
+		margin-top: 30px;
+
+		display: flex;
+		flex-wrap:wrap;
+		justify-content:center;
+
+		background-color: #0e0f0e9d;
+
+		.card{
+			flex:1 1 25%;
+
+			display:flex;
+			flex-direction: column;
+			align-content: center;
+
+			//border: 2px dotted red;
+			margin: 25px 5px 25px 5px;
+			.image{
+				flex: 1 1 15%;
+				img{
+					align-self: center;
+					width:200px;
+				}
+			}
+			a{
+				color:#03a9f4;
+			}
+			.name{
+				font-size: 5em;
+			}
+			.tooldesc{
+				font-size:2em;
+			}
+
+		}
 	}
 }
 
