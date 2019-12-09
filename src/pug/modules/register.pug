@@ -32,3 +32,36 @@
                 each event in eventList
                     option(value = event.title selected)=event.title 
 
+    .regMembers
+
+        .M2
+            .lable#teamMember Member 2
+            .textbox
+                input(type="text" id="team_leader" placeholder="Full Name")
+            .textbox
+                input(type="text" id="team_leader_email" placeholder="Email")
+
+        .M3
+            .lable#teamMember Member 3
+            .textbox
+                input(type="text" id="team_leader" placeholder="Full Name")
+            .textbox
+                input(type="text" id="team_leader_email" placeholder="Email") 
+
+        .M4
+            .lable#teamMember Member 4
+            .textbox
+                input(type="text" id="team_leader" placeholder="Full Name")
+            .textbox
+                input(type="text" id="team_leader_email" placeholder="Email")
+
+        .M5
+            .lable#teamMember Member 5
+            .textbox
+                input(type="text" id="team_leader" placeholder="Full Name")
+            .textbox
+                input(type="text" id="team_leader_email" placeholder="Email")
+    
+    .submit
+            input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
+
