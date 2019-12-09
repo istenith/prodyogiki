@@ -22,6 +22,7 @@ function playerSubmit(){
             email: player_email
         }).then(alert("DATA SUBMITTED \n"+"name:"+player_name+"\n"+"phone: "+player_phone+"\n"+"email: "+player_email))
         .catch((error)=>console.log("error submiting",error)) ; 
+        
     }
     else if(!isPhoneNumber(player_phone) && !isEmail(player_email)){
         alert("Chutiya hai kya");
