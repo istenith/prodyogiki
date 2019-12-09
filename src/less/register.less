@@ -3,7 +3,34 @@
 
 .holder{
     text-align: center;
-    margin:0 25%;
+    margin:0 25% 10%;
+}
+
+.textbox{
+    border-bottom: 2px solid #00ff00;
+    margin-bottom:15px;
+    padding:0;
+
+    input{
+        border:none;
+        outline:none;
+        background:none;
+        font-size:18px;
+        width:80%;
+        float:left;
+        color:white;
+    }
+}
+
+h1{
+    color:white;
+    margin-bottom:15px;
+    font-size:3vw;
+}
+
+.lable{
+    text-align: left;
+    padding-top:10px;
 }
 
 .regPlayer{
@@ -16,17 +43,10 @@
     h1{
         grid-column-start:1;
         grid-column-end: 3;
-        color:white;
-        margin-bottom:15px;
-        font-size:3vw;
     }
     .submit{
         grid-column-start:1;
         grid-column-end: 3;
-    }
-    .lable{
-        text-align: left;
-        padding-top:10px;
     }
 
     .btn{
@@ -45,21 +65,47 @@
         cursor: pointer;
         margin: 12px 0;
     }
-    
-    .textbox{
-        border-bottom: 2px solid #00ff00;
-        margin-bottom:15px;
-        padding:0;
+}
 
-        input{
+.regTeam{
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr repeat(4,50px);
+    grid-template-columns: repeat(2,1fr);
+
+    h1{
+        grid-column-start: 1;
+        grid-column-end:3;
+    }
+
+    #teamLeader{
+        grid-row: 3/span 2;
+        color:@accent-blue;
+    }
+
+    select{
+        border:none;
+        outline:none;
+        background:none;
+        font-size:18px;
+        width:80%;
+        float:left;
+        color:white;
+
+        option{
             border:none;
             outline:none;
             background:none;
             font-size:18px;
             width:80%;
             float:left;
-            color:white;
+            color:black;
         }
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .holder{
+        margin: 0 10% 10%
+    }
+  }

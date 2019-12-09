@@ -4,30 +4,31 @@
         .lable Name
         .textbox
             input(type="text" id="player_name" placeholder="Full Name")
-        
+
         .lable Phone Number
         .textbox
             input(type="text" id="player_phone" placeholder="Phone Number")
-        
+
         .lable Email
         .textbox
-            input(type="text" id="player_email" placeholder="Your Email")
+            input(type="email" id="player_email" placeholder="Your Email")
         .submit
             input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
 
 .holder
-    .regPlayer
-        h1 Register Yourself
-        .lable Name
+    .regTeam
+        h1 Register Your Team
+        .lable Team Name
         .textbox
-            input(type="text" id="player_name" placeholder="Full Name")
-        
-        .lable Phone Number
+            input(type="text" id="team_name" placeholder="Name of your team")
+        .lable#teamLeader Team Leader
+        .textbox(style="border-bottom: 2px solid #03a9f4")
+            input(type="text" id="team_leader" placeholder="Full Name")
+        .textbox(style="border-bottom: 2px solid #03a9f4")
+            input(type="text" id="team_leader_email" placeholder="Email")
+        .lable Event
         .textbox
-            input(type="text" id="player_phone" placeholder="Phone Number")
-        
-        .lable Email
-        .textbox
-            input(type="text" id="player_email" placeholder="Your Email")
-        .submit
-            input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
+            select(id="Event Select" onChange="toggle()")
+                each event in eventList
+                    option(value = event.title selected)=event.title 
+
