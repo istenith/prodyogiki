@@ -34,33 +34,16 @@
 
     .regMembers
 
-        .clear
-            .lable Member 2
-            .textbox
-                input(type="text" id="team_member_2" placeholder="Full Name")
-            .textbox
-                input(type="text" id="team_member_2_email" placeholder="Email")
+        -var members = [2,3,4,5]
 
-        .clear
-            .lable Member 3
-            .textbox
-                input(type="text" id="team_member_3" placeholder="Full Name")
-            .textbox
-                input(type="text" id="team_member_3_email" placeholder="Email") 
-
-        .clear
-            .lable Member 4
-            .textbox
-                input(type="text" id="team_member_4" placeholder="Full Name")
-            .textbox
-                input(type="text" id="team_member_4_email" placeholder="Email")
-
-        .clear
-            .lable Member 5
-            .textbox
-                input(type="text" id="team_member_5" placeholder="Full Name")
-            .textbox
-                input(type="text" id="team_member_5_email" placeholder="Email")
+        each member in members
+            .clear
+                .lable Member #{member}
+                .textbox
+                    input(type="text" id="team_member_"+member placeholder="Full Name")
+                .textbox
+                    input(type="text" id="team_member_"+member+"_email" placeholder="Email")
+        
     
     .submit
-            input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
+            input(class="btn" type="button" value="Submit!" onClick="teamSubmit()")
