@@ -122,18 +122,25 @@ h1{
 }
 
 .regMembers{
-    div{
+
+    .M{
         display:flex;
-        flex-direction: row;
+        //flex-direction: row;
         flex: 1 1 10%;
         margin: 20px 0;
 
+        .lable{
+            flex:1.5;
+        }
+
         .textbox{
             //margin: 0 10px;
-            width:100%;
+            //width:100%;
             border:none;
+            padding:none;
             input{
                 border-bottom: 2px solid white;
+                padding:none;
                 outline:none;
                 background:none;
                 font-size:18px;
@@ -142,6 +149,10 @@ h1{
                 color:white;
             }
         }
+    }
+
+    .clear{
+        display:none;
     }
 }
 
