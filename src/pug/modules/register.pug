@@ -3,14 +3,47 @@
         h1 Register Yourself
         .lable Name
         .textbox
-        input(type="text" id="player_name" placeholder="Full Name")
-        
+            input(type="text" id="player_name" placeholder="Full Name")
+
         .lable Phone Number
         .textbox
             input(type="text" id="player_phone" placeholder="Phone Number")
-        
+
         .lable Email
         .textbox
-            input(type="text" id="player_email" placeholder="Your Email")
+            input(type="email" id="player_email" placeholder="Your Email")
         .submit
             input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
+
+.holder
+    .regTeam
+        h1 Register Your Team
+        .lable Team Name
+        .textbox
+            input(type="text" id="team_name" placeholder="Name of your team")
+        .lable#teamLeader Team Leader
+        .textbox.team_leader
+            input(type="text" id="team_leader" placeholder="Full Name")
+        .textbox.team_leader
+            input(type="text" id="team_leader_email" placeholder="Email")
+        .lable Event
+        .textbox
+            select(id="select" onChange="handleSelectChange()")
+                each event in eventList
+                    option(value = event.team_limit id=event.title)=event.title 
+
+    .regMembers
+
+        -var members = [2,3,4,5]
+
+        each member in members
+            .clear
+                .lable Member #{member}
+                .textbox
+                    input(type="text" id="team_member_"+member placeholder="Full Name")
+                .textbox
+                    input(type="text" id="team_member_"+member+"_email" placeholder="Email")
+        
+    
+    .submit
+            input(class="btn" type="button" value="Submit!" onClick="teamSubmit()")
