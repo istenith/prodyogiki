@@ -35,6 +35,12 @@ html
 		link(rel="shortcut icon" href="/pg.png" type="image/x-icon")
 		link(rel="icon" href="/pg.png" type="image/x-icon")
 
+		script(src = "https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js")
+		script(src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js")
+
+		script
+			include /src/scripts/firebase.js
+
 	body
 		include /src/pug/modules/header
 
@@ -49,13 +55,17 @@ html
 			section#about-us
 				.content
 					include /src/pug/modules/aboutus
-			// section#sponsors
-			// 	.content
-			// 		include /src/pug/modules/sponsors
+			section#register
+				.content
+					include /src/pug/modules/register
+
 		include /src/pug/modules/footer
 
 		script
 			include /src/scripts/index.js
+		script
+			include /src/scripts/register.js
+
 		script
 			include /src/scripts/vanilla-tilt.min.js
 		script
