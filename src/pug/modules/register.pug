@@ -28,40 +28,39 @@
             input(type="text" id="team_leader_email" placeholder="Email")
         .lable Event
         .textbox
-            select(id="Event Select" onChange="toggle()")
+            select(id="select" onChange="handleSelectChange()")
                 each event in eventList
-                    option(value = event.title selected)=event.title 
+                    option(value = event.team_limit id=event.title)=event.title 
 
     .regMembers
 
-        .M2
+        .M
             .lable#teamMember Member 2
             .textbox
-                input(type="text" id="team_leader" placeholder="Full Name")
+                input(type="text" id="team_member_2" placeholder="Full Name")
             .textbox
-                input(type="text" id="team_leader_email" placeholder="Email")
+                input(type="text" id="team_member_2_email" placeholder="Email")
 
-        .M3
+        .M
             .lable#teamMember Member 3
             .textbox
-                input(type="text" id="team_leader" placeholder="Full Name")
+                input(type="text" id="team_member_3" placeholder="Full Name")
             .textbox
-                input(type="text" id="team_leader_email" placeholder="Email") 
+                input(type="text" id="team_member_3_email" placeholder="Email") 
 
-        .M4
+        .M
             .lable#teamMember Member 4
             .textbox
-                input(type="text" id="team_leader" placeholder="Full Name")
+                input(type="text" id="team_member_4" placeholder="Full Name")
             .textbox
-                input(type="text" id="team_leader_email" placeholder="Email")
+                input(type="text" id="team_member_4_email" placeholder="Email")
 
-        .M5
+        .M
             .lable#teamMember Member 5
             .textbox
-                input(type="text" id="team_leader" placeholder="Full Name")
+                input(type="text" id="team_member_5" placeholder="Full Name")
             .textbox
-                input(type="text" id="team_leader_email" placeholder="Email")
+                input(type="text" id="team_member_5_email" placeholder="Email")
     
     .submit
             input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
-

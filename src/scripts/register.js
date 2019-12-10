@@ -8,6 +8,14 @@ function isEmail(input){
     return emailPattern.test(input); 
 }
 
+function handleSelectChange(){
+    var select=document.getElementById("select");
+    var members = select.options[select.selectedIndex].value;
+    for(var i=0;i<members-1;i++){
+        console.log("member ",i+2);
+    }
+}
+
 function playerSubmit(){
     var player_name = document.getElementById('player_name').value;
     var player_phone = document.getElementById('player_phone').value;
@@ -25,7 +33,7 @@ function playerSubmit(){
         
     }
     else if(!isPhoneNumber(player_phone) && !isEmail(player_email)){
-        alert("Chutiya hai kya");
+        alert("Invalid Input");
     }
     else if(!isPhoneNumber(player_phone)){
         alert("invalid phone number");
