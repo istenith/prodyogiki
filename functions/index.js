@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 //const admin = require('firebase-admin');
-// const nodemailer = require('nodemailer');
-// const cors = require('cors')({origin: true});
+const nodemailer = require('nodemailer');
+const cors = require('cors')({origin: true});
 var shortid = require('shortid');
 //admin.initializeApp();
 
@@ -28,37 +28,39 @@ exports.assignPID = functions.firestore
 /**
 * Here we're using Gmail to send 
 */
-// let transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: 'teamiste@gmail.com',
-//         pass: 'teamisterocks'
-//     }
-// });
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'teamiste@gmail.com',
+        pass: 'teamisterocks'
+    }
+});
 
-// exports.sendMail = functions.firestore
-// .document('/players/{playerId}')
-// .onCreate((snapshot,context)=>{
-      
-//     // getting dest email by query string
-//     const dest = snapshot.data().email;
+exports.sendMail = functions.firestore
+.document('/players/{playerId}')
+.onCreate((snapshot,context)=>{
+    // getting dest email by query string
+    const dest = snapshot.data().email;
 
-//     const mailOptions = {
-//         from: 'Team ISTE <teamiste@gmail.com>', // Something like: Jane Doe <janedoe@gmail.com>
-//         to: dest,
-//         subject: 'Registered', // email subject
-//         html: `<p style="font-size: 16px;">You are now registered!!</p>
-//             <br />
-//             <img src="../src/resources/logos/ISTE.png" />
-//         ` // email content in HTML
-//     };
+    const mailOptions = {
+        from: 'teamiste@gmail.com', // Something like: Jane Doe <janedoe@gmail.com>
+        to: dest,
+        subject: 'I\'M A PICKLE!!!', // email subject
+        html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
+            <br />
+            <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
+        ` // email content in HTML
+    };
 
-//     // returning result
-//     return transporter.sendMail(mailOptions, (erro, info) => {
-//         if(erro){
-//             return res.send(erro.toString());
-//         }
-//         return res.send('Sended');
-//     });
-// });  
+    return transporter.sendMail(mailOptions, (error, data) => {
+        if (error) {
+            console.log(error)
+            return 0;
+        }
+        console.log("Sent!")
+    });
+});  
 
