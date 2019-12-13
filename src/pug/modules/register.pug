@@ -28,7 +28,7 @@ form.holder
             input(type="text" id="team_leader_email" placeholder="Email")
         .lable Event
         .textbox
-            select(id="select" onChange="handleSelectChange()")
+            select(id="select" name="event" onChange="handleSelectChange()")
                 each event in eventList
                     option(value = event.team_limit id=event.title)=event.title 
 
@@ -40,9 +40,9 @@ form.holder
             .clear
                 .lable Member #{member}
                 .textbox
-                    input(type="text" id="team_member_"+member placeholder="Full Name")
+                    input(type="text" name="team_member_"+member placeholder="Full Name")
                 .textbox
-                    input(type="text" id="team_member_"+member+"_email" placeholder="Email")
+                    input(type="text" name="team_member_"+member+"_email" placeholder="Email")
         
     
     .submit
