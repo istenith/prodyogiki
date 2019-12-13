@@ -15,23 +15,23 @@ form(class="holder" method="POST" action="/regPlayer")
         .submit
             input(class="btn" type="submit" value="Submit!")
 
-form.holder
+form(class="holder" method="POST" action="/regTeam")
     .regTeam
         h1 Register Your Team
         .lable Team Name
         .textbox
-            input(type="text" id="team_name" placeholder="Name of your team")
-        .lable#teamLeader Team Leader
+            input(type="text" id="team_name" name="team_name" placeholder="Name of your team")
+        .lable#teamLeader Team Leader Id
         .textbox.team_leader
-            input(type="text" id="team_leader" placeholder="Full Name")
-        .textbox.team_leader
-            input(type="text" id="team_leader_email" placeholder="Email")
+            input(type="text" id="team_leader_id" name="team_leader_id" placeholder="Id of team leader")
+        //- .textbox.team_leader
+        //-     input(type="text" id="team_leader_email" name="team_leader_email" placeholder="Email")
         .lable Event
         .textbox
             select(id="select" name="event" onChange="handleSelectChange()")
                 each event in eventList
-                    option(value = event.team_limit id=event.title)=event.title 
-
+                    option(value = event.title name=event.title id=event.team_limit)=event.title 
+                    //value->title                                    id->limit
     .regMembers
 
         -var members = [2,3,4,5]
@@ -40,9 +40,9 @@ form.holder
             .clear
                 .lable Member #{member}
                 .textbox
-                    input(type="text" name="team_member_"+member placeholder="Full Name")
-                .textbox
-                    input(type="text" name="team_member_"+member+"_email" placeholder="Email")
+                    input(type="text" name="team_member_"+member placeholder="Id of member"+member)
+                //- .textbox
+                //-     input(type="text" name="team_member_"+member+"_email" placeholder="Email")
         
     
     .submit

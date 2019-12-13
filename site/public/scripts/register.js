@@ -10,8 +10,8 @@ function isEmail(input){
 
 function handleSelectChange(){
     var select=document.getElementById("select");
-    var event=select.options[select.selectedIndex].id;
-    var members = select.options[select.selectedIndex].value;
+    var event=select.options[select.selectedIndex].value;
+    var members = select.options[select.selectedIndex].id;
     var input_nodes = document.querySelectorAll('.regMembers > div');
     console.log("EVENT: "+event+" members: "+members);
     for(var i=0;i<input_nodes.length;i++){

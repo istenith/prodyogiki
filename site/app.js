@@ -1,33 +1,24 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const shortid = require('shortid');
+var express = require('express');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
-const app = new express();
-const port = 3000;
+//loading models
+var User = require('./models/user');
+var Team = require('./models/team');
 
+//hosting the front end
+var app = new express();
+var port = 3000;
+
+//coneectiong to backend
 mongoose.connect('mongodb://localhost/myDb', {useNewUrlParser: true});
 
 var db = mongoose.connection;
 db.on('error',()=>console.log('error connecting to the database!'))
 .once('open',()=>console.log('connected to the database'));
 
-var userScheema = new mongoose.Schema({
-    _id : {
-        type : String,
-        default : shortid.generate
-    },
-    name : String,
-    phone : Number,
-    email : String
-},{versionKey : false});
-
-var User = new mongoose.model('user',userScheema);
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
 app.use(express.static('public'));
 
 app.post('/regPlayer',(req,res)=>{
@@ -38,5 +29,22 @@ app.post('/regPlayer',(req,res)=>{
     })
     .catch(err=>res.status(404).send(err));
 });
+
+app.post('/regTeam',(req,res)=>{
+    var recieved_data = req.body;
+    var data = {
+        name : recieved_data.team_name,
+        leader :recieved_data.team_leader_id,
+        members : [recieved_data.team_member_2, recieved_data.team_member_3, recieved_data.team_member_4 ,recieved_data.team_member_5],
+        event : recieved_data.event
+    }
+    team = new Team(data)
+    team.save()
+    .then((item)=>{res.send("your Team_id is "+item._id);
+        console.log(item);
+    })
+    .catch(err=>res.status(404).send(err));
+});
+
 
 app.listen(port);
