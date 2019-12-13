@@ -2,7 +2,7 @@
 trap "kill 0" EXIT
 
 # Set this variable to the name of the output directory
-BUILD_DIR=builds
+BUILD_DIR=site/public
 
 WATCH=0
 

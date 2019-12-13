@@ -1,21 +1,21 @@
-.holder
+form(class="holder" method="POST" action="/regPlayer")
     .regPlayer
         h1 Register Yourself
         .lable Name
         .textbox
-            input(type="text" id="player_name" placeholder="Full Name")
+            input(type="text" id="player_name" name="name" placeholder="Full Name")
 
         .lable Phone Number
         .textbox
-            input(type="text" id="player_phone" placeholder="Phone Number")
+            input(type="text" id="player_phone" name="phone" placeholder="Phone Number")
 
         .lable Email
         .textbox
-            input(type="email" id="player_email" placeholder="Your Email")
+            input(type="textbox" id="player_email" name="email" placeholder="Your Email")
         .submit
-            input(class="btn" type="button" value="Submit!" onClick="playerSubmit()")
+            input(class="btn" type="submit" value="Submit!")
 
-.holder
+form.holder
     .regTeam
         h1 Register Your Team
         .lable Team Name
@@ -46,4 +46,4 @@
         
     
     .submit
-            input(class="btn" type="button" value="Submit!" onClick="teamSubmit()")
+            input(class="btn" type="submit" value="Submit!" onClick="teamSubmit()")
