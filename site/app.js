@@ -2,8 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var nodemailer = require('nodemailer');
+var Email = require('email-templates');
+var path = require('path');
 
-//setting up node mailer
 var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -14,8 +15,16 @@ var transporter = nodemailer.createTransport({
            pass: 'teamisterocks'
        }
 });
-
-var dest;
+//Email Template
+const email = new Email({
+    message: {
+      from: 'Team ISTE'
+    },
+    // uncomment below to send emails in development/test env:
+    send: true,
+    preview: false,
+    transport: transporter
+});
 
 //loading models
 var User = require('./models/user');
@@ -45,22 +54,21 @@ app.post('/regPlayer',(req,res)=>{
     .then((item)=>{
         res.render('register',{title: "User Registration", id: item._id});
         console.log(item);
-        // uncomment this to send emails
-        // const mailOptions = {
-        //     from: 'Team ISTE', // sender address
-        //     to: item.email, // list of receivers
-        //     subject: 'Prodyogiki 2020', // Subject line
-        //     html: '<p>Your html here</p>'// plain text body
-        // };
-
-        // transporter.sendMail(mailOptions, function (err, info) {
-        //     if(err)
-        //       console.log(err)
-        //     else
-        //       console.log(info);
-        //  });
     })
-    .catch(err=>res.status(404).send(err));
+    .catch(err=>res.status(404).send(err))
+    .then(
+        email.send({
+        template: path.join(__dirname,'emails','user'),
+        message: {
+        to: 'parthpant4@gmail.com'
+        },
+        locals: {
+        name: 'Parth',
+        id: '234Ur43'
+        }
+    }))
+    .then(()=>console.log("email sent"))
+    .catch(err=>console.log(err));
 });
 
 app.post('/regTeam',(req,res)=>{
