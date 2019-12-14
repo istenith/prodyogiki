@@ -49,26 +49,31 @@ app.set('view engine', 'pug')
 
 app.post('/regPlayer',(req,res)=>{
     var data = new User(req.body);
+    var mailid;
     //////validation code
+
     data.save()
     .then((item)=>{
+        mailid = item._id;
         res.render('register',{title: "User Registration", id: item._id});
         console.log(item);
     })
-    .catch(err=>res.status(404).send(err))
-    .then(
+    .then(()=>{
+        console.log(mailid);
         email.send({
         template: path.join(__dirname,'emails','user'),
         message: {
-        to: 'parthpant4@gmail.com'
-        },
-        locals: {
-        name: 'Parth',
-        id: '234Ur43'
-        }
-    }))
+            to: data.email
+            },
+            locals: {
+                id: mailid,
+                name: data.name,
+            }
+        })
+    })
     .then(()=>console.log("email sent"))
     .catch(err=>console.log(err));
+
 });
 
 app.post('/regTeam',(req,res)=>{
@@ -87,6 +92,5 @@ app.post('/regTeam',(req,res)=>{
     })
     .catch(err=>res.status(404).send(err));
 });
-
 
 app.listen(port);

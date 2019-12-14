@@ -1,6 +1,7 @@
 var Email = require('email-templates');
 var path = require('path');
 var nodemailer = require('nodemailer');
+var shortid = require('shortid');
 
 var transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -22,7 +23,7 @@ const email = new Email({
   preview: false,
   transport: transporter
 });
-
+var is = shortid.generate();
 email.send({
   template: path.join(__dirname,'emails','user'),
   message: {
@@ -30,7 +31,7 @@ email.send({
   },
   locals: {
   name: 'Parth',
-  id: '234Ur43'
+  id: is
   }
 }).then(()=>console.log("email sent"))
 .catch(err=>console.log(err));
