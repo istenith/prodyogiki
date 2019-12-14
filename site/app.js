@@ -52,28 +52,33 @@ app.post('/regPlayer',(req,res)=>{
     var mailid;
     //////validation code
 
-    data.save()
-    .then((item)=>{
-        mailid = item._id;
-        res.render('register',{title: "User Registration", id: item._id});
-        console.log(item);
+    User.findOne({'email':data.email},(err,result)=>{
+        if(result == null){
+            data.save()
+            .then((item)=>{
+            mailid = item._id;
+            res.render('register',{title: "User Registration", id: item._id});
+            console.log(item);
+            })
+            .then(()=>{
+                email.send({
+                    template: path.join(__dirname,'emails','user'),
+                    message: {
+                        to: data.email
+                        },
+                        locals: {
+                            id: mailid,
+                            name: data.name,
+                        }
+                })
+            })
+            .then(()=>console.log("email sent"))
+            .catch(err=>console.log(err));
+        }
+        else{
+            res.send("The email has already been registered");
+        }
     })
-    .then(()=>{
-        console.log(mailid);
-        email.send({
-        template: path.join(__dirname,'emails','user'),
-        message: {
-            to: data.email
-            },
-            locals: {
-                id: mailid,
-                name: data.name,
-            }
-        })
-    })
-    .then(()=>console.log("email sent"))
-    .catch(err=>console.log(err));
-
 });
 
 app.post('/regTeam',(req,res)=>{
