@@ -8,17 +8,21 @@ function isEmail(input){
     return emailPattern.test(input); 
 }
 
+var textboxdiv;
+var textbox;
+var members;
+var input_nodes;
+
 function handleSelectChange(){
     var select=document.getElementById("select");
     var event=select.options[select.selectedIndex].value;
-    var members = select.options[select.selectedIndex].id;
-    var input_nodes = document.querySelectorAll('.regMembers > div');
+    members = select.options[select.selectedIndex].id;
+    input_nodes = document.querySelectorAll('.regMembers > div');
     console.log("EVENT: "+event+" members: "+members);
     for(var i=0;i<input_nodes.length;i++){
-        var textboxdiv = input_nodes[i].childNodes[1];
-        var textbox = textboxdiv.firstChild;
+        textboxdiv = input_nodes[i].childNodes[1];
+        textbox = textboxdiv.firstChild;
         textbox.value = '';
-        console.log(textbox)
         if(i+2>members){
              input_nodes[i].className='clear';
             continue;
@@ -26,6 +30,20 @@ function handleSelectChange(){
         input_nodes[i].className='member_div';
     }
     document.getElementById('limit_lable').innerHTML = members;
+}
+
+function validate(){
+    for(var i=0;i<members-1;i++){
+        var textboxdiv = input_nodes[i].childNodes[1];
+        var textbox = textboxdiv.firstChild;
+        if(textbox.value == ''){
+            console.log('fail'+i);
+            return false
+        }
+        console.log('pass'+i);
+    }
+    document.getElementById('regTeam').submit();
+    return true;
 }
 
 window.onload = handleSelectChange;

@@ -15,7 +15,7 @@ form(class="holder" method="POST" action="/regPlayer")
         .submit
             input(class="btn" type="submit" value="Submit!")
 
-form(class="holder" method="POST" action="/regTeam")
+form(class="holder" id="regTeam" onsubmit="event.preventDefault(); validate();" method="POST" action="/regTeam")
     .regTeam
         h1 Register Your Team
         .lable Team Name
@@ -51,4 +51,4 @@ form(class="holder" method="POST" action="/regTeam")
         
     
     .submit
-            input(class="btn" type="submit" value="Submit!" onClick="teamSubmit()")
+            input(class="btn" type="submit" value="Submit!")
