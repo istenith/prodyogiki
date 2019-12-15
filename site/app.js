@@ -84,13 +84,6 @@ app.post('/regPlayer',(req,res)=>{
 app.post('/regTeam',(req,res)=>{
     var recieved_data = req.body;
     var memArray = [recieved_data.team_member_2, recieved_data.team_member_3, recieved_data.team_member_4 ,recieved_data.team_member_5]
-    length = memArray.length;
-    for(var i=0;i<length;i++){
-        if(memArray[i] == ''){
-            memArray.splice(i,1);
-        }
-    }
-
     var data = {
         name : recieved_data.team_name,
         leader :recieved_data.team_leader_id,
