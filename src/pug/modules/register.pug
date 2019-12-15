@@ -3,15 +3,15 @@ form(class="holder" method="POST" action="/regPlayer")
         h1 Register Yourself
         .lable Name
         .textbox
-            input(type="text" id="player_name" name="name" placeholder="Full Name")
+            input(type="text" id="player_name" name="name" required placeholder="Full Name")
 
         .lable Phone Number
         .textbox
-            input(type="text" id="player_phone" name="phone" placeholder="Phone Number")
+            input(type="input" id="player_phone" name="phone" pattern="\d{10}" required placeholder="Phone Number")
 
         .lable Email
         .textbox
-            input(type="textbox" id="player_email" name="email" placeholder="Your Email")
+            input(type="email" id="player_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Your Email")
         .submit
             input(class="btn" type="submit" value="Submit!")
 
@@ -20,10 +20,10 @@ form(class="holder" method="POST" action="/regTeam")
         h1 Register Your Team
         .lable Team Name
         .textbox
-            input(type="text" id="team_name" name="team_name" placeholder="Name of your team")
+            input(type="text" id="team_name" required name="team_name" placeholder="Name of your team")
         .lable#teamLeader Team Leader Id
         .textbox.team_leader
-            input(type="text" id="team_leader_id" name="team_leader_id" placeholder="Id of team leader")
+            input(type="text" id="team_leader_id" required name="team_leader_id" placeholder="Id of team leader")
         //- .textbox.team_leader
         //-     input(type="text" id="team_leader_email" name="team_leader_email" placeholder="Email")
         .lable Event

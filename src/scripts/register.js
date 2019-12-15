@@ -16,10 +16,12 @@ function handleSelectChange(){
     console.log("EVENT: "+event+" members: "+members);
     for(var i=0;i<input_nodes.length;i++){
         if(i+2>members){
+            input_nodes[i].required = false;
             input_nodes[i].className='clear';
             continue;
         }
         input_nodes[i].className='member_div';
+        input_nodes[i].required = true;
     }
     document.getElementById('limit_lable').innerHTML = members;
 }
