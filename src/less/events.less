@@ -7,15 +7,14 @@
 		width: fit-content;
 		position: sticky;
 		left: 0;
-		top: 100px;
+		top: 50px;
 		transform: translateX(-100%);
-		padding: 0.5em 1em;
+		padding: 0.5em 0.3em;
 		font-family: 'Montserrat';
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		animation-name: pardesi;
-		animation-duration: 10s;
-		animation-iteration-count: 1;
+		animation-name: slidein;
+		animation-duration: 2.5s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
 		z-index: 6;
@@ -27,7 +26,7 @@
 			left: 0;
 			z-index: -2;
 
-			width: calc(100% + @border-thickness);
+			width: calc(11% + @border-thickness);
 			height: calc(100% + 2 * @border-thickness);
 			background-image: linear-gradient(
 				to bottom right,
@@ -44,7 +43,7 @@
 		}
 		&::before {
 			content: '';
-			width: 100%;
+			width: 11%;
 			height: 100%;
 			position: absolute;
 			top: 0;
@@ -64,25 +63,13 @@
 		&.active {
 			animation-play-state: running;
 		}
-		@keyframes pardesi {
-			0% {
-				transform: translateX(calc(-100% - @border-thickness));
-			}
-			15% {
-				transform: translateX(calc(-100% - @border-thickness));
-			}
-			20% {
-				transform: translateX(0);
-			}
-			40% {
-				transform: translateX(0);
-			}
-			45% {
-				transform: translateX(calc(-100% - @border-thickness));
-			}
-			100% {
-				transform: translateX(calc(-100% - @border-thickness));
-			}
+		@keyframes slidein {
+		from {
+			transform: translateX(-100%);
+		}
+		to{
+			transform: translateX(0%);
+		}
 		}
 	}
 
