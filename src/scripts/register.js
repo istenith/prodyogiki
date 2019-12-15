@@ -21,6 +21,7 @@ function handleSelectChange(){
         }
         input_nodes[i].className='member_div';
     }
+    document.getElementById('limit_lable').innerHTML = members;
 }
 
 window.onload = handleSelectChange;
