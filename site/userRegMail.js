@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
          user: 'teamiste@gmail.com',
-         pass: 'teamisterocks'
+         pass: 'doobaramatpuchna'
      }
 });
 //Email Template
