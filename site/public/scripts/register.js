@@ -22,3 +22,5 @@ function handleSelectChange(){
         input_nodes[i].className='member_div';
     }
 }
+
+window.onload = handleSelectChange;
