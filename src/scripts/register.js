@@ -15,13 +15,15 @@ function handleSelectChange(){
     var input_nodes = document.querySelectorAll('.regMembers > div');
     console.log("EVENT: "+event+" members: "+members);
     for(var i=0;i<input_nodes.length;i++){
+        var textboxdiv = input_nodes[i].childNodes[1];
+        var textbox = textboxdiv.firstChild;
+        textbox.value = '';
+        console.log(textbox)
         if(i+2>members){
-            input_nodes[i].required = false;
-            input_nodes[i].className='clear';
+             input_nodes[i].className='clear';
             continue;
         }
         input_nodes[i].className='member_div';
-        input_nodes[i].required = true;
     }
     document.getElementById('limit_lable').innerHTML = members;
 }
