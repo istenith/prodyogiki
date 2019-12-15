@@ -18,14 +18,41 @@ BUILD
 ---
 On `master` branch of the project run
 ```
-$ ./build.sh
+$ ./build.sh -w
 ```
-This will create a directory `builds` in project folder.
+This will create a directory `site/public` in project folder.
 
 **Note:** This is listener script and once your run it go ahead making changes.
 
 To kill press `ctrl + C`
 
+BACKEND SETUP GUIDE
+---
+On `master` branch of the project inside `site` directory run
+```
+$ npm install
+```
+this will install all the necessary packages for backend development
+however this does not install the database service we are using which is `MongoDB`
+
+To install MongoDB follow the instruction on the following link
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04
+
+after installation on MongoDB run the following command
+```
+$ sudo systemctl start mongodb
+```
+
+now all the necessary packages are installed to start running the website on the `localhost` run the following command in the `site` directory
+```
+$ npm start
+```
+this will start serving the website on the local host of your computer at `port:3000` you can access the website by typing the following address to your browser
+`localhost:3000`
+this is a listener script so you can make changes to your code and just save it to restart the server
+
+the entry point for backend server is the file `app.js`
 
 Test for features and bugs then push the changes.
 
