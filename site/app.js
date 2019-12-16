@@ -22,7 +22,7 @@ var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
            user: 'teamiste@gmail.com',
-           pass: 'everythingisplannedISTE'
+           pass: 'dobaaramatpuchna'
        }
 });
 //Email Template
