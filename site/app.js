@@ -84,6 +84,16 @@ app.post('/regPlayer',(req,res)=>{
 app.post('/regTeam',(req,res)=>{
     var recieved_data = req.body;
     var memArray = [recieved_data.team_member_2, recieved_data.team_member_3, recieved_data.team_member_4 ,recieved_data.team_member_5]
+
+    for( var i = 0; i < memArray.length; i++){ 
+        if ( memArray[i] === '') {
+          memArray.splice(i, 1); 
+          i--;
+        }
+    }
+
+     console.log(memArray);
+
     var data = {
         name : recieved_data.team_name,
         leader :recieved_data.team_leader_id,
@@ -91,7 +101,7 @@ app.post('/regTeam',(req,res)=>{
         event : recieved_data.event
     }
     team = new Team(data)
-    ///////validation code
+
     team.save()
     .then((item)=>{res.send("your Team_id is "+item._id);
         console.log(item);
