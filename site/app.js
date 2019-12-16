@@ -91,22 +91,28 @@ app.post('/regTeam',(req,res)=>{
           i--;
         }
     }
+    memArray.push(recieved_data.team_leader_id);
 
-     console.log(memArray);
-
-    var data = {
-        name : recieved_data.team_name,
-        leader :recieved_data.team_leader_id,
-        members : memArray,
-        event : recieved_data.event
-    }
-    team = new Team(data)
-
-    team.save()
-    .then((item)=>{res.send("your Team_id is "+item._id);
-        console.log(item);
+    User.find({'_id':{$in:memArray}},(err,docs)=>{
+        if(docs.length == memArray.length){
+            var data = {
+                name : recieved_data.team_name,
+                leader :recieved_data.team_leader_id,
+                members : memArray,
+                event : recieved_data.event
+            }
+            team = new Team(data)
+        
+            team.save()
+            .then((item)=>{res.send("your Team_id is "+item._id);
+                console.log(item);
+            })
+            .catch(err=>res.status(404).send(err));
+        }
+        else{
+            res.send("Invalid Ids entered")
+        }
     })
-    .catch(err=>res.status(404).send(err));
 });
 
 app.listen(port);
