@@ -93,26 +93,41 @@ app.post('/regTeam',(req,res)=>{
     }
     memArray.push(recieved_data.team_leader_id);
 
-    User.find({'_id':{$in:memArray}},(err,docs)=>{
-        if(docs.length == memArray.length){
-            var data = {
-                name : recieved_data.team_name,
-                leader :recieved_data.team_leader_id,
-                members : memArray,
-                event : recieved_data.event
+    var duplicateFlag = false;
+
+    for(var i=0;i<memArray.length;i++){
+        for(var j=0;j<memArray.length;i++){
+            if(memArray[i]==memArray[j]){
+                duplicateFlag = true;
+                break;
             }
-            team = new Team(data)
-        
-            team.save()
-            .then((item)=>{res.send("your Team_id is "+item._id);
-                console.log(item);
-            })
-            .catch(err=>res.status(404).send(err));
         }
-        else{
-            res.send("Invalid Ids entered")
-        }
-    })
+    }
+
+    if(!duplicateFlag){
+        User.find({'_id':{$in:memArray}},(err,docs)=>{
+            if(docs.length == memArray.length){
+                var data = {
+                    name : recieved_data.team_name,
+                    leader :recieved_data.team_leader_id,
+                    members : memArray,
+                    event : recieved_data.event
+                }
+                team = new Team(data)
+            
+                team.save()
+                .then((item)=>{res.send("your Team_id is "+item._id);
+                    console.log(item);
+                })
+                .catch(err=>res.status(404).send(err));
+            }
+            else{
+                res.send("Invalid Ids entered")
+            }
+        })
+    }else{
+        res.send('Duplicate Ids have been entered')
+    }
 });
 
 app.listen(port);
