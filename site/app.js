@@ -5,6 +5,16 @@ var nodemailer = require('nodemailer');
 var Email = require('email-templates');
 var path = require('path');
 
+//leader mail extraction
+function search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i]._id === nameKey) {
+            return myArray[i];
+        }
+    }
+}
+
+
 var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -12,7 +22,7 @@ var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
            user: 'teamiste@gmail.com',
-           pass: 'doobaramatpuuchna'
+           pass: 'everythingisplannedISTE'
        }
 });
 //Email Template
@@ -106,6 +116,9 @@ app.post('/regTeam',(req,res)=>{
 
     if(duplicateFlag == false){
         User.find({'_id':{$in:memArray}},(err,docs)=>{
+            var leaderDoc = search(recieved_data.team_leader_id,docs);
+            var leadMail = leaderDoc.email;
+            var tid;
             if(docs.length == memArray.length){
                 var data = {
                     name : recieved_data.team_name,
@@ -117,9 +130,24 @@ app.post('/regTeam',(req,res)=>{
             
                 team.save()
                 .then((item)=>{res.send("your Team_id is "+item._id);
+                    tid =item._id;
                     console.log(item);
+                    console.log('leader : '+leaderDoc);
                 })
-                .catch(err=>res.status(404).send(err));
+                .then(()=>{
+                    email.send({
+                        template: path.join(__dirname,'emails','team'),
+                        message: {
+                            to: leadMail
+                            },
+                            locals: {
+                                Tid: tid,
+                                Tname: data.name,
+                            }
+                    })
+                })
+                .then(()=>console.log("email sent"))
+                .catch(err=>console.log(err));
             }
             else{
                 res.send("Invalid Ids entered")
