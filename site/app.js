@@ -96,7 +96,7 @@ app.post('/regTeam',(req,res)=>{
     var duplicateFlag = false;
 
     for(var i=0;i<memArray.length;i++){
-        for(var j=0;j<memArray.length;i++){
+        for(var j=i+1;j<memArray.length;j++){
             if(memArray[i]==memArray[j]){
                 duplicateFlag = true;
                 break;
@@ -104,7 +104,7 @@ app.post('/regTeam',(req,res)=>{
         }
     }
 
-    if(!duplicateFlag){
+    if(duplicateFlag == false){
         User.find({'_id':{$in:memArray}},(err,docs)=>{
             if(docs.length == memArray.length){
                 var data = {
