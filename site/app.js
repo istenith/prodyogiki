@@ -86,7 +86,8 @@ app.post('/regPlayer',(req,res)=>{
             .catch(err=>console.log(err));
         }
         else{
-            res.send("The email has already been registered");
+            //res.send("The email has already been registered");
+            res.render('error',{title:"Error",message:"The email has already been registered"})
         }
     })
 });
@@ -116,10 +117,15 @@ app.post('/regTeam',(req,res)=>{
 
     if(duplicateFlag == false){
         User.find({'_id':{$in:memArray}},(err,docs)=>{
-            var leaderDoc = search(recieved_data.team_leader_id,docs);
-            var leadMail = leaderDoc.email;
+            var leaderDoc;
+            var leadMail;
             var tid;
             if(docs.length == memArray.length){
+                leaderDoc = search(recieved_data.team_leader_id,docs);
+                leadMail = leaderDoc.email;
+                tid;leaderDoc = search(recieved_data.team_leader_id,docs);
+                leadMail = leaderDoc.email;
+                tid;
                 var data = {
                     name : recieved_data.team_name,
                     leader :recieved_data.team_leader_id,
@@ -152,11 +158,13 @@ app.post('/regTeam',(req,res)=>{
                 .catch(err=>console.log(err));
             }
             else{
-                res.send("Invalid Ids entered")
+                // res.send("Invalid Ids entered")
+                res.render('error',{title:"Error",message:"Invalid Ids entered"});
             }
         })
     }else{
-        res.send('Duplicate Ids have been entered')
+        // res.send('Duplicate Ids have been entered')
+        res.render('error',{title:"Error",message:"Duplicate Ids have been entered"});
     }
 });
 
