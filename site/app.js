@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var nodemailer = require('nodemailer');
 var Email = require('email-templates');
 var path = require('path');
+var config = require('./config')
 
 //leader mail extraction
 function search(nameKey, myArray){
@@ -21,8 +22,8 @@ var transporter = nodemailer.createTransport({
     secure: true,
     service: 'gmail',
     auth: {
-           user: 'teamiste@gmail.com',
-           pass: 'dobaaramatpuchna'
+           user: config.email,
+           pass: config.pw
        }
 });
 //Email Template
