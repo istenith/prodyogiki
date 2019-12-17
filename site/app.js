@@ -15,7 +15,6 @@ function search(nameKey, myArray){
     }
 }
 
-
 var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -130,7 +129,9 @@ app.post('/regTeam',(req,res)=>{
                 team = new Team(data)
             
                 team.save()
-                .then((item)=>{res.send("your Team_id is "+item._id);
+                .then((item)=>{
+                    //res.send("your Team_id is "+item._id);
+                    res.render('teamRegister',{title:"Team Registration", id:item._id, name:item.name});
                     tid =item._id;
                     console.log(item);
                     console.log('leader : '+leaderDoc);
