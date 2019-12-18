@@ -1,0 +1,85 @@
+-
+	var eventList = [
+		{
+			'title': 'Crazy Crawler',
+			'image': 'cc.svg',
+			'descr': 'Build a legged bot (crawler) that can move in a straight line to dash through a track in minimum time',
+			'team_limit':3,
+			'abstract'  : 'crazy-crawler.pdf',
+			'dontInline': true,
+		},
+		{
+			'title': 'Molecular Mystery',
+			'image': 'mm.svg',
+			'descr': 'A treasure hunt which has questions related to all topics which have to be answered by teams of 4. Solutions are all around the campus.',
+			'team_limit':4,
+			'abstract'  : 'molecular-mystery.pdf'
+		},
+		{
+			'title': 'Compact Condo',
+			'image': 'ccondo.svg',
+			'descr': 'Design a tiny house with different features in a defined area. You can use any means for designing.',
+			'team_limit':2,
+			'abstract'  : 'compact-condo.pdf',
+			'dontInline': true,
+		},
+		{
+			'title': 'Risk Reduction',
+			'image': 'rr.svg',
+			'descr': 'Buy virtual ../assets to ideate a solution to protect against virtual perils and calamities.',
+			'team_limit':2,
+			'abstract'  : 'risk-reduction.pdf'
+		},
+		{
+			'title': 'Lost Lander',
+			'image': 'll.svg',
+			'descr': 'Build a bot which can sense obstacles in an obstacle course and clear that obstacle course in minimum time. The course cannot be seen by the operator.',
+			'team_limit':4,
+			'abstract'  : 'lost-lander.pdf'
+		},
+		{
+			'title': 'Spaghetti Bridge',
+			'image': 'sb.svg',
+			'descr': ' Design and construct a model of a single span truss bridge with the help of spaghetti noodles.',
+			'team_limit':5,
+			'abstract'  : 'spaghetti-bridge-challenge.pdf'
+		},
+		{
+			'title': 'Ropeway Design',
+			'image': 'ropeway-design.svg',
+			'descr': 'Design and make a model of a ropeway. You need to know simple law of mechanics here, cable car is one of the example for this type of ropeway systems.',
+			'team_limit':4,
+			'abstract'  : 'ropeway-design.pdf'
+		},
+		{
+			'title': 'Dev Dash',
+			'image': 'dd.svg',
+			'descr': 'There are 2 rounds in this code marathon. A short code competition followed by code relay event. Solo event for all the enthusiastic coders',
+			'team_limit':1,
+			'abstract'  : 'dev-dash.pdf'
+		}
+	]
+
+
+.topic
+	.heading
+		span Registrations comming soon!
+.card-holder
+	each event in eventList
+		.card
+			.inner
+				.front
+					h3= event.title
+					center
+						// if event.dontInline
+						img(src='../assets/img/' + event.image)
+						// else
+							img(inline src='../assets/img/' + event.image)
+				.back
+					p= event.descr
+					.downloadabs
+					center
+						br
+						// path according to dist assumin documents in root of dist
+						a(class="abstract" href='documents/' + event.abstract download) Abstract &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp   
+							img(src="../assets/img/download.svg", alt="")

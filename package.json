@@ -1,0 +1,52 @@
+{
+    "name": "webpack-pug-less-babel",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "keywords": [
+        "webpack",
+        "pug",
+        "less",
+        "babel"
+    ],
+    "author": "Abhay Raj Singh",
+    "license": "MIT",
+    "scripts": {
+        "build": "webpack --config webpack.prod.js",
+        "develop": "webpack-dev-server --config webpack.dev.js --open"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "printWidth": 90,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "useTabs": true
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.5",
+        "@babel/preset-env": "^7.7.6",
+        "babel-loader": "^8.0.6",
+        "clean-webpack-plugin": "^3.0.0",
+        "copy-webpack-plugin": "^5.1.1",
+        "css-loader": "^3.3.2",
+        "file-loader": "^5.0.2",
+        "html-loader": "^0.5.5",
+        "html-webpack-inline-svg-plugin": "^1.2.4",
+        "html-webpack-plugin": "^3.2.0",
+        "less": "^3.10.3",
+        "less-loader": "^5.0.0",
+        "mini-css-extract-plugin": "^0.8.0",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "pug": "^2.0.4",
+        "pug-html-loader": "^1.1.5",
+        "style-loader": "^1.0.1",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0",
+        "webpack-md5-hash": "0.0.6",
+        "webpack-merge": "^4.2.2"
+    },
+    "dependencies": {
+        "vanilla-tilt": "^1.7.0"
+    }
+}

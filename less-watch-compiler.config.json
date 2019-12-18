@@ -1,5 +1,0 @@
-{
-	"watchFolder" : "src/less",
-	"outputFolder" : "builds/styles",
-	"minified": true
-}
