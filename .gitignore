@@ -1,2 +1,3 @@
-# directory
-builds/
+# directories
+dist
+node_modules

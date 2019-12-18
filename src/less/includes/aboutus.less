@@ -1,0 +1,58 @@
+@import (reference) '../lib/colors.less';
+@import (reference) '../lib/helpers.less';
+
+#about-us {
+	padding-bottom: 6em;
+	.topic {
+		.heading {
+			text-align: center;
+			span {
+				color: @accent-blue;
+				font-size: 5em;
+				letter-spacing: 15px;
+				margin-left: 60px;
+			}
+		}
+	}
+}
+.header {
+	display: flex;
+	width: 60%;
+	position: relative;
+	margin: auto;
+	.image {
+		padding: 24px;
+		padding-top: 0;
+		text-align: center;
+		img {
+			width: 240px;
+		}
+	}
+	.desc {
+		padding: 0.7em;
+		#iste {
+			color: #00ff00;
+		}
+	}
+	p {
+		text-align: justify;
+		border-left: 2px solid #00ff00;
+		padding-left: 1em;
+	}
+	a {
+		color: #03a9f4;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	.header {
+		width: 90%;
+		display: flex;
+		flex-flow: column;
+	}
+	#about-us {
+		.desc {
+			padding-bottom: 6em;
+		}
+	}
+}

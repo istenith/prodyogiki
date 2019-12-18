@@ -1,0 +1,184 @@
+@import (reference) '../lib/colors.less';
+@import (reference) '../lib/helpers.less';
+#events {
+	padding-bottom: 6em;
+	.band {
+		@border-thickness: 3px;
+		display: inline-block;
+		width: fit-content;
+		position: sticky;
+		left: 0;
+		top: 50%;
+		transform: translateX(-120%);
+		padding: 0.5em 0.3em;
+		@padding-left: 1em;
+		padding-left: @padding-left;
+		font-family: 'Montserrat';
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		animation-name: slidein;
+		animation-delay: 1s;
+		animation-duration: 5s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		z-index: 6;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: -@border-thickness;
+			left: 0;
+			z-index: -2;
+
+			width: calc(100% + @padding-left + @border-thickness + 1px);
+			height: calc(100% + 2 * @border-thickness);
+			background-image: linear-gradient(
+				to bottom right,
+				@accent-green,
+				@accent-blue
+			);
+			clip-path: polygon(
+				0 0,
+				calc(100% - 1.2em + 1px) 0,
+				100% 50%,
+				calc(100% - 1.2em + 1px) 100%,
+				0 100%
+			);
+		}
+		&::before {
+			content: '';
+			width: calc(100% + @padding-left);
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: black;
+			z-index: -1;
+
+			clip-path: polygon(
+				0 0,
+				calc(100% - 1em) 0,
+				100% 50%,
+				calc(100% - 1em) 100%,
+				0 100%
+			);
+		}
+
+		&.active {
+			animation-play-state: running;
+		}
+		@keyframes slidein {
+			0% {
+				transform: translateX(-120%);
+			}
+			10% {
+				transform: translateX(0%);
+			}
+			11% {
+				transform: translateX(0%);
+			}
+			89% {
+				transform: translateX(0%);
+			}
+			90% {
+				transform: translateX(0%);
+			}
+			100% {
+				transform: translateX(-120%);
+			}
+		}
+	}
+
+	.card-holder {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@card-width: 330px;
+		.card {
+			.no-select();
+			perspective: 1000px;
+			background: transparent;
+			box-shadow: 0 14px 22px rgba(0, 0, 0, 0.24);
+			width: @card-width;
+			height: 450px;
+			margin: 15px;
+			cursor: pointer;
+
+			* {
+				pointer-events: none;
+			}
+
+			.inner {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				transition: transform 0.5s;
+				transform-style: preserve-3d;
+
+				.front,
+				.back {
+					text-align: justify;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					backface-visibility: hidden;
+					background-color: @darker;
+					border: 3px solid @accent-green;
+					// border: 3px solid transparent;
+					// border-image: linear-gradient(
+					// 	to bottom right,
+					// 	@accent-green 70%,
+					// 	@accent-blue
+					// );
+					border-image-slice: 1;
+					display: flex;
+					flex-direction: column;
+					align-content: center;
+					// justify-content: center;
+				}
+
+				.front {
+					img {
+						width: 80%;
+						height: @card-width;
+					}
+					h3 {
+						font-family: 'Righteous', sans-serif;
+						font-size: 21px;
+						padding: 0.9em;
+						font-weight: unset;
+					}
+				}
+
+				.back {
+					transform: rotateY(180deg);
+					padding: 1em;
+					justify-content: center;
+					.abstract {
+						width: 50%;
+						position: absolute;
+						bottom: 1.8em;
+						right: 1.8em;
+						display: flex;
+						justify-content: right;
+						background: none;
+						color: @accent-green;
+						font-size: 18px;
+						cursor: pointer;
+						pointer-events: all;
+						img {
+							width: 23px;
+							height: 23px;
+						}
+					}
+				}
+			}
+
+			&.turned .inner {
+				transform: rotateY(-180deg);
+			}
+			transition: transform 0.1s;
+		}
+	}
+}
