@@ -3,6 +3,7 @@ import '../less/styles.less';
 import { flicker } from './imports/flicker';
 import { animateMatrix } from './imports/matrix';
 import { TabWatcher } from './imports/tabs';
+import { handleSelectChange, validate } from './imports/register'
 
 import 'vanilla-tilt';
 
@@ -37,4 +38,16 @@ window.addEventListener('load', () => {
 	}
 	animateMatrix('#matrix-effect', 'TEAM ISTE');
 	flicker();
+
+	handleSelectChange();
+	
 });
+
+
+document.getElementById("select").addEventListener('change',()=>{
+	handleSelectChange();
+})
+
+document.getElementById('regTeam').addEventListener('submit',()=>{
+	validate();
+})
