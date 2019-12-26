@@ -54,11 +54,17 @@ h1{
     padding-top:10px;
 }
 
+#message{
+    grid-column-start:1;
+    grid-column-end: 3;
+    text-align: center;
+}
+
 .regPlayer{
     text-align: center;
     
     display: grid;
-    grid-template-rows: 1fr repeat(4,50px);
+    grid-template-rows: 1fr repeat(6,50px);
     grid-template-columns: repeat(2,1fr);
 
     h1{
@@ -70,22 +76,22 @@ h1{
         grid-column-end: 3;
     }
 
-    .btn{
-        width: 100%;
-        background: none;
-        border: 3px solid transparent;
-        border-image: linear-gradient(
-            to bottom right,
-            @accent-green,
-            @accent-blue
-        );
-        border-image-slice: 1;
-        color:white;
-        padding:5px;
-        font-size: 18px;
-        cursor: pointer;
-        margin: 12px 0;
-    }
+    // .btn{
+    //     width: 100%;
+    //     background: none;
+    //     border: 3px solid transparent;
+    //     border-image: linear-gradient(
+    //         to bottom right,
+    //         @accent-green,
+    //         @accent-blue
+    //     );
+    //     border-image-slice: 1;
+    //     color:white;
+    //     padding:5px;
+    //     font-size: 18px;
+    //     cursor: pointer;
+    //     margin: 12px 0;
+    // }
 }
 
 .regTeam{
@@ -162,6 +168,24 @@ h1{
     .clear{
         display:none;
     }
+}
+
+.joinTeam{
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr repeat(4,50px);
+    grid-template-columns: repeat(2,1fr);
+
+    h1{
+        grid-column-start: 1;
+        grid-column-end:3;
+    }
+
+    .submit{
+        grid-column-start:1;
+        grid-column-end: 3;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {

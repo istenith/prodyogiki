@@ -3,7 +3,7 @@ import '../less/styles.less';
 import { flicker } from './imports/flicker';
 import { animateMatrix } from './imports/matrix';
 import { TabWatcher } from './imports/tabs';
-import { handleSelectChange, validate } from './imports/register'
+import { handleSelectChange} from './imports/register'
 
 import 'vanilla-tilt';
 
