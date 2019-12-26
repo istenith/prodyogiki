@@ -7,7 +7,6 @@ var teamScheema = new mongoose.Schema({
         default : shortid.generate
     },
     name : String,
-    leader : String,
     event : String,
     team_limit : Number,
     members : [String]
