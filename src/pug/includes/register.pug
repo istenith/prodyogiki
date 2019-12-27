@@ -26,8 +26,6 @@ form(class="holder" method="POST" action="/regPlayer")
 
         .lable#message
 
-
-
 form(class="holder" id="regTeam" method="POST" action="/regTeam")
     .regTeam
         h1 Make a Team
@@ -52,25 +50,9 @@ form(class="holder" id="regTeam" method="POST" action="/regTeam")
         .lable Team Members
         div(class='lable' id='limit_lable') 
         input(type="hidden" id="team_limit" name="team_limit")
-
-  
-    //- .regMembers
-
-    //-     -var members = [2,3,4,5]
-
-    //-     each member in members
-    //-         .clear
-    //-             .lable Member #{member}
-    //-             .textbox
-    //-                 input(type="text" name="team_member_"+member placeholder="Id of member"+member)
-    //-             //- .textbox
-    //-             //-     input(type="text" name="team_member_"+member+"_email" placeholder="Email")
-        
     
     .submit
             input(class="btn" type="submit" value="Submit!")
-
-
 
 form(class="holder" id="joinTeam" method="POST" action="/joinTeam")
     .joinTeam
