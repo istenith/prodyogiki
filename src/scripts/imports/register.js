@@ -33,12 +33,18 @@ export function watchTabs(){
     document.getElementById('join').style.color='#0082af';
     document.getElementById('make').style.color='#00ff66';
 
+    // document.getElementById('make').style.borderBottom='5px solid #fff';
+    // document.getElementById('join').style.borderBottom='none';
+
     make.addEventListener('click',event=>{
         document.getElementById('joinTeam').style.display='none';
         document.getElementById('regTeam').style.display='block';
 
         document.getElementById('join').style.color='#0082af';
         document.getElementById('make').style.color='#00ff66';
+
+        // document.getElementById('make').style.borderBottom='5px solid #fff';
+        // document.getElementById('join').style.borderBottom='none';
     })
 
     join.addEventListener('click',event=>{
@@ -47,5 +53,8 @@ export function watchTabs(){
 
         document.getElementById('join').style.color='#00ff66';
         document.getElementById('make').style.color='#0082af';
+
+        // document.getElementById('join').style.borderBottom='5px solid #fff';
+        // document.getElementById('make').style.borderBottom='none';
     })
 }

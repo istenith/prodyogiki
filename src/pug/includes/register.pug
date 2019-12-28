@@ -1,6 +1,6 @@
+h1 Register Yourself
 form(class="holder" method="POST" action="/regPlayer")
     .regPlayer
-        h1 Register Yourself
         .textbox
             input(type="text" id="player_name" name="name" required )
             lable Name
@@ -32,7 +32,7 @@ form(class="holder" method="POST" action="/regPlayer")
 
 .formselect
     h1.option#make Make a Team
-    h1.option#or /
+    h1#or /
     h1.option#join Join a Team 
 
 form(class="holder" id="regTeam" method="POST" action="/regTeam")
