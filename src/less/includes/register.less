@@ -1,9 +1,11 @@
 @import (reference) '../lib/colors.less';
 @import (reference) '../lib/helpers.less';
+@import (css)
+	url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
-.holder{
+    .holder{
     text-align: center;
-    margin:0 25% 10%;
+    margin:0 25% 5%;
 }
 
 #limit_lable{
@@ -68,6 +70,8 @@ h1{
     grid-template-columns: repeat(2,1fr);
 
     h1{
+        font-family: 'Kulim Park', sans-serif;
+        font-style: normal;
         grid-column-start:1;
         grid-column-end: 3;
     }
@@ -76,22 +80,6 @@ h1{
         grid-column-end: 3;
     }
 
-    // .btn{
-    //     width: 100%;
-    //     background: none;
-    //     border: 3px solid transparent;
-    //     border-image: linear-gradient(
-    //         to bottom right,
-    //         @accent-green,
-    //         @accent-blue
-    //     );
-    //     border-image-slice: 1;
-    //     color:white;
-    //     padding:5px;
-    //     font-size: 18px;
-    //     cursor: pointer;
-    //     margin: 12px 0;
-    // }
 }
 
 .regTeam{
@@ -135,41 +123,6 @@ h1{
     }
 }
 
-.regMembers{
-
-    .member_div{
-        display:flex;
-        //flex-direction: row;
-        flex: 1 1 10%;
-        margin: 20px 0;
-
-        .lable{
-            flex:1.5;
-        }
-
-        .textbox{
-            //margin: 0 10px;
-            //width:100%;
-            border:none;
-            padding:none;
-            input{
-                border-bottom: 2px solid white;
-                padding:none;
-                outline:none;
-                background:none;
-                font-size:18px;
-                width:80%;
-                float:left;
-                color:white;
-            }
-        }
-    }
-
-    .clear{
-        display:none;
-    }
-}
-
 .joinTeam{
     text-align: center;
     display: grid;
@@ -185,7 +138,22 @@ h1{
         grid-column-start:1;
         grid-column-end: 3;
     }
+}
 
+.formselect{
+    .option{
+        margin:0 4px;
+    }
+    h1{
+        cursor: pointer;
+    }
+
+    justify-content: center;
+    text-align: center;
+    font-family: 'Kulim Park', sans-serif;
+    margin: 5%;
+    display: flex;
+    
 }
 
 @media only screen and (max-width: 600px) {

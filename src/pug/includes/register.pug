@@ -26,9 +26,13 @@ form(class="holder" method="POST" action="/regPlayer")
 
         .lable#message
 
+.formselect
+    h1.option#make Make a Team
+    h1.option#or /
+    h1.option#join Join a Team 
+
 form(class="holder" id="regTeam" method="POST" action="/regTeam")
     .regTeam
-        h1 Make a Team
         .lable Team Name
         .textbox
             input(type="text" id="team_name" required name="team_name" placeholder="Name of your team")
@@ -56,7 +60,6 @@ form(class="holder" id="regTeam" method="POST" action="/regTeam")
 
 form(class="holder" id="joinTeam" method="POST" action="/joinTeam")
     .joinTeam
-        h1 Join a Team
         .lable Your Email
         .textbox
             input(type="email" id="player_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Your Email")

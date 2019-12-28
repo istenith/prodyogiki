@@ -22,3 +22,30 @@ export function handleSelectChange(){
     document.getElementById('team_limit').value = members;
     document.getElementById('limit_lable').innerHTML = members;
 }
+
+export function watchTabs(){
+    var make  = document.getElementById('make')
+    var join = document.getElementById('join')
+
+    document.getElementById('joinTeam').style.display='none';
+    document.getElementById('regTeam').style.display='block';
+
+    document.getElementById('join').style.color='#0082af';
+    document.getElementById('make').style.color='#00ff66';
+
+    make.addEventListener('click',event=>{
+        document.getElementById('joinTeam').style.display='none';
+        document.getElementById('regTeam').style.display='block';
+
+        document.getElementById('join').style.color='#0082af';
+        document.getElementById('make').style.color='#00ff66';
+    })
+
+    join.addEventListener('click',event=>{
+        document.getElementById('regTeam').style.display = 'none';
+        document.getElementById('joinTeam').style.display='block';
+
+        document.getElementById('join').style.color='#00ff66';
+        document.getElementById('make').style.color='#0082af';
+    })
+}
