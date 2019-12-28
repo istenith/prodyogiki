@@ -15,8 +15,8 @@ export class TabWatcher {
 
 		mobileWindow = window.matchMedia('(max-width: 700px)');
 
-		this.previouslyActive = this.tabs[0];
-		this.setActiveTab(this.tabs[1]);
+		this.previouslyActive = this.tabs[2];
+		this.setActiveTab(this.tabs[0]);
 	}
 	watchTabs() {
 		this.tabs.forEach((tab) => {
