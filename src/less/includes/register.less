@@ -11,6 +11,10 @@
     color: @accent-green;
 }
 
+#message{
+    color:red;
+}
+
 .textbox {
     //border-bottom: 2px solid #00ff00;
     margin-bottom: 30px 0;
@@ -19,7 +23,7 @@
 
     input {
         border: none;
-        box-shadow: 2px 3px 6px #00ff66;
+        box-shadow: 0px 5px 6px -6px #00ff66;
         border-radius: 15px;
         outline: none;
         background: transparent;
@@ -50,27 +54,9 @@
     }
 
     input:focus {
-        box-shadow: 0px 2px 4px #00ff66;
+        box-shadow: 0px 2px 4px -4px #00ff66;
     }
 }
-
-// .btn{
-//     width: 100%;
-//     background: none;
-//     border: 3px solid transparent;
-//     border-radius: 50px;
-//     border-image: linear-gradient(
-//         to bottom right,
-//         @accent-green,
-//         @accent-blue
-//     );
-//     border-image-slice: 1;
-//     color:white;
-//     padding:5px;
-//     font-size: 18px;
-//     cursor: pointer;
-//     margin: 12px 0;
-// }
 
 .submit {
     display: flex;
@@ -104,7 +90,7 @@
     /* !importanté */
     border-radius: inherit;
     /* !importanté */
-    background: linear-gradient(to right, red, orange);
+    background: linear-gradient(to right, @accent-green,@accent-blue);
 }
 
 .btn{

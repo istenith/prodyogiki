@@ -5,20 +5,7 @@ var input_nodes;
 
 export function handleSelectChange(){
     var select=document.getElementById("selectelement");
-    //var event=select.options[select.selectedIndex].value;
     members = select.options[select.selectedIndex].id;
-    //input_nodes = document.querySelectorAll('.regMembers > div');
-    //console.log("EVENT: "+event+" members: "+members);
-    // for(var i=0;i<input_nodes.length;i++){
-    //     textboxdiv = input_nodes[i].childNodes[1];
-    //     textbox = textboxdiv.firstChild;
-    //     textbox.value = '';
-    //     if(i+2>members){
-    //          input_nodes[i].className='clear';
-    //         continue;
-    //     }
-    //     input_nodes[i].className='member_div';
-    // }
     document.getElementById('team_limit').value = members;
     document.getElementById('limit_lable').innerHTML = members;
 }
@@ -56,5 +43,19 @@ export function watchTabs(){
 
         // document.getElementById('join').style.borderBottom='5px solid #fff';
         // document.getElementById('make').style.borderBottom='none';
+    })
+}
+
+
+export function confPass(){
+    var pw = document.getElementById('password');
+    var conf_pw = document.getElementById('conf_password');
+
+    conf_pw.addEventListener('change',()=>{
+        if(pw.value != conf_pw.value){
+            document.getElementById('message').innerHTML = 'Conformation password is not the same'
+        }else{
+            document.getElementById('message').innerHTML = ''
+        }
     })
 }
