@@ -1,0 +1,67 @@
+@import (less) '../lib/colors.less';
+@import (less) '../lib/helpers.less';
+
+#workshops{
+    .workheader{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 550;
+        color: @accent-green;
+        text-align: center;
+        font-size: 50px;
+        padding-top: 30px;
+    }
+    .workbox{
+        text-align: center;
+        width: 30%;
+        height: 70%;
+        padding: 40px;
+        margin: 40px;
+        border: 2px solid @accent-green;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #666;
+        padding-bottom: 6px;      
+        .worklabel{
+            color: white;
+            font-size: 30px;
+            padding-bottom: 3px;
+            font-weight: bold;
+
+        }
+        img{
+            height: 35%;
+            width: 35%;
+        }
+        p{
+            text-align: justify;
+            line-height: 30px;            
+        }
+        .workdesc{
+            #title{
+                color: @accent-green;
+            }
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        a{
+            display: block;
+            color: @accent-blue;
+            margin-bottom: 20px;
+        }
+    }
+}
+@media screen and (max-width: 1150px) {
+	.workheader {
+        text-align: center;
+    }
+	#workshops {
+		.workbox {
+            padding: 10px;
+            display: flex;
+            flex-flow: column;
+            flex-basis: 200px;
+            width: 80%;
+            height: 80%;
+            margin: 10% 10% 10%;
+        }
+	}
+}
