@@ -4,7 +4,7 @@ var members;
 var input_nodes;
 
 export function handleSelectChange(){
-    var select=document.getElementById("select");
+    var select=document.getElementById("selectelement");
     //var event=select.options[select.selectedIndex].value;
     members = select.options[select.selectedIndex].id;
     //input_nodes = document.querySelectorAll('.regMembers > div');

@@ -1,30 +1,34 @@
 form(class="holder" method="POST" action="/regPlayer")
     .regPlayer
         h1 Register Yourself
-        .lable Name
         .textbox
-            input(type="text" id="player_name" name="name" required placeholder="Full Name")
+            input(type="text" id="player_name" name="name" required )
+            lable Name
 
-        .lable Phone Number
-        .textbox
-            input(type="input" id="phone" name="phone" required placeholder="Phone Number")
-
-        .lable Email
-        .textbox
-            input(type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Your Email")
         
-        .lable Password
         .textbox
-            input(type="password" id="password" name="pw" required placeholder="Password")
+            input(type="input" id="phone" name="phone" required )
+            lable Phone Number
 
-        .lable Confirm Password
+        
         .textbox
-            input(type="password" id="conf_password" name="confpw" required placeholder="Confirm Password")
+            input(type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required )
+            lable Email
+        
+        
+        .textbox
+            input(type="password" id="password" name="pw" required )
+            lable Password
+
+        
+        .textbox
+            input(type="password" id="conf_password" name="confpw" required )
+            lable Confirm Password
 
         .submit
             input(class="btn" type="submit" value="Submit!")
 
-        .lable#message
+        lable#message
 
 .formselect
     h1.option#make Make a Team
@@ -33,25 +37,27 @@ form(class="holder" method="POST" action="/regPlayer")
 
 form(class="holder" id="regTeam" method="POST" action="/regTeam")
     .regTeam
-        .lable Team Name
+        
         .textbox
-            input(type="text" id="team_name" required name="team_name" placeholder="Name of your team")
-        .lable#teamLeader Team Leader Email
+            input(type="text" id="team_name" required name="team_name" )
+            lable Team Name
+        
         .textbox.team_leader
-            input(type="text" id="team_leader_email" required name="team_leader_email" placeholder="Email of team leader")
-        .lable#teamLeader Team Leader Password
+            input(type="text" id="team_leader_email" required name="team_leader_email" )
+            lable#teamLeader Team Leader Email
+        
         .textbox.team_leader
-            input(type="password" id="team_leader_password" name="leader_pw" required placeholder="Password")
+            input(type="password" id="team_leader_password" name="leader_pw" required )
+            lable#teamLeader Team Leader Password
        
-        .lable Event
+        lable#event Event
         - var limit
-        .textbox
-            select(id="select" name="event")
+        .textbox#select
+            select(id="selectelement" name="event")
                 each event in eventList
                     - limit = event.team_limit
                     option(value = event.title name=event.title id=event.team_limit)=event.title 
-                    //value->title                                    id->limit
-        .lable Team Members
+        lable Team Members
         div(class='lable' id='limit_lable') 
         input(type="hidden" id="team_limit" name="team_limit")
     
@@ -60,14 +66,18 @@ form(class="holder" id="regTeam" method="POST" action="/regTeam")
 
 form(class="holder" id="joinTeam" method="POST" action="/joinTeam")
     .joinTeam
-        .lable Your Email
+        
         .textbox
-            input(type="email" id="player_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required placeholder="Your Email")
-        .lable Password
+            input(type="email" id="player_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required )
+            lable Your Email
+        
         .textbox
-            input(type="password" id="player_pass" name="pw" required placeholder="Password")
-        .lable Team Id
+            input(type="password" id="player_pass" name="pw" required )
+            lable Password
+        
         .textbox
-            input(type="text" id="team_id" name="team_id" required placeholder="Id of The Team")
+            input(type="text" id="team_id" name="team_id" required )
+            lable Team Id
+
         .submit
             input(class="btn" type="submit" value="Submit!")

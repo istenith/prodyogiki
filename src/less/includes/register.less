@@ -3,8 +3,8 @@
 @import (css)
 	url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
-    .holder{
-    text-align: center;
+.holder{
+    //text-align: center;
     margin:0 25% 5%;
 }
 
@@ -13,18 +13,38 @@
 }
 
 .textbox{
-    border-bottom: 2px solid #00ff00;
-    margin-bottom:15px;
+    //border-bottom: 2px solid #00ff00;
+    margin-bottom:30px;
     padding:0;
-
+    position: relative;
     input{
-        border:none;
+        border: none;
+        border-bottom: 1px solid #fff;
         outline:none;
-        background:none;
+        background:transparent;
         font-size:18px;
-        width:80%;
+        width:100%;
         float:left;
         color:white;
+        padding:10px 0;
+    }
+    lable{
+        position:absolute;
+        top:0;
+        left:0;
+        padding: 10px 0;
+        pointer-events: none;
+        color:#fff;
+        transition:.5s;
+    }
+
+    input:focus ~ lable,
+    input:valid ~ lable
+    {
+        top:-18px;
+        left:0;
+        color:@accent-green;
+        font-size: 12px;
     }
 }
 
@@ -58,51 +78,52 @@ h1{
 
 #message{
     grid-column-start:1;
-    grid-column-end: 3;
+    grid-column-end: 2;
     text-align: center;
 }
 
 .regPlayer{
-    text-align: center;
+    //text-align: center;
     
     display: grid;
     grid-template-rows: 1fr repeat(6,50px);
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(1,1fr);
 
     h1{
         font-family: 'Kulim Park', sans-serif;
         font-style: normal;
         grid-column-start:1;
-        grid-column-end: 3;
+        grid-column-end: 2;
+        text-align: center;
     }
     .submit{
         grid-column-start:1;
-        grid-column-end: 3;
+        grid-column-end: 2;
     }
 
 }
 
 .regTeam{
-    text-align: center;
+    //text-align: center;
     display: grid;
-    grid-template-rows: 1fr repeat(4,50px);
+    grid-template-rows: repeat(5,50px);
     grid-template-columns: repeat(2,1fr);
 
-    h1{
+    .textbox{
         grid-column-start: 1;
         grid-column-end:3;
     }
 
-    #teamLeader{ 
-        //grid-row: 3/span 2;
-        color:@accent-blue;
+    #event{
+        grid-column-start: 1;
+        grid-column-end:2;
     }
 
-    .team_leader{
-        border-bottom: 2px solid #03a9f4; 
+    #select{
+        grid-column-start: 2;
+        grid-column-end:3;
     }
-
-    select{
+    #selectelement{
         border:none;
         outline:none;
         background:none;
@@ -110,6 +131,7 @@ h1{
         width:80%;
         float:left;
         color:white;
+
 
         option{
             border:none;
@@ -124,19 +146,19 @@ h1{
 }
 
 .joinTeam{
-    text-align: center;
+    //text-align: center;
     display: grid;
-    grid-template-rows: 1fr repeat(4,50px);
-    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,50px);
+    grid-template-columns: repeat(1,1fr);
 
     h1{
         grid-column-start: 1;
-        grid-column-end:3;
+        grid-column-end:2;
     }
 
     .submit{
         grid-column-start:1;
-        grid-column-end: 3;
+        grid-column-end: 2;
     }
 }
 
