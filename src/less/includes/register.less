@@ -1,36 +1,37 @@
 @import (reference) '../lib/colors.less';
 @import (reference) '../lib/helpers.less';
-@import (css)
-	url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
+@import (css) url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
-.holder{
+.holder {
     //text-align: center;
-    margin:0 30% 5%;
+    margin: 0 30% 5%;
 }
 
-#limit_lable{
-    color : @accent-green;
+#limit_lable {
+    color: @accent-green;
 }
 
-.textbox{
+.textbox {
     //border-bottom: 2px solid #00ff00;
-    margin-bottom:30px 0;
-    padding:0;
+    margin-bottom: 30px 0;
+    padding: 0;
     position: relative;
-    input{
+
+    input {
         border: none;
         box-shadow: 2px 3px 6px #00ff66;
         border-radius: 15px;
-        outline:none;
-        background:transparent;
-        font-size:18px;
-        width:100%;
-        float:left;
-        color:white;
-        padding:10px 10px;
+        outline: none;
+        background: transparent;
+        font-size: 18px;
+        width: 100%;
+        float: left;
+        color: white;
+        padding: 10px 10px;
         margin-bottom: 20px;
     }
-    lable{
+
+    lable {
         position: absolute;
         top: 0;
         left: 0;
@@ -40,167 +41,218 @@
         transition: 0.5s;
     }
 
-    input:focus ~ lable,
-    input:valid ~ lable
-    {
-        top:-15px;
-        left:0;
-        color:@accent-green;
+    input:focus~lable,
+    input:valid~lable {
+        top: -15px;
+        left: 0;
+        color: @accent-green;
         font-size: 12px;
     }
 
-    input:focus{
+    input:focus {
         box-shadow: 0px 2px 4px #00ff66;
     }
 }
 
-.btn{
-    width: 100%;
-    background: none;
-    border: 3px solid transparent;
-    border-image: linear-gradient(
-        to bottom right,
-        @accent-green,
-        @accent-blue
-    );
-    border-image-slice: 1;
-    color:white;
-    padding:5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 12px 0;
+// .btn{
+//     width: 100%;
+//     background: none;
+//     border: 3px solid transparent;
+//     border-radius: 50px;
+//     border-image: linear-gradient(
+//         to bottom right,
+//         @accent-green,
+//         @accent-blue
+//     );
+//     border-image-slice: 1;
+//     color:white;
+//     padding:5px;
+//     font-size: 18px;
+//     cursor: pointer;
+//     margin: 12px 0;
+// }
+
+.submit {
+    display: flex;
+    align-items: center;
+    //width: 90%;
+    margin: auto;
+    max-width: 22em;
+    position: relative;
+    padding: none;
+    box-sizing: border-box;
+    color: #FFF;
+    background: #000;
+    background-clip: padding-box;
+    /* !importanté */
+    border: solid 5px transparent;
+    /* !importanté */
+    border-radius: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
-h1{
+.submit:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -3px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: linear-gradient(to right, red, orange);
+}
+
+.btn{
+    background: none;
+    text-align: center;
+    border:none;
+    outline:none;
+    padding:5px 30px;
     color:white;
-    margin-bottom:15px;
-    font-size:55px;
+    font-size: 20px;
+}
+
+
+
+
+h1 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 55px;
     text-align: center;
 }
 
-.lable{
+.lable {
     text-align: left;
-    padding-top:10px;
+    padding-top: 10px;
 }
 
-#message{
-    grid-column-start:1;
+#message {
+    grid-column-start: 1;
     grid-column-end: 2;
     text-align: center;
 }
 
-.regPlayer{
+.regPlayer {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(5,65px);
-    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(5, 65px);
+    grid-template-columns: repeat(1, 1fr);
 
-    .submit{
-        grid-column-start:1;
+    .submit {
+        grid-column-start: 1;
         grid-column-end: 2;
     }
 
 }
 
-.regTeam{
+.regTeam {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(5,65px);
-    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(5, 65px);
+    grid-template-columns: repeat(2, 1fr);
 
-    .textbox{
+    .textbox {
         grid-column-start: 1;
-        grid-column-end:3;
+        grid-column-end: 3;
     }
 
-    #event{
+    #event {
         grid-column-start: 1;
-        grid-column-end:2;
+        grid-column-end: 2;
     }
 
-    #select{
+    #select {
         grid-column-start: 2;
-        grid-column-end:3;
+        grid-column-end: 3;
     }
-    #selectelement{
-        border:none;
-        outline:none;
-        background:none;
-        font-size:18px;
-        width:80%;
-        float:left;
-        color:white;
+
+    #selectelement {
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 18px;
+        width: 80%;
+        float: left;
+        color: white;
 
 
-        option{
-            border:none;
-            outline:none;
-            background:none;
-            font-size:18px;
-            width:80%;
-            float:left;
-            color:black;
+        option {
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 18px;
+            width: 80%;
+            float: left;
+            color: black;
         }
     }
 }
 
-.joinTeam{
+.joinTeam {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(3,65px);
-    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(3, 65px);
+    grid-template-columns: repeat(1, 1fr);
 
-    h1{
+    h1 {
         grid-column-start: 1;
-        grid-column-end:2;
+        grid-column-end: 2;
     }
 
-    .submit{
-        grid-column-start:1;
+    .submit {
+        grid-column-start: 1;
         grid-column-end: 2;
     }
 }
 
-.formselect{
-    .option{
+.formselect {
+    .option {
         position: relative;
-        margin:30px;
+        margin: 30px;
     }
 
-    .option:after{
+    .option:after {
         content: "";
         position: absolute;
         border-bottom: 3px solid #fff;
-        bottom:0;
-        left:0;
-        right:100%;
-        transition: all 500ms; 
+        bottom: 0;
+        left: 0;
+        right: 100%;
+        transition: all 500ms;
     }
 
-    .option:hover:after{
-        right:0;
+    .option:hover:after {
+        right: 0;
     }
 
-    h1{
+    h1 {
         cursor: pointer;
-        margin:0 4px;
+        margin: 0 4px;
     }
 
     justify-content: center;
     text-align: center;
-    font-family: 'Kulim Park', sans-serif;
+    font-family: 'Kulim Park',
+    sans-serif;
     margin: 5%;
     display: flex;
 }
 
 @media only screen and (max-width: 600px) {
-    .holder{
+    .holder {
         margin: 0 10% 10%
     }
-    h1{
-        font-size:20px;
+
+    h1 {
+        font-size: 20px;
     }
 }
