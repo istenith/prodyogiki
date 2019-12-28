@@ -65,32 +65,30 @@
     margin: auto;
     max-width: 22em;
     position: relative;
-    padding: none;
+    padding: 4px;
     box-sizing: border-box;
-    color: #FFF;
-    background: #000;
+    background: transparent;
+    
     background-clip: padding-box;
     /* !importanté */
-    border: solid 5px transparent;
+    border: solid 3px @accent-green;
     /* !importanté */
     border-radius: 50px;
     grid-column-start: 1;
     grid-column-end: 3;
+
+    transition: 0.5s;
+
+    input{
+        background: @accent-green;
+        border-radius: 50px;
+    }
+    
 }
 
-.submit:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -3px;
-    /* !importanté */
-    border-radius: inherit;
-    /* !importanté */
-    background: linear-gradient(to right, @accent-green,@accent-blue);
+.submit:hover{
+    padding:6px;
+    border: solid 1px @accent-green
 }
 
 .btn{
@@ -99,7 +97,7 @@
     border:none;
     outline:none;
     padding:5px 30px;
-    color:white;
+    color:@dark;
     font-size: 20px;
 }
 

@@ -13,7 +13,7 @@ module.exports = merge(common, {
 	mode: 'production',
 
 	output: {
-		path: path.join(__dirname, 'site/public'),
+		path: path.join(__dirname, 'dist'),
 		filename: '[name].[chunkhash].bundle.js',
 	},
 
