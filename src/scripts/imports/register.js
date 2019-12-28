@@ -1,50 +1,60 @@
-function isPhoneNumber(input) {
-    var phoneno = /^([0|\+[0-9]{1,5})?([0-9]{10})$/;
-    return phoneno.test(input); 
+var textboxdiv;
+var textbox;
+var members;
+var input_nodes;
+
+export function handleSelectChange(){
+    var select=document.getElementById("selectelement");
+    //var event=select.options[select.selectedIndex].value;
+    members = select.options[select.selectedIndex].id;
+    //input_nodes = document.querySelectorAll('.regMembers > div');
+    //console.log("EVENT: "+event+" members: "+members);
+    // for(var i=0;i<input_nodes.length;i++){
+    //     textboxdiv = input_nodes[i].childNodes[1];
+    //     textbox = textboxdiv.firstChild;
+    //     textbox.value = '';
+    //     if(i+2>members){
+    //          input_nodes[i].className='clear';
+    //         continue;
+    //     }
+    //     input_nodes[i].className='member_div';
+    // }
+    document.getElementById('team_limit').value = members;
+    document.getElementById('limit_lable').innerHTML = members;
 }
 
-function isEmail(input){      
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(input); 
-}
+export function watchTabs(){
+    var make  = document.getElementById('make')
+    var join = document.getElementById('join')
 
-function handleSelectChange(){
-    var select=document.getElementById("select");
-    var event=select.options[select.selectedIndex].id;
-    var members = select.options[select.selectedIndex].value;
-    var input_nodes = document.querySelectorAll('.regMembers > div');
-    console.log("EVENT: "+event+" members: "+members);
-    for(var i=0;i<input_nodes.length;i++){
-        if(i+2>members){
-            input_nodes[i].className='clear';
-            continue;
-        }
-        input_nodes[i].className='member_div';
-    }
-}
+    document.getElementById('joinTeam').style.display='none';
+    document.getElementById('regTeam').style.display='block';
 
-function playerSubmit(){
-    var player_name = document.getElementById('player_name').value;
-    var player_phone = document.getElementById('player_phone').value;
-    var player_email = document.getElementById('player_email').value;
+    document.getElementById('join').style.color='#0082af';
+    document.getElementById('make').style.color='#00ff66';
 
-    if (isPhoneNumber(player_phone) && isEmail(player_email)){
-        //alert("DATA SUBMITTED \n"+"name:"+player_name+"\n"+"phone: "+player_phone+"\n"+"email: "+player_email);
-    
-        db.collection('players').add({
-            name: player_name,
-            phone: player_phone,
-            email: player_email
-        }).then(alert("DATA SUBMITTED \n"+"name:"+player_name+"\n"+"phone: "+player_phone+"\n"+"email: "+player_email))
-        .catch((error)=>console.log("error submiting",error)) ; 
+    // document.getElementById('make').style.borderBottom='5px solid #fff';
+    // document.getElementById('join').style.borderBottom='none';
 
-    }
-    else if(!isPhoneNumber(player_phone) && !isEmail(player_email)){
-        alert("Invalid Input");
-    }
-    else if(!isPhoneNumber(player_phone)){
-        alert("invalid phone number");
-    }else if(!isEmail(player_email)){
-        alert("invalid email")
-    }
+    make.addEventListener('click',event=>{
+        document.getElementById('joinTeam').style.display='none';
+        document.getElementById('regTeam').style.display='block';
+
+        document.getElementById('join').style.color='#0082af';
+        document.getElementById('make').style.color='#00ff66';
+
+        // document.getElementById('make').style.borderBottom='5px solid #fff';
+        // document.getElementById('join').style.borderBottom='none';
+    })
+
+    join.addEventListener('click',event=>{
+        document.getElementById('regTeam').style.display = 'none';
+        document.getElementById('joinTeam').style.display='block';
+
+        document.getElementById('join').style.color='#00ff66';
+        document.getElementById('make').style.color='#0082af';
+
+        // document.getElementById('join').style.borderBottom='5px solid #fff';
+        // document.getElementById('make').style.borderBottom='none';
+    })
 }
