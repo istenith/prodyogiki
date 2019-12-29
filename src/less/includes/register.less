@@ -26,7 +26,7 @@ h2{
     position: relative;
 
     input {
-        border: none;
+        border: 2px solid @accent-green;
         box-shadow: 0px 5px 6px -6px #00ff66;
         border-radius: 15px;
         outline: none;
@@ -51,7 +51,7 @@ h2{
 
     input:focus~lable,
     input:valid~lable {
-        top: -15px;
+        top: -25px;
         left: 0;
         color: @accent-green;
         font-size: 12px;
@@ -59,6 +59,7 @@ h2{
 
     input:focus {
         box-shadow: 0px 2px 4px -4px #00ff66;
+        border:1px solid @accent-green;
     }
 }
 
@@ -131,7 +132,7 @@ h1 {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(6, 65px);
+    grid-template-rows: repeat(6, 70px);
     grid-template-columns: repeat(1, 1fr);
 
     .submit {
@@ -145,7 +146,7 @@ h1 {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(6, 65px);
+    grid-template-rows: repeat(6, 70px);
     grid-template-columns: repeat(2, 1fr);
 
     .textbox {
@@ -189,7 +190,7 @@ h1 {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(4, 65px);
+    grid-template-rows: repeat(4, 70px);
     grid-template-columns: repeat(1, 1fr);
 
     h1 {
