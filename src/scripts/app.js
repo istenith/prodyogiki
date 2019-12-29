@@ -53,7 +53,3 @@ confPass();
 document.getElementById("select").addEventListener('change',()=>{
 	handleSelectChange();
 })
-
-document.getElementById('regTeam').addEventListener('submit',()=>{
-	validate();
-})
