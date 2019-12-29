@@ -35,6 +35,7 @@ form(class="holder" method="POST" action="/regPlayer")
     h1.active#make Make Team
     h1.inactive#join Join Team 
 
+
 form(class="holder" id="regTeam" method="POST" action="/regTeam")
     .regTeam
         
@@ -61,8 +62,10 @@ form(class="holder" id="regTeam" method="POST" action="/regTeam")
         div(class='lable' id='limit_lable') 
         input(type="hidden" id="team_limit" name="team_limit")
     
+
         .submit
                 input(class="btn" type="submit" value="Submit!")
+
 
 form(class="holder" id="joinTeam" method="POST" action="/joinTeam")
     .joinTeam

@@ -5,7 +5,9 @@ var input_nodes;
 
 export function handleSelectChange(){
     var select=document.getElementById("selectelement");
+
     members = select.options[select.selectedIndex].id;
+
     document.getElementById('team_limit').value = members;
     document.getElementById('limit_lable').innerHTML = members;
 }
@@ -17,8 +19,10 @@ export function watchTabs(){
     document.getElementById('joinTeam').style.display='none';
     document.getElementById('regTeam').style.display='block';
 
+
     document.getElementById('join').className="inactive";
     document.getElementById('make').className='active';
+
 
     make.addEventListener('click',event=>{
         document.getElementById('joinTeam').style.display='none';
@@ -34,6 +38,7 @@ export function watchTabs(){
 
         document.getElementById('join').className="active";
         document.getElementById('make').className='inactive';
+
     })
 }
 
