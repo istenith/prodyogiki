@@ -17,32 +17,23 @@ export function watchTabs(){
     document.getElementById('joinTeam').style.display='none';
     document.getElementById('regTeam').style.display='block';
 
-    document.getElementById('join').style.color='#0082af';
-    document.getElementById('make').style.color='#00ff66';
-
-    // document.getElementById('make').style.borderBottom='5px solid #fff';
-    // document.getElementById('join').style.borderBottom='none';
+    document.getElementById('join').className="inactive";
+    document.getElementById('make').className='active';
 
     make.addEventListener('click',event=>{
         document.getElementById('joinTeam').style.display='none';
         document.getElementById('regTeam').style.display='block';
 
-        document.getElementById('join').style.color='#0082af';
-        document.getElementById('make').style.color='#00ff66';
-
-        // document.getElementById('make').style.borderBottom='5px solid #fff';
-        // document.getElementById('join').style.borderBottom='none';
+        document.getElementById('join').className="inactive";
+        document.getElementById('make').className='active';
     })
 
     join.addEventListener('click',event=>{
         document.getElementById('regTeam').style.display = 'none';
         document.getElementById('joinTeam').style.display='block';
 
-        document.getElementById('join').style.color='#00ff66';
-        document.getElementById('make').style.color='#0082af';
-
-        // document.getElementById('join').style.borderBottom='5px solid #fff';
-        // document.getElementById('make').style.borderBottom='none';
+        document.getElementById('join').className="active";
+        document.getElementById('make').className='inactive';
     })
 }
 
