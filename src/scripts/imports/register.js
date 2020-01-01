@@ -1,50 +1,57 @@
-function isPhoneNumber(input) {
-    var phoneno = /^([0|\+[0-9]{1,5})?([0-9]{10})$/;
-    return phoneno.test(input); 
+var textboxdiv;
+var textbox;
+var members;
+var input_nodes;
+
+export function handleSelectChange(){
+    var select=document.getElementById("selectelement");
+
+    members = select.options[select.selectedIndex].id;
+
+    document.getElementById('team_limit').value = members;
+    document.getElementById('limit_lable').innerHTML = members;
 }
 
-function isEmail(input){      
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(input); 
+export function watchTabs(){
+    var make  = document.getElementById('make')
+    var join = document.getElementById('join')
+
+    document.getElementById('joinTeam').style.display='none';
+    document.getElementById('regTeam').style.display='block';
+
+
+    document.getElementById('join').className="inactive";
+    document.getElementById('make').className='active';
+
+
+    make.addEventListener('click',event=>{
+        document.getElementById('joinTeam').style.display='none';
+        document.getElementById('regTeam').style.display='block';
+
+        document.getElementById('join').className="inactive";
+        document.getElementById('make').className='active';
+    })
+
+    join.addEventListener('click',event=>{
+        document.getElementById('regTeam').style.display = 'none';
+        document.getElementById('joinTeam').style.display='block';
+
+        document.getElementById('join').className="active";
+        document.getElementById('make').className='inactive';
+
+    })
 }
 
-function handleSelectChange(){
-    var select=document.getElementById("select");
-    var event=select.options[select.selectedIndex].id;
-    var members = select.options[select.selectedIndex].value;
-    var input_nodes = document.querySelectorAll('.regMembers > div');
-    console.log("EVENT: "+event+" members: "+members);
-    for(var i=0;i<input_nodes.length;i++){
-        if(i+2>members){
-            input_nodes[i].className='clear';
-            continue;
+
+export function confPass(){
+    var pw = document.getElementById('password');
+    var conf_pw = document.getElementById('conf_password');
+
+    conf_pw.addEventListener('change',()=>{
+        if(pw.value != conf_pw.value){
+            document.getElementById('message').innerHTML = 'Conformation password is not the same'
+        }else{
+            document.getElementById('message').innerHTML = ''
         }
-        input_nodes[i].className='member_div';
-    }
-}
-
-function playerSubmit(){
-    var player_name = document.getElementById('player_name').value;
-    var player_phone = document.getElementById('player_phone').value;
-    var player_email = document.getElementById('player_email').value;
-
-    if (isPhoneNumber(player_phone) && isEmail(player_email)){
-        //alert("DATA SUBMITTED \n"+"name:"+player_name+"\n"+"phone: "+player_phone+"\n"+"email: "+player_email);
-    
-        db.collection('players').add({
-            name: player_name,
-            phone: player_phone,
-            email: player_email
-        }).then(alert("DATA SUBMITTED \n"+"name:"+player_name+"\n"+"phone: "+player_phone+"\n"+"email: "+player_email))
-        .catch((error)=>console.log("error submiting",error)) ; 
-
-    }
-    else if(!isPhoneNumber(player_phone) && !isEmail(player_email)){
-        alert("Invalid Input");
-    }
-    else if(!isPhoneNumber(player_phone)){
-        alert("invalid phone number");
-    }else if(!isEmail(player_email)){
-        alert("invalid email")
-    }
+    })
 }
