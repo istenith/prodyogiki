@@ -1,203 +1,248 @@
 @import (reference) '../lib/colors.less';
 @import (reference) '../lib/helpers.less';
-@import (css)
-	url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
-.holder{
+@import (css) url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
+
+.holder {
     //text-align: center;
-    margin:0 30% 5%;
+    margin: 0 30% 5%;
 }
-
-#limit_lable{
-    color : @accent-green;
-}
-
-.textbox{
-    //border-bottom: 2px solid #00ff00;
-    margin-bottom:30px 0;
-    padding:0;
-    position: relative;
-    input{
-        border: none;
-        border-bottom: 1px solid #fff;
-        outline:none;
-        background:transparent;
-        font-size:18px;
-        width:100%;
-        float:left;
-        color:white;
-        padding:10px 0;
-        margin-bottom: 20px;
-    }
-    lable{
-        position:absolute;
-        top:0;
-        left:0;
-        padding: 10px 0;
-        pointer-events: none;
-        color:#fff;
-        transition:.5s;
-    }
-
-    input:focus ~ lable,
-    input:valid ~ lable
-    {
-        top:-18px;
-        left:0;
-        color:@accent-green;
-        font-size: 12px;
-    }
-}
-
-.btn{
-    width: 100%;
-    background: none;
-    border: 3px solid transparent;
-    border-image: linear-gradient(
-        to bottom right,
-        @accent-green,
-        @accent-blue
-    );
-    border-image-slice: 1;
-    color:white;
-    padding:5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 12px 0;
-}
-
-h1{
-    color:white;
-    margin-bottom:15px;
-    font-size:55px;
+h2{
     text-align: center;
+    font-family: 'Kulim Park', sans-serif;
 }
 
-.lable{
-    text-align: left;
-    padding-top:10px;
+#limit_lable {
+    color: @accent-green;
 }
 
 #message{
-    grid-column-start:1;
+    color:red;
+}
+
+.textbox {
+    //border-bottom: 2px solid #00ff00;
+    margin-bottom: 30px 0;
+    padding: 0;
+    position: relative;
+
+    input {
+        border: 2px solid @accent-green;
+        box-shadow: 0px 5px 6px -6px #00ff66;
+        border-radius: 15px;
+        outline: none;
+        background: transparent;
+        font-size: 18px;
+        width: 100%;
+        float: left;
+        color: white;
+        padding: 10px 10px;
+        margin-bottom: 20px;
+    }
+
+    lable {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 10px;
+        pointer-events: none;
+        color: #fff;
+        transition: 0.5s;
+    }
+
+    input:focus~lable,
+    input:valid~lable {
+        top: -25px;
+        left: 0;
+        color: @accent-green;
+        font-size: 12px;
+    }
+
+    input:focus {
+        box-shadow: 0px 2px 4px -4px #00ff66;
+        border:1px solid @accent-green;
+    }
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    //width: 90%;
+    margin: auto;
+    max-width: 22em;
+    position: relative;
+    padding: 4px;
+    box-sizing: border-box;
+    background: transparent;
+    
+    background-clip: padding-box;
+    /* !importanté */
+    border: solid 2px @accent-green;
+    box-shadow: 0 0 10px #666;
+    /* !importanté */
+    border-radius: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    transition: 0.5s;
+
+    input{
+        background: @accent-green;
+        border-radius: 50px;
+    }
+    
+}
+
+.submit:hover{
+    padding:6px;
+    border: solid 1px @accent-green
+}
+
+.btn{
+    background: none;
+    text-align: center;
+    border:none;
+    outline:none;
+    padding:4px 30px;
+    color:@dark;
+    font-size: 20px;
+}
+
+
+
+
+h1 {
+    font-family: 'Kulim Park', sans-serif;
+    color: white;
+    margin-bottom: 15px;
+    font-size: 55px;
+    text-align: center;
+}
+
+.lable {
+    text-align: left;
+    padding-top: 10px;
+}
+
+#message {
+    grid-column-start: 1;
     grid-column-end: 2;
     text-align: center;
 }
 
-.regPlayer{
+.regPlayer {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(5,65px);
-    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(6, 70px);
+    grid-template-columns: repeat(1, 1fr);
 
-    .submit{
-        grid-column-start:1;
+    .submit {
+        grid-column-start: 1;
         grid-column-end: 2;
     }
 
 }
 
-.regTeam{
+.regTeam {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(5,65px);
-    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(6, 70px);
+    grid-template-columns: repeat(2, 1fr);
 
-    .textbox{
+    .textbox {
         grid-column-start: 1;
-        grid-column-end:3;
+        grid-column-end: 3;
     }
 
-    #event{
+    #event {
         grid-column-start: 1;
-        grid-column-end:2;
+        grid-column-end: 2;
     }
 
-    #select{
+    #select {
         grid-column-start: 2;
-        grid-column-end:3;
+        grid-column-end: 3;
     }
-    #selectelement{
-        border:none;
-        outline:none;
-        background:none;
-        font-size:18px;
-        width:80%;
-        float:left;
-        color:white;
+
+    #selectelement {
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 18px;
+        width: 80%;
+        float: left;
+        color: white;
 
 
-        option{
-            border:none;
-            outline:none;
-            background:none;
-            font-size:18px;
-            width:80%;
-            float:left;
-            color:black;
+        option {
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 18px;
+            width: 80%;
+            float: left;
+            color: black;
         }
     }
 }
 
-.joinTeam{
+.joinTeam {
     //text-align: center;
     font-family: 'Kulim Park', sans-serif;
     display: grid;
-    grid-template-rows: repeat(3,65px);
-    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(4, 70px);
+    grid-template-columns: repeat(1, 1fr);
 
-    h1{
+    h1 {
         grid-column-start: 1;
-        grid-column-end:2;
+        grid-column-end: 2;
     }
 
-    .submit{
-        grid-column-start:1;
+    .submit {
+        grid-column-start: 1;
         grid-column-end: 2;
     }
 }
 
-.formselect{
-    .option{
-        position: relative;
-        margin:30px;
-    }
-
-    .option:after{
-        content: "";
-        position: absolute;
-        border-bottom: 3px solid #fff;
-        bottom:0;
-        left:0;
-        right:100%;
-        transition: all 500ms; 
-    }
-
-    .option:hover:after{
-        right:0;
-    }
-
-    h1{
+.formselect {
+    h1 {
         cursor: pointer;
-        margin:0 4px;
+        margin: 5px 10px;
+    }
+
+    .inactive:hover{
+        color:@accent-green;
+    }
+
+    .active{
+        background-color: @accent-green;
+        color:@dark;
+        border-radius: 20px;
+        padding: 2px 10px;
+        box-shadow: 0 0 10px #666;
+    }
+
+    .inactive{
+        color:white;
+        background:none;
     }
 
     justify-content: center;
     text-align: center;
-    font-family: 'Kulim Park', sans-serif;
+    font-family: 'Kulim Park',
+    sans-serif;
     margin: 5%;
     display: flex;
-    
-    
 }
 
 @media only screen and (max-width: 600px) {
-    .holder{
+    .holder {
         margin: 0 10% 10%
     }
-    h1{
-        font-size:20px;
+
+    h1 {
+        font-size: 20px;
     }
 }
