@@ -1,248 +1,192 @@
 @import (reference) '../lib/colors.less';
 @import (reference) '../lib/helpers.less';
 
-@import (css) url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
+@import (css)
+	url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
 .holder {
-    //text-align: center;
-    margin: 0 30% 5%;
+	//text-align: center;
+	margin: 0 30% 5%;
 }
-h2{
-    text-align: center;
-    font-family: 'Kulim Park', sans-serif;
+h2 {
+	text-align: center;
+	font-family: 'montserrat', sans-serif;
 }
-
-#limit_lable {
-    color: @accent-green;
-}
-
-#message{
-    color:red;
-}
-
-.textbox {
-    //border-bottom: 2px solid #00ff00;
-    margin-bottom: 30px 0;
-    padding: 0;
-    position: relative;
-
-    input {
-        border: 2px solid @accent-green;
-        box-shadow: 0px 5px 6px -6px #00ff66;
-        border-radius: 15px;
-        outline: none;
-        background: transparent;
-        font-size: 18px;
-        width: 100%;
-        float: left;
-        color: white;
-        padding: 10px 10px;
-        margin-bottom: 20px;
-    }
-
-    lable {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 10px 10px;
-        pointer-events: none;
-        color: #fff;
-        transition: 0.5s;
-    }
-
-    input:focus~lable,
-    input:valid~lable {
-        top: -25px;
-        left: 0;
-        color: @accent-green;
-        font-size: 12px;
-    }
-
-    input:focus {
-        box-shadow: 0px 2px 4px -4px #00ff66;
-        border:1px solid @accent-green;
-    }
-}
-
-.submit {
-    display: flex;
-    align-items: center;
-    //width: 90%;
-    margin: auto;
-    max-width: 22em;
-    position: relative;
-    padding: 4px;
-    box-sizing: border-box;
-    background: transparent;
-    
-    background-clip: padding-box;
-    /* !importanté */
-    border: solid 2px @accent-green;
-    box-shadow: 0 0 10px #666;
-    /* !importanté */
-    border-radius: 50px;
-    grid-column-start: 1;
-    grid-column-end: 3;
-
-    transition: 0.5s;
-
-    input{
-        background: @accent-green;
-        border-radius: 50px;
-    }
-    
-}
-
-.submit:hover{
-    padding:6px;
-    border: solid 1px @accent-green
-}
-
-.btn{
-    background: none;
-    text-align: center;
-    border:none;
-    outline:none;
-    padding:4px 30px;
-    color:@dark;
-    font-size: 20px;
-}
-
-
-
-
 h1 {
-    font-family: 'Kulim Park', sans-serif;
-    color: white;
-    margin-bottom: 15px;
-    font-size: 55px;
-    text-align: center;
+	font-family: 'Kulim Park', sans-serif;
+	color: white;
+	margin-bottom: 15px;
+	text-align: center;
 }
 
-.lable {
-    text-align: left;
-    padding-top: 10px;
+form {
+	padding: 15px 0;
+}
+#limit_lable {
+	color: @accent-green;
+	text-align: right;
 }
 
 #message {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    text-align: center;
+	color: white;
+	background: #f55;
+	font-weight: bold;
+	padding: 1em;
+	border-radius: 5px;
+	display: none;
 }
 
-.regPlayer {
-    //text-align: center;
-    font-family: 'Kulim Park', sans-serif;
-    display: grid;
-    grid-template-rows: repeat(6, 70px);
-    grid-template-columns: repeat(1, 1fr);
+.textbox {
+	//border-bottom: 2px solid #00ff00;
+	// margin: 15px 0;
+	padding: 0;
+	position: relative;
 
-    .submit {
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
+	input {
+		border: 2px solid @accent-green;
+		// box-shadow: 0px 5px 6px -6px #00ff66;
+		border-radius: 15px;
+		outline: none;
+		background: transparent;
+		font-size: 18px;
+		width: 100%;
+		float: left;
+		color: white;
+		padding: 10px 10px;
+		// margin-bottom: 20px;
+	}
 
+	lable {
+		position: absolute;
+		top: 9px;
+		left: 9px;
+		padding: 5px;
+		pointer-events: none;
+		color: #fff;
+		background: @dark;
+		transition: 0.3s;
+	}
+
+	input:focus ~ lable,
+	input:valid ~ lable {
+		top: -15px;
+		left: 9px;
+		color: @accent-green;
+		font-size: 12px;
+	}
+
+	input:focus {
+		box-shadow: 0px 0px 2px @accent-green;
+		// border: 1px solid @accent-green;
+	}
 }
 
-.regTeam {
-    //text-align: center;
-    font-family: 'Kulim Park', sans-serif;
-    display: grid;
-    grid-template-rows: repeat(6, 70px);
-    grid-template-columns: repeat(2, 1fr);
-
-    .textbox {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-
-    #event {
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
-
-    #select {
-        grid-column-start: 2;
-        grid-column-end: 3;
-    }
-
-    #selectelement {
-        border: none;
-        outline: none;
-        background: none;
-        font-size: 18px;
-        width: 80%;
-        float: left;
-        color: white;
-
-
-        option {
-            border: none;
-            outline: none;
-            background: none;
-            font-size: 18px;
-            width: 80%;
-            float: left;
-            color: black;
-        }
-    }
-}
-
-.joinTeam {
-    //text-align: center;
-    font-family: 'Kulim Park', sans-serif;
-    display: grid;
-    grid-template-rows: repeat(4, 70px);
-    grid-template-columns: repeat(1, 1fr);
-
-    h1 {
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
-
-    .submit {
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
+input[type='submit'],
+.formselect > div {
+	background: @accent-green;
+	color: @dark;
+	font-family: 'montserrat', sans-serif;
+	border: none;
+	border-radius: 7px;
+	padding: 0.7em 1em;
+	margin: 0 0.5em;
+	cursor: pointer;
+	float: right;
 }
 
 .formselect {
-    h1 {
-        cursor: pointer;
-        margin: 5px 10px;
-    }
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	.inactive {
+		background: #333;
+		color: white;
+	}
+}
+.lable {
+	text-align: left;
+}
 
-    .inactive:hover{
-        color:@accent-green;
-    }
+#message {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	text-align: center;
+}
 
-    .active{
-        background-color: @accent-green;
-        color:@dark;
-        border-radius: 20px;
-        padding: 2px 10px;
-        box-shadow: 0 0 10px #666;
-    }
+.regPlayer {
+	//text-align: center;
+	font-family: 'Kulim Park', sans-serif;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(1, 1fr);
+}
 
-    .inactive{
-        color:white;
-        background:none;
-    }
+.regTeam {
+	//text-align: center;
+	font-family: 'Kulim Park', sans-serif;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(3, 1fr);
 
-    justify-content: center;
-    text-align: center;
-    font-family: 'Kulim Park',
-    sans-serif;
-    margin: 5%;
-    display: flex;
+	.textbox,
+	.submit {
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+
+	#event {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	#select {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+
+	#selectelement {
+		outline: none;
+		background: none;
+		font-size: 16px;
+		width: 100%;
+		float: left;
+		border-radius: 15px;
+		padding: 10px;
+		border: 2px solid @accent-green;
+		background: @dark;
+		color: white;
+
+		option {
+			border: none;
+			outline: none;
+			background: none;
+			font-size: 18px;
+			width: 80%;
+			float: left;
+			color: black;
+		}
+	}
+	lable {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+}
+
+.joinTeam {
+	//text-align: center;
+	font-family: 'Kulim Park', sans-serif;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(1, 1fr);
+
+	h1 {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
 }
 
 @media only screen and (max-width: 600px) {
-    .holder {
-        margin: 0 10% 10%
-    }
-
-    h1 {
-        font-size: 20px;
-    }
+	.holder {
+		margin: 0 10% 10%;
+	}
 }
