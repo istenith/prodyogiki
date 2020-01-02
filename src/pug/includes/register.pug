@@ -1,86 +1,149 @@
+-
+	var eventList = [
+		{
+			'title': 'Crazy Crawler',
+			'image': 'cc.svg',
+			'descr': 'Build a legged bot (crawler) that can move in a straight line to dash through a track in minimum time',
+			'team_limit':3,
+			'abstract'  : 'crazy-crawler.pdf',
+			'dontInline': true,
+		},
+		{
+			'title': 'Molecular Mystery',
+			'image': 'mm.svg',
+			'descr': 'A treasure hunt which has questions related to all topics which have to be answered by teams of 4. Solutions are all around the campus.',
+			'team_limit':4,
+			'abstract'  : 'molecular-mystery.pdf'
+		},
+		{
+			'title': 'Compact Condo',
+			'image': 'ccondo.svg',
+			'descr': 'Design a tiny house with different features in a defined area. You can use any means for designing.',
+			'team_limit':2,
+			'abstract'  : 'compact-condo.pdf',
+			'dontInline': true,
+		},
+		{
+			'title': 'Risk Reduction',
+			'image': 'rr.svg',
+			'descr': 'Buy virtual ../assets to ideate a solution to protect against virtual perils and calamities.',
+			'team_limit':2,
+			'abstract'  : 'risk-reduction.pdf'
+		},
+		{
+			'title': 'Lost Lander',
+			'image': 'll.svg',
+			'descr': 'Build a bot which can sense obstacles in an obstacle course and clear that obstacle course in minimum time. The course cannot be seen by the operator.',
+			'team_limit':4,
+			'abstract'  : 'lost-lander.pdf'
+		},
+		{
+			'title': 'Spaghetti Bridge',
+			'image': 'sb.svg',
+			'descr': ' Design and construct a model of a single span truss bridge with the help of spaghetti noodles.',
+			'team_limit':5,
+			'abstract'  : 'spaghetti-bridge-challenge.pdf'
+		},
+		{
+			'title': 'Ropeway Design',
+			'image': 'ropeway-design.svg',
+			'descr': 'Design and make a model of a ropeway. You need to know simple law of mechanics here, cable car is one of the example for this type of ropeway systems.',
+			'team_limit':4,
+			'abstract'  : 'ropeway-design.pdf'
+		},
+		{
+			'title': 'Dev Dash',
+			'image': 'dd.svg',
+			'descr': 'There are 2 rounds in this code marathon. A short code competition followed by code relay event. Solo event for all the enthusiastic coders',
+			'team_limit':1,
+			'abstract'  : 'dev-dash.pdf'
+		}
+	]
+
 h1 Register Yourself
 form(class="holder" method="POST" action="/regPlayer")
-    .regPlayer
-        .textbox
-            input(type="text" id="player_name" name="name" required )
-            lable Name
-        
-        .textbox
-            input(type="input" id="phone" name="phone" required )
-            lable Phone Number
+	.regPlayer
+		.textbox
+			input(type="text" id="player_name" name="name" required )
+			lable Name
+		
+		.textbox
+			input(type="input" id="phone" name="phone" required )
+			lable Phone Number
 
-        
-        .textbox
-            input(type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required )
-            lable Email
-        
-        
-        .textbox
-            input(type="password" id="password" name="pw" required )
-            lable Password
+		
+		.textbox
+			input(type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required )
+			lable Email
+		
+		
+		.textbox
+			input(type="password" id="password" name="pw" required )
+			lable Password
 
-        
-        .textbox
-            input(type="password" id="conf_password" name="confpw" required )
-            lable Confirm Password
+		
+		.textbox
+			input(type="password" id="conf_password" name="confpw" required )
+			lable Confirm Password
 
-        .submit
-            input(class="btn" type="submit" value="Submit!")
+		lable#message Passwords don't match
 
-        lable#message
+		.submit
+			input(type="submit" value="SUBMIT")
 
 h2 Already Registered?
 
 .formselect
-    h1.active#make Make Team
-    h1.inactive#join Join Team 
+	.active#make Make Team
+	.inactive#join Join Team 
 
 
 form(class="holder" id="regTeam" method="POST" action="/regTeam")
-    .regTeam
-        
-        .textbox
-            input(type="text" id="team_name" required name="team_name" )
-            lable Team Name
-        
-        .textbox.team_leader
-            input(type="text" id="team_leader_email" required name="team_leader_email" )
-            lable#teamLeader Team Leader Email
-        
-        .textbox.team_leader
-            input(type="password" id="team_leader_password" name="leader_pw" required )
-            lable#teamLeader Team Leader Password
-       
-        lable#event Event
-        - var limit
-        .textbox#select
-            select(id="selectelement" name="event")
-                each event in eventList
-                    - limit = event.team_limit
-                    option(value = event.title name=event.title id=event.team_limit)=event.title 
-        lable Team Members
-        div(class='lable' id='limit_lable') 
-        input(type="hidden" id="team_limit" name="team_limit")
-    
+	.regTeam
+		
+		.textbox
+			input(type="text" id="team_name" required name="team_name" )
+			lable Team Name
+		
+		.textbox.team_leader
+			input(type="text" id="team_leader_email" required name="team_leader_email" )
+			lable#teamLeader Team Leader Email
+		
+		.textbox.team_leader
+			input(type="password" id="team_leader_password" name="leader_pw" required )
+			lable#teamLeader Team Leader Password
+	   
+		lable#event Event
+		- var limit
+		.textbox#select
+			select(id="selectelement" name="event")
+				each event in eventList
+					- limit = event.team_limit
+					option(value = event.title name=event.title id=event.team_limit)=event.title 
+		lable Team Members
+		#limit_lable
+		input(type="hidden" id="team_limit" name="team_limit")
+	
 
-        .submit
-                input(class="btn" type="submit" value="Submit!")
+		.submit
+			input(type="submit" value="SUBMIT")
 
 
 form(class="holder" id="joinTeam" method="POST" action="/joinTeam")
-    .joinTeam
-        
-        .textbox
-            input(type="email" id="player_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required )
-            lable Your Email
-        
-        .textbox
-            input(type="password" id="player_pass" name="pw" required )
-            lable Password
-        
-        .textbox
-            input(type="text" id="team_id" name="team_id" required )
-            lable Team Id
+	.joinTeam
+		
+		.textbox
+			input(type="email" id="player_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required )
+			lable Your Email
+		
+		.textbox
+			input(type="password" id="player_pass" name="pw" required )
+			lable Password
+		
+		.textbox
+			input(type="text" id="team_id" name="team_id" required )
+			lable Team Id
 
-        .submit
-            input(class="btn" type="submit" value="Submit!")
+		.submit
+			input(type="submit" value="SUBMIT")
+
