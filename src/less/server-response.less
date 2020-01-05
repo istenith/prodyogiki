@@ -1,0 +1,40 @@
+@import (reference) './lib/colors.less';
+@import (css)
+	url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+body {
+	font-family: 'Share Tech Mono', monospace;
+	background: black;
+	color: @accent-green;
+}
+#container {
+	width: 93%;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	margin: 0 auto;
+}
+span,
+h1 {
+	color: white;
+}
+
+h1 {
+	text-align: center;
+}
+a,
+.warning {
+	color: white;
+	padding: 1em;
+	border-radius: 0.3em;
+}
+
+a.btn {
+	background: @accent-blue;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.warning {
+	background: @warning-red;
+}

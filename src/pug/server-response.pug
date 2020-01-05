@@ -1,0 +1,38 @@
+doctype html
+html
+	head 
+		title Server Response | Prodyogiki 2020 | ISTE - NIT Hamirpur
+		// Responsiveness enabled
+		meta(name='viewport' content= 'width=device-width, initial-scale=1.0 user-scalable=no')
+		meta(charset='utf-8')
+		link(rel="shortcut icon" href="https://istenith.com/prody/pg.png")
+		link(rel="icon" href="https://istenith.com/prody/pg.png")
+	body
+		#container
+			a.btn(href='https://istenith.com/prody') Prodyogiki homepage
+			p contact
+				a(href='mailto:teamiste@gmai.com') teamiste@gmail.com
+				| for any problem in registerations.
+
+		template#error
+			div
+				p An error occurred while processing your request
+				h1#console What was the error 
+
+		template#player-registered
+			div
+				h3 Congratulations!&nbsp; 
+					span#name participant
+					| &nbsp;you are successfully registered in our database.
+				h2 We will shortly email you your Prodyogiki ID, thanks for registering
+		
+		template#team-registered
+			div
+				h3 Congratulations! your team&nbsp;
+					span#team-name team
+					| &nbsp;is registered for the event&nbsp;
+					span#event event
+					| ,&nbsp;your team id is
+				h1#team-id team id
+				h2 Share this id with your teammates
+				h3.warning Don't share this id with anyone except your teammates for this event.
