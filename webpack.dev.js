@@ -16,8 +16,17 @@ module.exports = merge(common, {
 	plugins: [
 		new HtmlWebpackPlugin({
 			filetype: 'pug',
+			filename: 'index.html',
 			template: './src/pug/index.pug',
 			hash: true,
+			chunks: ['app'],
+		}),
+		new HtmlWebpackPlugin({
+			filetype: 'pug',
+			filename: 'server-response.html',
+			template: './src/pug/server-response.pug',
+			hash: true,
+			chunks: ['server-response'],
 		}),
 	],
 	module: {

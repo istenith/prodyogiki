@@ -3,6 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
 	entry: {
 		app: './src/scripts/app.js',
+		'server-response': './src/scripts/server-response.js',
 		// vendor: './src/scripts/vendor.js',
 	},
 	plugins: [new CopyPlugin([{ from: './src/root/', to: './' }])],
