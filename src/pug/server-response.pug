@@ -9,30 +9,36 @@ html
 		link(rel="icon" href="https://istenith.com/prody/pg.png")
 	body
 		#container
-			a.btn(href='https://istenith.com/prody') Prodyogiki homepage
+			a.btn(href='https://istenith.com/prody') goto Prodyogiki homepage;
 			p contact
-				a(href='mailto:teamiste@gmai.com') teamiste@gmail.com
+				a(href='mailto:teamiste@gmail.com') teamiste@gmail.com
 				| for any problem in registerations.
 
-		template#error
+		template#error-template
 			div
 				p An error occurred while processing your request
-				h1#console What was the error 
+				h1#error What was the error 
 
-		template#player-registered
+		template#player-registered-template
 			div
-				h3 Congratulations!&nbsp; 
+				h3 Congratulations!&nbsp;
 					span#name participant
 					| &nbsp;you are successfully registered in our database.
-				h2 We will shortly email you your Prodyogiki ID, thanks for registering
+				h2 Thanks for registering! we will shortly email you your Prodyogiki ID 
+					i (only for attendance).
 		
-		template#team-registered
+		template#team-registered-template
 			div
 				h3 Congratulations! your team&nbsp;
-					span#team-name team
+					span#name team
 					| &nbsp;is registered for the event&nbsp;
 					span#event event
 					| ,&nbsp;your team id is
-				h1#team-id team id
+				h1#id team id
 				h2 Share this id with your teammates
 				h3.warning Don't share this id with anyone except your teammates for this event.
+
+		template#joined-team-template
+			div
+				h2 Congratulations! You are now a member of team
+				h1#name
