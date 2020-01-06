@@ -31,6 +31,7 @@ module.exports = merge(common, {
 			filetype: 'pug',
 			filename: 'index.html',
 			template: './src/pug/index.pug',
+			chunks: ['app'],
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
@@ -42,6 +43,7 @@ module.exports = merge(common, {
 			filetype: 'pug',
 			filename: 'server-response.html',
 			template: './src/pug/server-response.pug',
+			chunks: ['server-response'],
 			minify: {
 				removeAttributeQuotes: true,
 				collapseWhitespace: true,
