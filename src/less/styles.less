@@ -75,6 +75,92 @@ section {
 		text-align: justify;
 	}
 }
+.band {
+	@border-thickness: 3px;
+	display: inline-block;
+	width: fit-content;
+	position: sticky;
+	left: 0;
+	top: 50%;
+	transform: translateX(-120%);
+	padding: 0.5em 0.3em;
+	@padding-left: 1em;
+	padding-left: @padding-left;
+	font-family: 'Montserrat';
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	animation-name: slidein;
+	animation-delay: 1s;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	z-index: 6;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -@border-thickness;
+		left: 0;
+		z-index: -2;
+
+		width: calc(100% + @padding-left + @border-thickness + 1px);
+		height: calc(100% + 2 * @border-thickness);
+		background-image: linear-gradient(
+			to bottom right,
+			@accent-green,
+			@accent-blue
+		);
+		clip-path: polygon(
+			0 0,
+			calc(100% - 1.2em + 1px) 0,
+			100% 50%,
+			calc(100% - 1.2em + 1px) 100%,
+			0 100%
+		);
+	}
+	&::before {
+		content: '';
+		width: calc(100% + @padding-left);
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: black;
+		z-index: -1;
+
+		clip-path: polygon(
+			0 0,
+			calc(100% - 1em) 0,
+			100% 50%,
+			calc(100% - 1em) 100%,
+			0 100%
+		);
+	}
+
+	&.active {
+		animation-play-state: running;
+	}
+	@keyframes slidein {
+		0% {
+			transform: translateX(-120%);
+		}
+		10% {
+			transform: translateX(0%);
+		}
+		11% {
+			transform: translateX(0%);
+		}
+		89% {
+			transform: translateX(0%);
+		}
+		90% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-120%);
+		}
+	}
+}
 
 .page {
 	width: 100vw;

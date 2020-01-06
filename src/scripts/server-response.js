@@ -4,7 +4,6 @@ window.addEventListener('load', function() {
 	const container = document.getElementById('container');
 	let clone;
 	let urlParams = new URLSearchParams(window.location.search.slice(1));
-	console.log(urlParams);
 
 	if (urlParams.get('type')) {
 		switch (urlParams.get('type')) {
@@ -32,7 +31,6 @@ window.addEventListener('load', function() {
 
 const fillupClone = (clone, config) => {
 	for (const [key, value] of config) {
-		console.log(key);
 		clone.getElementById(key).innerText = value;
 	}
 };
