@@ -1,4 +1,5 @@
-let mobileWindow;
+import 'hammerjs';
+('use strict');
 export class TabWatcher {
 	constructor(query) {
 		this.tabs = document.querySelectorAll(query);
@@ -13,7 +14,7 @@ export class TabWatcher {
 		this.tabs[0].prevTab = this.tabs[this.tabs.length - 1];
 		this.tabs[this.tabs.length - 1].nextTab = this.tabs[0];
 
-		mobileWindow = window.matchMedia('(max-width: 700px)');
+		this.mobileWindow = window.matchMedia('(max-width: 700px)');
 
 		this.previouslyActive = this.tabs[2];
 		this.setActiveTab(this.tabs[0]);
@@ -39,6 +40,32 @@ export class TabWatcher {
 			}
 		});
 	}
+	watchSwipes() {
+		const manager = new Hammer.Manager(document.querySelector('body'), {
+			touchAction: 'auto',
+			inputClass: Hammer.SUPPORT_POINTER_EVENTS
+				? Hammer.PointerEventInput
+				: Hammer.TouchMouseInput,
+			recognizers: [
+				[
+					Hammer.Swipe,
+					{
+						direction: Hammer.DIRECTION_HORIZONTAL,
+					},
+				],
+			],
+		});
+		const Swipe = new Hammer.Swipe();
+
+		manager.add(Swipe);
+
+		manager.on('swipeleft', () => {
+			this.setActiveTab(this.previouslyActive.nextTab);
+		});
+		manager.on('swiperight', () => {
+			this.setActiveTab(this.previouslyActive.prevTab);
+		});
+	}
 	setActiveTab(tab) {
 		if (tab != this.previouslyActive) {
 			// update active tab
@@ -46,7 +73,7 @@ export class TabWatcher {
 			tab.classList.add('active');
 
 			// center tab
-			if (mobileWindow.matches) {
+			if (this.mobileWindow.matches) {
 				navbar.style.transform = `translateX(${window.innerWidth / 2 -
 					(tab.offsetWidth / 2 + tab.offsetLeft)}px)`;
 			}

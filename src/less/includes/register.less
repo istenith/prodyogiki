@@ -4,189 +4,192 @@
 @import (css)
 	url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
 
-.holder {
-	//text-align: center;
-	margin: 0 30% 5%;
-}
-h2 {
-	text-align: center;
-	font-family: 'montserrat', sans-serif;
-}
-h1 {
-	font-family: 'Kulim Park', sans-serif;
-	color: white;
-	margin-bottom: 15px;
-	text-align: center;
-}
-
-form {
-	padding: 15px 0;
-}
-#limit_lable {
-	color: @accent-green;
-	text-align: right;
-}
-
-#message {
-	color: white;
-	background: @warning-red;
-	font-weight: bold;
-	padding: 1em;
-	border-radius: 5px;
-	display: none;
-}
-
-.textbox {
-	//border-bottom: 2px solid #00ff00;
-	// margin: 15px 0;
-	padding: 0;
-	position: relative;
-
-	input {
-		border: 2px solid @accent-green;
-		// box-shadow: 0px 5px 6px -6px #00ff66;
-		border-radius: 15px;
-		outline: none;
-		background: transparent;
-		font-size: 18px;
-		width: 100%;
-		float: left;
+#register {
+	background: @dark;
+	.holder {
+		//text-align: center;
+		margin: 0 30% 5%;
+	}
+	h2 {
+		text-align: center;
+		font-family: 'montserrat', sans-serif;
+	}
+	h1 {
+		font-family: 'Kulim Park', sans-serif;
 		color: white;
-		padding: 10px 10px;
-		// margin-bottom: 20px;
+		margin-bottom: 15px;
+		text-align: center;
 	}
 
-	lable {
-		position: absolute;
-		top: 9px;
-		left: 9px;
-		padding: 5px;
-		pointer-events: none;
-		color: #fff;
-		background: @dark;
-		transition: 0.3s;
+	form {
+		padding: 15px 0;
 	}
-
-	input:focus ~ lable,
-	input:valid ~ lable {
-		top: -15px;
-		left: 9px;
+	#limit_lable {
 		color: @accent-green;
-		font-size: 12px;
+		text-align: right;
 	}
 
-	input:focus {
-		box-shadow: 0px 0px 2px @accent-green;
-		// border: 1px solid @accent-green;
-	}
-}
-
-input[type='submit'],
-.formselect > div {
-	background: @accent-green;
-	color: @dark;
-	font-family: 'montserrat', sans-serif;
-	border: none;
-	border-radius: 7px;
-	padding: 0.7em 1em;
-	margin: 0 0.5em;
-	cursor: pointer;
-	float: right;
-}
-
-.formselect {
-	display: flex;
-	justify-content: center;
-	padding: 15px;
-	.inactive {
-		background: #333;
+	#message {
 		color: white;
-	}
-}
-.lable {
-	text-align: left;
-}
-
-#message {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	text-align: center;
-}
-
-.regPlayer {
-	//text-align: center;
-	font-family: 'Kulim Park', sans-serif;
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: repeat(1, 1fr);
-}
-
-.regTeam {
-	//text-align: center;
-	font-family: 'Kulim Park', sans-serif;
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: repeat(3, 1fr);
-
-	.textbox,
-	.submit {
-		grid-column-start: 1;
-		grid-column-end: 4;
+		background: @warning-red;
+		font-weight: bold;
+		padding: 1em;
+		border-radius: 5px;
+		display: none;
 	}
 
-	#event {
-		grid-column-start: 1;
-		grid-column-end: 2;
-	}
+	.textbox {
+		//border-bottom: 2px solid #00ff00;
+		// margin: 15px 0;
+		padding: 0;
+		position: relative;
 
-	#select {
-		grid-column-start: 2;
-		grid-column-end: 4;
-	}
-
-	#selectelement {
-		outline: none;
-		background: none;
-		font-size: 16px;
-		width: 100%;
-		float: left;
-		border-radius: 15px;
-		padding: 10px;
-		border: 2px solid @accent-green;
-		background: @dark;
-		color: white;
-
-		option {
-			border: none;
+		input {
+			border: 2px solid @accent-green;
+			// box-shadow: 0px 5px 6px -6px #00ff66;
+			border-radius: 15px;
 			outline: none;
-			background: none;
+			background: transparent;
 			font-size: 18px;
-			width: 80%;
+			width: 100%;
 			float: left;
-			color: black;
+			color: white;
+			padding: 10px 10px;
+			// margin-bottom: 20px;
+		}
+
+		lable {
+			position: absolute;
+			top: 9px;
+			left: 9px;
+			padding: 5px;
+			pointer-events: none;
+			color: #fff;
+			background: @dark;
+			transition: 0.3s;
+		}
+
+		input:focus ~ lable,
+		input:valid ~ lable {
+			top: -15px;
+			left: 9px;
+			color: @accent-green;
+			font-size: 12px;
+		}
+
+		input:focus {
+			box-shadow: 0px 0px 2px @accent-green;
+			// border: 1px solid @accent-green;
 		}
 	}
-	lable {
-		grid-column-start: 1;
-		grid-column-end: 3;
+
+	input[type='submit'],
+	.formselect > div {
+		background: @accent-green;
+		color: @dark;
+		font-family: 'montserrat', sans-serif;
+		border: none;
+		border-radius: 7px;
+		padding: 0.7em 1em;
+		margin: 0 0.5em;
+		cursor: pointer;
+		float: right;
 	}
-}
 
-.joinTeam {
-	//text-align: center;
-	font-family: 'Kulim Park', sans-serif;
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: repeat(1, 1fr);
+	.formselect {
+		display: flex;
+		justify-content: center;
+		padding: 15px;
+		.inactive {
+			background: #333;
+			color: white;
+		}
+	}
+	.lable {
+		text-align: left;
+	}
 
-	h1 {
+	#message {
 		grid-column-start: 1;
 		grid-column-end: 2;
+		text-align: center;
 	}
-}
 
-@media only screen and (max-width: 600px) {
-	.holder {
-		margin: 0 10% 10%;
+	.regPlayer {
+		//text-align: center;
+		font-family: 'Kulim Park', sans-serif;
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.regTeam {
+		//text-align: center;
+		font-family: 'Kulim Park', sans-serif;
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(3, 1fr);
+
+		.textbox,
+		.submit {
+			grid-column-start: 1;
+			grid-column-end: 4;
+		}
+
+		#event {
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
+
+		#select {
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+
+		#selectelement {
+			outline: none;
+			background: none;
+			font-size: 16px;
+			width: 100%;
+			float: left;
+			border-radius: 15px;
+			padding: 10px;
+			border: 2px solid @accent-green;
+			background: @dark;
+			color: white;
+
+			option {
+				border: none;
+				outline: none;
+				background: none;
+				font-size: 18px;
+				width: 80%;
+				float: left;
+				color: black;
+			}
+		}
+		lable {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
+
+	.joinTeam {
+		//text-align: center;
+		font-family: 'Kulim Park', sans-serif;
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(1, 1fr);
+
+		h1 {
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.holder {
+			margin: 0 10% 10%;
+		}
 	}
 }

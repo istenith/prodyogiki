@@ -6,12 +6,13 @@ import { TabWatcher } from './imports/tabs';
 import { handleSelectChange, watchTabs, confPass} from './imports/register';
 import { countdown } from './imports/timer';
 
-
 import 'vanilla-tilt';
 
 window.addEventListener('load', () => {
 	document.querySelector('header').style.height =
 		document.querySelector('.tab').offsetHeight + 4 + 'px';
+
+	document.querySelector('#window>.band').classList.toggle('active');
 
 	VanillaTilt.init(document.querySelector('#banner .image img'), {
 		reverse: true,
@@ -29,6 +30,7 @@ window.addEventListener('load', () => {
 	const tw = new TabWatcher('.tab');
 	tw.watchTabs();
 	tw.watchKeys();
+	tw.watchSwipes();
 
 	{
 		let events = document.querySelectorAll('#events .card');
@@ -43,15 +45,11 @@ window.addEventListener('load', () => {
 	countdown();
 
 	handleSelectChange();
-
-	watchTabs()
-	
+	watchTabs();
 });
-
-watchTabs();
 
 confPass();
 
-document.getElementById("select").addEventListener('change',()=>{
+document.getElementById('select').addEventListener('change', () => {
 	handleSelectChange();
-})
+});
