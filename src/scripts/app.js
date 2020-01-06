@@ -3,8 +3,8 @@ import '../less/styles.less';
 import { flicker } from './imports/flicker';
 import { animateMatrix } from './imports/matrix';
 import { TabWatcher } from './imports/tabs';
-import { handleSelectChange, watchTabs, confPass } from './imports/register';
-// import { countdown } from './imports/timer';
+import { handleSelectChange, watchTabs, confPass} from './imports/register';
+import { countdown } from './imports/timer';
 
 import 'vanilla-tilt';
 
@@ -42,6 +42,7 @@ window.addEventListener('load', () => {
 	}
 	animateMatrix('#matrix-effect', 'TEAM ISTE');
 	flicker();
+	countdown();
 
 	handleSelectChange();
 	watchTabs();

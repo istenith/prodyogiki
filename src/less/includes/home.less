@@ -75,6 +75,46 @@
 	z-index: -1;
 }
 
+#timer{
+	background-color: rgba(255, 255, 255, 0.02);
+	border-top: 1px solid @accent-green;
+	border-bottom: 1px solid @accent-blue;
+	border-image-slice: 1;
+	border-radius: 10px;
+	width: 260px;
+	padding: 5px;
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: 1px;
+
+	tr{
+		
+		td{
+			padding: 6px;
+			text-align: center;
+			.begin{
+				color: @accent-green;
+				font-size: large;
+			}
+			.top{
+				color: @accent-blue;
+				font-size: larger;
+			}
+			.duration{
+				color: @accent-blue;
+				font-size: xx-large;
+				text-shadow: 0 0 8px #666;
+				transition: 0.2s;
+			}
+			.duration:hover{
+				font-size: 40px;
+			}
+
+		}
+		
+	}
+
+}
+
 @media screen and (min-width: 500px) {
 	#prody {
 		font-size: 56px;
