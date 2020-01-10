@@ -15,11 +15,12 @@
 		}
 	}
 }
+
 .header {
+	margin:auto;
 	display: flex;
 	width: 60%;
 	position: relative;
-	margin: auto;
 	.image {
 		padding: 24px;
 		padding-top: 4px;
@@ -44,8 +45,33 @@
 	}
 }
 
+.sponsors{
+	margin:auto;
+	width:60%;
+	display:grid;
+	grid-template-columns: repeat(3,1fr);
+
+	.card{
+		max-width:400px;
+		max-height:400px;
+		img{
+			width:100%;
+			border: 3px solid @accent-green;
+			box-shadow: 0 0 12px rgba(0, 255, 100, 0.24);
+			border-radius: 10px;
+		}
+	}
+}
+
+.Oursps{
+	margin:auto;
+	width:60%;
+	font-size: 3em;
+	color:@accent-green;
+	margin: 20px;
+}
 @media screen and (max-width: 1150px) {
-	.header {
+.header {
 		width: 90%;
 		display: flex;
 		flex-flow: column;
@@ -55,4 +81,7 @@
 			padding-bottom: 6em;
 		}
 	}
+.sponsors{
+		grid-template-columns: repeat(3,1fr);
+}
 }
