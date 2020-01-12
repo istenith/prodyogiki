@@ -3,7 +3,8 @@
 		{
 			name:'Ace Engineering Academy',
 			img: 'ace.png',
-			website: 'https://aceenggacademy.com'
+			website: 'https://aceenggacademy.com',
+			//- category: 'Study Buddy'
 		}
 	]
 
@@ -22,6 +23,7 @@
 .sponsors
 	each sponsor in sponsors
 		.card
+			//- .category #{sponsor.category}
 			a(href=sponsor.website)
 				img(src = '../assets/img/sponsors/'+sponsor.img)
 
