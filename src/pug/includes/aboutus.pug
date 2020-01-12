@@ -2,7 +2,8 @@
 	var sponsors = [
 		{
 			name:'Ace Engineering Academy',
-			img: 'ace.png'
+			img: 'ace.png',
+			website: 'https://aceenggacademy.com'
 		}
 	]
 
@@ -21,5 +22,6 @@
 .sponsors
 	each sponsor in sponsors
 		.card
-			img(src = '../assets/img/sponsors/'+sponsor.img)
+			a(href=sponsor.website)
+				img(src = '../assets/img/sponsors/'+sponsor.img)
 
