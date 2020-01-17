@@ -2,27 +2,45 @@
 	var sponsors = [
 		{
 			name:'Ace Engineering Academy',
-			img: 'ace.png',
+			img: 'AceAcademy.png',
 			website: 'https://aceenggacademy.com',
-			//- category: 'Study Buddy'
+			category: 'Education Partner'
 		},
 		{
 			name:'Grab On',
-			img: 'grabon.png',
-			website: 'https://aceenggacademy.com',
-			//- category: 'Study Buddy'
+			img: 'GrabOn.png',
+			website: 'https://grabon.in',
+			category: 'Gifting Partner'
 		},
 		{
 			name:'Union Bank of India',
-			img: 'union-bank.png',
-			website: 'https://aceenggacademy.com',
-			//- category: 'Study Buddy'
+			img: 'UnionBank.png',
+			website:'https://unionbankofindia.co.in',
+			category: 'Banking Partner'
+		},
+		{
+			name:'Lens Fit',
+			img: 'LensFit.png',
+			website:'https://lensfit.com',
+			category: 'eye-wear partner'
+		},
+		{
+			name:'Dash Management',
+			img: 'DashManagement.png',
+			website:'https://dash.management',
+			category: 'Gifting Partner'
 		},
 		{
 			name:'The Souled Store',
-			img: 'souledStore.png',
-			website: 'https://aceenggacademy.com',
-			//- category: 'Study Buddy'
+			img: 'SouledStore.png',
+			website: 'https://thesouledstore.com',
+			category: 'Gifting Partner'
+		},
+		{
+			name:'Hacker Earth',
+			img: 'HackerEarth.png',
+			website: 'https://hackerearth.com',
+			category: 'Debugging Partner'
 		}
 	]
 
@@ -41,7 +59,7 @@
 .sponsors
 	each sponsor in sponsors
 		.card
-			//- .category #{sponsor.category}
 			a(href=sponsor.website)
 				img(src = '../assets/img/sponsors/'+sponsor.img)
+			.category #{sponsor.category}
 

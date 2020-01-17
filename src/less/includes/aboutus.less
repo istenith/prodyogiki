@@ -47,24 +47,35 @@
 
 .sponsors{
 	padding:6em;
-	background-color:white  ;
+	// background-color:white  ;
 	margin:auto;
 	width:60%;
 	display:flex;
-	flex:1 1 20%;
+	flex-wrap: wrap;
+	// flex:1 1 20%;
 	justify-content: center;
 
 	.card{
+		margin:10px 10px;
 		.category{
-			background-color: @accent-green;
-			color:@dark;
+			// background-color: black;
+			color:white;
 			align-self: center;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			margin-bottom:10px;
+			// display: inline-block;
 		}
-		max-width:400px;
-		max-height:400px;
-		img{
-			width:100%;
-			transition:0.3s
+		// max-width:400px;
+		// max-height:400px;
+		a{
+			width:200px;
+			height:110px;
+			img{
+				width:100%;
+				transition:0.3s
+			}
 		}
 		img:hover{
 			filter:grayscale(100%) blur(1px);
