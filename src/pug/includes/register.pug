@@ -4,7 +4,7 @@
 			'title': 'Crazy Crawler',
 			'image': 'cc.svg',
 			'descr': 'Build a legged bot (crawler) that can move in a straight line to dash through a track in minimum time',
-			'team_limit':3,
+			'team_limit':4,
 			'abstract'  : 'crazy-crawler.pdf',
 			'dontInline': true,
 		},
@@ -19,7 +19,7 @@
 			'title': 'Compact Condo',
 			'image': 'ccondo.svg',
 			'descr': 'Design a tiny house with different features in a defined area. You can use any means for designing.',
-			'team_limit':2,
+			'team_limit':1,
 			'abstract'  : 'compact-condo.pdf',
 			'dontInline': true,
 		},
@@ -27,7 +27,7 @@
 			'title': 'Risk Reduction',
 			'image': 'rr.svg',
 			'descr': 'Buy virtual ../assets to ideate a solution to protect against virtual perils and calamities.',
-			'team_limit':2,
+			'team_limit':4,
 			'abstract'  : 'risk-reduction.pdf'
 		},
 		{
@@ -48,7 +48,7 @@
 			'title': 'Ropeway Design',
 			'image': 'ropeway-design.svg',
 			'descr': 'Design and make a model of a ropeway. You need to know simple law of mechanics here, cable car is one of the example for this type of ropeway systems.',
-			'team_limit':4,
+			'team_limit':5,
 			'abstract'  : 'ropeway-design.pdf'
 		},
 		{
@@ -61,7 +61,7 @@
 	]
 
 h1 Register Yourself
-form(class="holder" method="POST" action="https://backend.istenith.com/regPlayer")
+form(class="holder" method="POST" action="/regPlayer")
 	.regPlayer
 		.textbox
 			input(type="text" id="player_name" name="name" required )
@@ -98,7 +98,7 @@ h2 Already Registered?
 	.inactive#join Join Team 
 
 
-form(class="holder" id="regTeam" method="POST" action="https://backend.istenith.com/regTeam")
+form(class="holder" id="regTeam" method="POST" action="/regTeam")
 	.regTeam
 		
 		.textbox
@@ -129,7 +129,7 @@ form(class="holder" id="regTeam" method="POST" action="https://backend.istenith.
 			input(type="submit" value="SUBMIT")
 
 
-form(class="holder" id="joinTeam" method="POST" action="https://backend.istenith.com/joinTeam")
+form(class="holder" id="joinTeam" method="POST" action="/joinTeam")
 	.joinTeam
 		
 		.textbox
