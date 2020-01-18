@@ -15,11 +15,12 @@
 		}
 	}
 }
+
 .header {
+	margin:auto;
 	display: flex;
 	width: 60%;
 	position: relative;
-	margin: auto;
 	.image {
 		padding: 24px;
 		padding-top: 4px;
@@ -44,8 +45,55 @@
 	}
 }
 
-@media screen and (max-width: 1150px) {
-	.header {
+.sponsors{
+	padding:6em;
+	// background-color:white  ;
+	margin:auto;
+	width:60%;
+	display:flex;
+	flex-wrap: wrap;
+	// flex:1 1 20%;
+	justify-content: center;
+
+	.card{
+		margin:10px 10px;
+		.category{
+			// background-color: black;
+			color:white;
+			align-self: center;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			margin-bottom:10px;
+			// display: inline-block;
+		}
+		// max-width:400px;
+		// max-height:400px;
+		a{
+			width:200px;
+			height:110px;
+			img{
+				width:100%;
+				transition:0.3s
+			}
+		}
+		img:hover{
+			filter:grayscale(100%) blur(1px);
+			-webkit-filter:grayscale(100%) blur(1px);
+		}
+	}
+}
+
+.Oursps{
+	text-align: center;
+	margin:auto;
+	width:60%;
+	font-size: 3em;
+	color:@accent-green;
+	margin-top: 20px;
+}
+@media only screen and (max-width: 600px) {
+.header {
 		width: 90%;
 		display: flex;
 		flex-flow: column;
