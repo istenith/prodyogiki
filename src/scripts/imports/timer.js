@@ -36,18 +36,18 @@ export function countdown() {
 	setTimeout(countdown, 1000);
 }
 
-export function highlight(){
+export function highlight() {
 	var today = new Date();
-	var day1 = new Date(2020, 0,22);
-	var day2 = new Date(2020, 0,25);
-	var day3 = new Date(2020, 0,26);
-	if(day1.getTime() == today.getTime()){
+	var day1 = new Date(2020, 0, 22);
+	var day2 = new Date(2020, 0, 25);
+	var day3 = new Date(2020, 0, 26);
+	if (day1.getTime() == today.getTime()) {
 		document.getElementById('day1').getElementsByClassName('card').style.opacity = 1;
 	}
-	if(day2.getTime() == today.getTime()){
+	if (day2.getTime() == today.getTime()) {
 		document.getElementById('day2').getElementsByClassName('card').style.opacity = 1;
 	}
-	if(day3.getTime() == today.getTime()){
+	if (day3.getTime() == today.getTime()) {
 		document.getElementById('day3').getElementsByClassName('card').style.opacity = 1;
 	}
 }
