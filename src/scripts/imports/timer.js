@@ -38,16 +38,17 @@ export function countdown() {
 
 export function highlight() {
 	var today = new Date();
-	var day1 = new Date(2020, 0, 22);
+	var day1 = new Date(2020, 0, 24);
 	var day2 = new Date(2020, 0, 25);
 	var day3 = new Date(2020, 0, 26);
-	if (day1.getTime() == today.getTime()) {
-		document.getElementById('day1').getElementsByClassName('card').style.opacity = 1;
+	var day4 = new Date(2020, 0, 27);
+	if (today.getTime() > day1.getTime() && today.getTime() < day2.getTime()) {
+		document.getElementById('day1').style.opacity = 1;
 	}
-	if (day2.getTime() == today.getTime()) {
-		document.getElementById('day2').getElementsByClassName('card').style.opacity = 1;
+	if (today.getTime() > day2.getTime() && today.getTime() < day3.getTime()) {
+		document.getElementById('day2').style.opacity = 1;
 	}
-	if (day3.getTime() == today.getTime()) {
-		document.getElementById('day3').getElementsByClassName('card').style.opacity = 1;
+	if (today.getTime() > day3.getTime() && today.getTime() < day4.getTime()) {
+		document.getElementById('day3').style.opacity = 1;
 	}
 }
