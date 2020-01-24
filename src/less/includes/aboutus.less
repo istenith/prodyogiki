@@ -17,7 +17,7 @@
 }
 
 .header {
-	margin:auto;
+	margin: auto;
 	display: flex;
 	width: 60%;
 	position: relative;
@@ -45,55 +45,64 @@
 	}
 }
 
-.sponsors{
-	padding:6em;
+.sponsors {
+	padding: 6em 0;
 	// background-color:white  ;
-	margin:auto;
-	width:60%;
-	display:flex;
+	margin: auto;
+	width: 90%;
+	max-width: 600px;
+	display: flex;
 	flex-wrap: wrap;
 	// flex:1 1 20%;
 	justify-content: center;
+	margin: auto;
 
-	.card{
-		margin:10px 10px;
-		.category{
+	.card {
+		margin: 10px 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.category {
 			// background-color: black;
-			color:white;
+			background: @accent-green;
+			display: inline-block;
+			color: black;
 			align-self: center;
 			font-weight: bold;
 			text-transform: uppercase;
 			text-align: center;
-			margin-bottom:10px;
+			margin: 0.7em auto;
+			margin-bottom: 1.5em;
+			padding: 0.7em;
 			// display: inline-block;
 		}
 		// max-width:400px;
 		// max-height:400px;
-		a{
-			width:200px;
-			height:110px;
-			img{
-				width:100%;
-				transition:0.3s
+		a {
+			flex: 100%;
+			img {
+				width: 100%;
+				transition: 0.3s;
 			}
 		}
-		img:hover{
-			filter:grayscale(100%) blur(1px);
-			-webkit-filter:grayscale(100%) blur(1px);
+		img:hover {
+			// filter:grayscale(100%) blur(1px);
+			// -webkit-filter:grayscale(100%) blur(1px);
+			transform: scale(1.1);
 		}
 	}
 }
 
-.Oursps{
+.Oursps {
 	text-align: center;
-	margin:auto;
-	width:60%;
+	margin: auto;
+	width: 60%;
 	font-size: 3em;
-	color:@accent-green;
+	color: @accent-green;
 	margin-top: 20px;
 }
 @media only screen and (max-width: 600px) {
-.header {
+	.header {
 		width: 90%;
 		display: flex;
 		flex-flow: column;
