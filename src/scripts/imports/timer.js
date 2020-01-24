@@ -42,15 +42,15 @@ export function highlight() {
 		if(date.getUTCFullYear() == 2020 && date.getMonth() == 0){
 			switch(date.getDate()){
 				case 24:
-					id = document.getElementById('day1');
+					id = 'day1';
 					break;
 				case 25:
-					id = document.getElementById('day2');
+					id = 'day2';
 					break;
 				case 26:
-					id = document.getElementById('day3');
+					id = 'day3';
 					break;
 			}
 		}
-	id.style.opacity = 1;
+	document.getElementById(id).style.opacity = 1;
 }
