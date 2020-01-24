@@ -37,17 +37,20 @@ export function countdown() {
 }
 
 export function highlight() {
-	var today = new Date();
-	var day1 = new Date(2020, 0, 22);
-	var day2 = new Date(2020, 0, 25);
-	var day3 = new Date(2020, 0, 26);
-	if (day1.getTime() == today.getTime()) {
-		document.getElementById('day1').getElementsByClassName('card').style.opacity = 1;
-	}
-	if (day2.getTime() == today.getTime()) {
-		document.getElementById('day2').getElementsByClassName('card').style.opacity = 1;
-	}
-	if (day3.getTime() == today.getTime()) {
-		document.getElementById('day3').getElementsByClassName('card').style.opacity = 1;
-	}
+	var date = new Date();
+	var id;
+		if(date.getUTCFullYear() == 2020 && date.getMonth() == 0){
+			switch(date.getDate()){
+				case 24:
+					id = 'day1';
+					break;
+				case 25:
+					id = 'day2';
+					break;
+				case 26:
+					id = 'day3';
+					break;
+			}
+		}
+	document.getElementById(id).style.opacity = 1;
 }
