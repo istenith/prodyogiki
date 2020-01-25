@@ -7,55 +7,64 @@
 			'team_limit':4,
 			'abstract'  : 'crazy-crawler.pdf',
 			'dontInline': true,
+			'prize': 2400,
 		},
 		{
 			'title': 'Molecular Mystery',
 			'image': 'mm.svg',
 			'descr': 'A treasure hunt which has questions related to all topics which have to be answered by teams of 4. Solutions are all around the campus.',
 			'team_limit':4,
-			'abstract'  : 'molecular-mystery.pdf'
+			'abstract'  : 'molecular-mystery.pdf',
+			'prize': 2600,
 		},
 		{
 			'title': 'Compact Condo',
 			'image': 'ccondo.svg',
 			'descr': 'Design a tiny house with different features in a defined area. You can use any means for designing.',
-			'team_limit':1,
+			'team_limit':2,
 			'dontInline': true,
+			'abstract'  : 'compact-condo.pdf',
+			'prize': 1900,
 		},
 		{
 			'title': 'Risk Reduction',
 			'image': 'rr.svg',
 			'descr': 'Buy virtual assets to ideate a solution to protect against virtual perils and calamities.',
 			'team_limit':4,
-			'abstract'  : 'risk-reduction.pdf'
+			'abstract'  : 'risk-reduction.pdf',
+			'prize': 3600,
 		},
 		{
 			'title': 'Lost Lander',
 			'image': 'll.svg',
 			'descr': 'Build a bot which can sense obstacles in an obstacle course and clear that obstacle course in minimum time. The course cannot be seen by the operator.',
 			'team_limit':4,
-			'abstract'  : 'lost-lander.pdf'
+			'abstract'  : 'lost-lander.pdf',
+			'prize': 2400,
 		},
 		{
 			'title': 'Spaghetti Bridge',
 			'image': 'sb.svg',
 			'descr': ' Design and construct a model of a single span truss bridge with the help of spaghetti noodles.',
 			'team_limit':5,
-			'abstract'  : 'spaghetti-bridge-challenge.pdf'
+			'abstract'  : 'spaghetti-bridge-challenge.pdf',
+			'prize': 3100,
 		},
 		{
 			'title': 'Ropeway Design',
 			'image': 'ropeway-design.svg',
 			'descr': 'Design and make a model of a ropeway. You need to know simple law of mechanics here, cable car is one of the example for this type of ropeway systems.',
 			'team_limit':5,
-			'abstract'  : 'ropeway-design.pdf'
+			'abstract'  : 'ropeway-design.pdf',
+			'prize': 3100,
 		},
 		{
 			'title': 'Dev Dash',
 			'image': 'dd.svg',
 			'descr': 'There are 2 rounds in this code marathon. A short code competition followed by code relay event. Solo event for all the enthusiastic coders',
 			'team_limit':1,
-			'abstract'  : 'dev-dash.pdf'
+			'abstract'  : 'dev-dash.pdf',
+			'prize': 3900,
 		}
 	]
 
@@ -116,9 +125,12 @@ form(class="holder" id="regTeam" method="POST" action="https://backend.istenith.
 		- var limit
 		.textbox#select
 			select(id="selectelement" name="event")
-				each event in eventList
-					- limit = event.team_limit
-					option(value = event.title name=event.title id=event.team_limit)=event.title 
+				mixin event_option(event, limit)
+					option(value=event name=event id=limit)=event
+				+event_option('Crazy Crawler', 4)
+				+event_option('Molecular Mystery', 4)
+				+event_option('Compact Condo', 2)
+				+event_option('Lost Lander', 4)
 		lable Team Members
 		#limit_lable
 		input(type="hidden" id="team_limit" name="team_limit")

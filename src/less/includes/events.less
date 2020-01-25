@@ -2,6 +2,13 @@
 @import (reference) '../lib/helpers.less';
 #events {
 	padding-bottom: 6em;
+	.info {
+		background: white;
+		color: black;
+		padding: 1em;
+		font-size: 21px;
+		border-radius: 3px;
+	}
 	.card-holder {
 		display: flex;
 		justify-content: center;
@@ -62,6 +69,17 @@
 						font-size: 21px;
 						padding: 0.9em;
 						font-weight: unset;
+					}
+					& > .prize {
+						position: absolute;
+						bottom: 0;
+						padding: 0.7em;
+						background: @accent-green;
+						color: @dark;
+						border-radius: 5px 5px 0 0;
+						left: 50%;
+						transform: translateX(-50%);
+						font-weight: bold;
 					}
 				}
 
