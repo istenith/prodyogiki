@@ -125,9 +125,12 @@ form(class="holder" id="regTeam" method="POST" action="https://backend.istenith.
 		- var limit
 		.textbox#select
 			select(id="selectelement" name="event")
-				each event in eventList
-					- limit = event.team_limit
-					option(value = event.title name=event.title id=event.team_limit)=event.title 
+				mixin event_option(event, limit)
+					option(value=event name=event id=limit)=event
+				+event_option('Crazy Crawler', 4)
+				+event_option('Molecular Mystery', 4)
+				+event_option('Compact Condo', 2)
+				+event_option('Lost Lander', 4)
 		lable Team Members
 		#limit_lable
 		input(type="hidden" id="team_limit" name="team_limit")
