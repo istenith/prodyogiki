@@ -1,8 +1,10 @@
 @import (reference) '../lib/colors.less';
+@import (css)
+ url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
 
 #prody {
 	text-transform: uppercase;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'audiowide', sans-serif;
 	font-size: 36px;
 	font-weight: 700;
 	text-align: center;
@@ -23,7 +25,7 @@
 }
 #dates {
 	text-transform: uppercase;
-	font-family: 'kalam', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 30px;
 	font-weight: 700;
 	text-align: center;
@@ -104,7 +106,7 @@
 			padding: 6px;
 			text-align: center;
 			.begin {
-				color: @accent-green;
+				color: @accent-blue;
 				font-size: large;
 			}
 		}
@@ -133,11 +135,10 @@
 			border-bottom: 3px solid @accent-blue;
 			.heading {
 				font-size: 40px;
-				color: @accent-blue;
+				color: @accent-green;
 			}
 			.content {
 				font-size: 20px;
-				font-family: 'kalam', sans serif;
 				margin-top: 3em;
 				li {
 					margin-bottom: 1.5em;
@@ -145,6 +146,21 @@
 			}
 		}
 	}
+}
+.content {
+		.topic {
+			.heading {
+				span{
+    			font-family: 'audiowide', serif;
+    			font-size: 55px;
+    			color: #00ff66;
+			}
+			} .desc {
+				font-family: 'badoni moda', serif;
+				font-size: 32px;
+
+			}
+		}
 }
 
 @media screen and (min-width: 500px) {
