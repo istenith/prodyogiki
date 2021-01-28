@@ -84,16 +84,17 @@
 				}
 
 				.back {
+					// text-align: center;
 					transform: rotateY(180deg);
 					padding: 1em;
 					justify-content: center;
 					.abstract {
-						width: 50%;
+						// width: 50%;
 						position: absolute;
 						bottom: 1.8em;
 						right: 1.8em;
 						display: flex;
-						justify-content: right;
+						text-align: center;
 						background: none;
 						color: @accent-green;
 						font-size: 18px;
@@ -102,6 +103,33 @@
 						img {
 							width: 23px;
 							height: 23px;
+						}
+					}
+					// #00ff66 , #00e177 , #00ce82 , #00e576 , #00a19d , 
+					.form {
+						color: #111;
+						// font-family: 'Kulim Park', sans-serif;
+						font-weight: bold;
+						justify-content: center;
+						padding: 8px;
+						border-radius: 3px;
+						background-color: #00e576;
+						background: linear-gradient(to right, #34ff85 , #19c072 , #02fa9f , #1aa05f , #03ff89,#34ff85 , #19c072 );
+						background-size: 200% 200%;
+						animation: glow 10s linear infinite;
+						width: 50%;
+						left: 1.0em;
+						bottom: 1.4em;
+					}
+					@keyframes glow{
+						0%{
+							background-position: 0% 100%;
+						}
+						50%{
+							background-position: 100% 50%;
+						}
+						100%{
+							background-position: 0% 50%;
 						}
 					}
 				}
