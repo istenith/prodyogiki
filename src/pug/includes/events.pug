@@ -68,11 +68,15 @@
 			'prize': 3900,
 		}
 	]
+	var registration_open = false
 
 
 .topic
 	.heading
-		span Register Now!
+		if registration_open
+			span Register Now!
+		else
+			span Registrations Opening Soon!
 //.info Submission for <b>Compact Condo</b>, offline(sheets): till <b>26th, 23:59 IST</b>, online(digital): till <b>27th, 18:00 IST</b> at <a href="https://tiny.cc/prodycc">tiny.cc/prodycc</a>
 .card-holder
 	each event in eventList
@@ -93,7 +97,13 @@
 					center
 						br
 						// path according to dist assumin documents in root of dist
-						a(class="abstract form" href=event.form) Register Now!
-						a(class="abstract" href='documents/' + event.abstract download) |&nbsp&nbsp&nbsp Abstract   
-							//- img(src="../assets/img/download.svg", alt="")
-						
+						if registration_open
+							a(class="abstract form" href=event.form) Register Now!
+						a(class="abstract" href='documents/' + event.abstract download) 
+							if registration_open
+								span |&nbsp&nbsp
+							span Abstract   
+							if !registration_open
+								span &nbsp
+								img(src="../assets/img/download.svg", alt="")
+			
