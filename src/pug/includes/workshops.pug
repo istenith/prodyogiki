@@ -5,14 +5,16 @@
 
             image: "../assets/img/gsoc.png",
             desc: "<strong><font color='#dde26a'>Team ISTE </font></strong>in collaboration with team <strong><font color='#dde26a'>GLUG</font></strong> presented the GSOC workshop with an experienced and well versed panel consisting of <strong><font color='#dde26a'>Shivam Kapilla</font></strong> @metabrainz , <strong><font color='#dde26a'>Yash Punia</font></strong> @catrobat and <strong><font color='#dde26a'>Abhay Raj Singh</font></strong> @inkspace<br>The panelists ran us through every step we would encounter in the way of excelling in GSOC and guided us about all the dos and don'ts for the same<br>The command, fluency and vast knowledge of the panelists only naturally attracted loads of attendees from all walks of student life (irrespective of their branch and year) which was certain by the downpour of likes shares and comments in the stream which were addressed gracefully by the team<br>We at <strong><font color='#dde26a'>ISTE</font></strong> have an aim to <strong><font color='#dde26a'>diversify the technical advancement</font></strong> of our Institute and this proved to be one of the many gateways for achieving it. ",
-            register: "https://youtu.be/6QRIj_yp7Tk",
+            watch: "https://youtu.be/6QRIj_yp7Tk",
+            //- register: '',
             //- perks: ['perk1', 'perk2', 'perk3']
         },
         {
             name: "Quantum Computing",
             image: "../assets/img/qc.png",
             desc: "<strong><font color='#dde26a'>Team ISTE</font></strong> at NIT Hamirpur had provided the insights on Quantum Computing, which was presented by <strong><font color='#dde26a'>Roger Luo</font></strong> himself, the Creator of <strong><font color='#dde26a'>Quantum BFS Ecosystem</font></strong> and a <strong><font color='#dde26a'>Researcher at the University of Waterloo</font></strong>. His amazing insights on Quantum Computing allowed to catch a glimpse of this magical world!<br>From getting to know the basics of Quantum Computing to explaining the opportunities associated with it and finally <strong><font color='#dde26a'>running your own Quantum Circuit on a real Quantum Computer</font></strong>, we have got it all covered.<br>“Quantum computers are poised to kick-start the next computing revolution” – So we at <strong><font color='#dde26a'>ISTE</font></strong> bustling with our aim of <strong><font color='#dde26a'>diversifying the technical advancement</font></strong> of our Institute.",
-            register: "https://youtu.be/5oBpcvihLdM",
+            watch: "https://youtu.be/5oBpcvihLdM",
+            //- register: '',
             //- perks: []
         }
     ]
@@ -29,8 +31,9 @@ center
                     br
                     br
                     if workshop.register
-
-                        a(href=workshop.register target="blank") Click here to watch the entire Session !
+                        a(href=workshop.register target="blank") Click here to register !
+                    if workshop.watch
+                        a(href=workshop.watch target="blank") Click here to watch the entire Session !
 
                 if workshop.perks && workshop.perks.length > 0
                     .header PERKS
