@@ -1,54 +1,38 @@
+-
+    var workshopList = [
+        {
+            name: "GSoC Talk",
+            image: "../assets/img/techkriti.png",
+            desc: '<strong>hello</strong> this is an unscaped description <br/> have fun with standard html tags in pug',
+            register: "https://www.google.com",
+            perks: ['perk1', 'perk2', 'perk3']
+        },
+        {
+            name: "Quantum Computing",
+            image: "../assets/img/techkriti.png",
+            desc: `this is a another description of the workshop`,
+            register: "https://www.istenith.com",
+            perks: []
+        }
+    ]
+
 center
-    .box
-        .head
-            .label IIT-K Technocruise
-            img(src="../assets/img/techkriti.png", alt="")
-        .desc
-            p
-                span.imp Prodyogiki 2020 
-                |presents in collaboration with the 
-                span.imp Indian Institute of Technology, Kanpur 
-                | a couple of extravagant workshops focussed majorily on the fields of 
-                span.imp Data Science 
-                |and 
-                span.imp Internet Of Things. 
-            p
-                |The workshops are designed and hosted by experts from IIT-K. They will be organized on a two day basis and will cover a wide range of information focussing primarily on the above mentioned fields. 
-            p
-                |So grab this chance of a lifetime to procure knowledge right from the tables of the expertise. 
-            p
-                |To register for the workshops, go to the registration link given below and then upload your e-tickets on the next link.
-            p   
-                |Click on the link on the submission page of the form to join the official 
-                span.imp Technocruise whatsapp group 
-                |to remain updated about the workshop.
-                br
-                br
-                a(href="https://tiny.cc/technocruise_hamirpur" target="blank") Click here to Register !
-                a(href="https://docs.google.com/forms/d/e/1FAIpQLSdqHFvCiicFiqZIDoCV4F-8J6CRYeLL0lHtg5W4-j6_VjewQg/viewform?usp=sf_link" target="blank") Upload e-tickets (post-registration) !
-            .header PERKS
-            img.perks(src="../assets/img/stars.png")
-            p
-                ul(type="dot")
-                    li Receive a 
-                        span.imp participation certificate 
-                        |duly signed by 
-                        span.imp Dean, Student's Welfare 
-                        |; Festival Chairman and Co-ordinator.
-                    li Get discount on 
-                        span.imp Machine Learning Course 
-                        |(cost Rs.6000) and a certificate duly signed by 
-                        span.imp Satya Nadella 
-                        |(CEO , Microsoft) through 
-                        span.imp Foxmula 
-                        |(Microsoft Associate).
-                    li Participate in a free test conducted by 
-                        span.imp Technocruise 
-                        |on 
-                        span.imp "Data Science" 
-                        |to get a chance to gain free entry access to the 
-                        span.imp Techkriti 
-                        |workshops.
-                    li For more info, visit
-                        span
-                            a(href="https://technocruise.techkriti.org/" target="blank") www.technocruise.techkriti.org
+    each workshop in workshopList
+        .box
+            .head
+                .label=workshop.name 
+                img(src=workshop.image, alt="")
+            .desc
+                p
+                    span!=workshop.desc
+                    br
+                    br
+                    if workshop.register
+                        a(href=workshop.register target="blank") Click here to Register !
+                if workshop.perks && workshop.perks.length > 0
+                    .header PERKS
+                    img.perks(src="../assets/img/stars.png")
+                    p
+                        ul(type="dot")
+                            each perk in workshop.perks
+                                li= perk 
