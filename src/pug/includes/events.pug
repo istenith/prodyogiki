@@ -1,10 +1,11 @@
 -
 	var eventList = [
 		{
-			'title': 'Crazy Crawler',
-			'image': 'cc.svg',
+			'title': 'Kryptic Hunt',
+			'image': 'kh.svg',
 			'descr': 'Build a legged bot (crawler) that can move in a straight line to dash through a track in minimum time',
 			'team_limit':4,
+			'form': 'https://www.istenith.com/',
 			'abstract'  : 'crazy-crawler.pdf',
 			'dontInline': true,
 			'prize': 2400,
@@ -92,5 +93,7 @@
 					center
 						br
 						// path according to dist assumin documents in root of dist
-						a(class="abstract" href='documents/' + event.abstract download) Abstract &nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp   
-							img(src="../assets/img/download.svg", alt="")
+						a(class="abstract form" href=event.form) Register Now!
+						a(class="abstract" href='documents/' + event.abstract download) |&nbsp&nbsp&nbsp Abstract   
+							//- img(src="../assets/img/download.svg", alt="")
+						

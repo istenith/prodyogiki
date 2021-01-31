@@ -2,6 +2,7 @@
     var workshopList = [
         {
             name: "GSoC Talk",
+
             image: "../assets/img/gsoc.png",
             desc: "<strong><font color='#dde26a'>Team ISTE </font></strong>in collaboration with team <strong><font color='#dde26a'>GLUG</font></strong> presented the GSOC workshop with an experienced and well versed panel consisting of <strong><font color='#dde26a'>Shivam Kapilla</font></strong> @metabrainz , <strong><font color='#dde26a'>Yash Punia</font></strong> @catrobat and <strong><font color='#dde26a'>Abhay Raj Singh</font></strong> @inkspace<br>The panelists ran us through every step we would encounter in the way of excelling in GSOC and guided us about all the dos and don'ts for the same<br>The command, fluency and vast knowledge of the panelists only naturally attracted loads of attendees from all walks of student life (irrespective of their branch and year) which was certain by the downpour of likes shares and comments in the stream which were addressed gracefully by the team<br>We at <strong><font color='#dde26a'>ISTE</font></strong> have an aim to <strong><font color='#dde26a'>diversify the technical advancement</font></strong> of our Institute and this proved to be one of the many gateways for achieving it. ",
             register: "https://youtu.be/6QRIj_yp7Tk",
@@ -15,6 +16,7 @@
             //- perks: []
         }
     ]
+
 center
     each workshop in workshopList
         .box
@@ -27,11 +29,17 @@ center
                     br
                     br
                     if workshop.register
+
                         a(href=workshop.register target="blank") Click here to watch the entire Session !
+
                 if workshop.perks && workshop.perks.length > 0
                     .header PERKS
                     img.perks(src="../assets/img/stars.png")
                     p
                         ul(type="dot")
                             each perk in workshop.perks
+
                                 li= perk 
+
+                              
+
