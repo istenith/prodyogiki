@@ -27,6 +27,15 @@ window.addEventListener('load', () => {
 		gyroscopeMaxAngleY: 45,
 	});
 
+
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('./service-worker.js').then(registration => {	 
+			console.log('SW registered: ', registration);
+	 		}).catch(registrationError => { 
+				console.log('SW registration failed: ', registrationError);
+		});
+	}
+
 	const tw = new TabWatcher('.tab');
 	tw.watchTabs();
 	tw.watchKeys();

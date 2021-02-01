@@ -13,7 +13,8 @@
     "license": "MIT",
     "scripts": {
         "build": "webpack --config webpack.prod.js",
-        "develop": "webpack-dev-server --config webpack.dev.js --open"
+        "develop": "webpack-dev-server --config webpack.dev.js --open",
+        "start-sw": "http-server ./dist"
     },
     "prettier": {
         "tabWidth": 4,
@@ -33,6 +34,7 @@
         "html-loader": "^0.5.5",
         "html-webpack-inline-svg-plugin": "^1.2.4",
         "html-webpack-plugin": "^3.2.0",
+        "http-server": "^0.12.3",
         "less": "^3.10.3",
         "less-loader": "^5.0.0",
         "mini-css-extract-plugin": "^0.8.0",
@@ -44,7 +46,8 @@
         "webpack-cli": "^3.3.10",
         "webpack-dev-server": "^3.9.0",
         "webpack-md5-hash": "0.0.6",
-        "webpack-merge": "^4.2.2"
+        "webpack-merge": "^4.2.2",
+        "workbox-webpack-plugin": "^6.1.0"
     },
     "dependencies": {
         "animejs": "^3.1.0",
