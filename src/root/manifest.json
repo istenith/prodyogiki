@@ -1,0 +1,15 @@
+{
+    "name": "Prodyogiki - 2021",
+    "short_name": "Prodyogiki",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#101010",
+    "description": "Prodyogiki 2021 by ISTE-NITH",
+    "icons": [{
+      "src": "pg_a2hs.svg",
+      "sizes": "343x343",
+      "type": "image/png",
+      "purpose": "any"
+    }
+    ]
+  }
