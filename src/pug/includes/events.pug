@@ -5,7 +5,6 @@
 			'image': 'kh.svg',
 			'descr': "Traverse through a series of levels, decoding the clues and answering the questions and gradually moving on to the next one in a massive Cyber Cryptic Hunt. Exercise your braincells while competing with others as your race to reach the top.",
 			'team_limit':1,
-			'form': 'https://www.istenith.com/',
 			'abstract'  : 'https://docs.google.com/presentation/d/1na-iOIlKuF3XnvRnjBQslMrRs0DPWytj3uP3-F2-KG8/edit?usp=sharing',
 			'dontInline': true,
 			'prize': 1800,
@@ -15,6 +14,7 @@
 			'image': 'rr.svg',
 			'descr': "Shift a chosen landmark to a new location and provide sustainable solutions to the obstacles participants might face due to varying topography and climatic factors.",
 			'team_limit':4,
+			'form': 'https://docs.google.com/forms/d/e/1FAIpQLSd9oE-ZXdUj3Fn4ZBsnDnJFObis575V16Ot8DiktfKnFPeMDA/viewform?usp=sf_link',
 			'abstract'  : 'https://docs.google.com/presentation/d/1Ay0KkuRI2_zSY5LIHlnsWcVHgtxDSxn3d-W2QieRGr8/edit?usp=sharing',
 			'prize': 2000,
 		},
@@ -32,6 +32,7 @@
 			'image': 'tt.svg',
 			'descr': "Explore your interest in the field of robotics. Learning about the turtlesim library, and implement the same  to complete the task of tracing the shape by coding your turtle on the Robot Operating System(ROS)",
 			'team_limit':4,
+			'form': 'https://docs.google.com/forms/d/e/1FAIpQLSdqJS6__2sy-43yDjc-REjto6EcRHpe3LyevactF9lLzL52fA/viewform?usp=sf_link',
 			'abstract'  : 'https://docs.google.com/presentation/d/18hdIEFjEnLu_jt0Mm6kL0flRrAdZ7CYDiUF_PwtSk2E/edit?usp=sharing',
 			'prize': 1600,
 		},
@@ -40,6 +41,7 @@
 			'image': 'ckt.svg',
 			'descr': "Construct the most efficient circuit based on a given problem statement with the help of given clues. An ideal event for those who enjoy the complexity of electronics",
 			'team_limit':4,
+			'form': 'https://docs.google.com/forms/d/e/1FAIpQLScfxLUrfEag573lHeJdnb2EUCiKN6DniSTKVxbmkC0EQro2cQ/viewform?usp=sf_link',
 			'abstract'  : 'https://docs.google.com/presentation/d/1k1N6igQkkRxybEI32oT-utNjhkKO7JcLUvFW2JB83rU/edit?usp=sharing',
 			'prize': 1600,
 		},
@@ -48,6 +50,7 @@
 			'image': 'ccondo.svg',
 			'descr': "As we come across the period of pandemic, we have seen a loss of economy. Tackle the solution of shutting down of offices. Make a safe workspace which follows all the precautionary measures, most importantly social distancing, keeping in mind all the precautions and safety measures to make the workspace safe,secure and cost effective.",
 			'team_limit':5,
+			'form': 'https://docs.google.com/forms/d/e/1FAIpQLSdakilN22TMEmKcpiO2mQmk__58_vPxT75AbnMQus6ZdFbVxQ/viewform?usp=sf_link',
 			'abstract'  : 'https://drive.google.com/file/d/1EWPr6NeTxSnpq8WlmPezoKBSQWSv9YJ0/view?usp=sharing',
 			'prize': 1600,
 		},
@@ -68,7 +71,7 @@
 			'prize': 1600,
 		}
 	]
-	var registration_open = false
+	var registration_open = true
 
 
 .topic
@@ -98,7 +101,11 @@
 						br
 						// path according to dist assumin documents in root of dist
 						if registration_open
-							a(class="abstract form" href=event.form) Register Now!
+							if event.form
+								a(class="abstract form" href=event.form) Register Now!
+							else
+								span.abstract.soon Coming Soon!
+
 						a(class="abstract" href=event.abstract) 
 							if registration_open
 								span |&nbsp&nbsp
