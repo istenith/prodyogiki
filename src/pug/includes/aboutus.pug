@@ -1,11 +1,11 @@
 -
 	var sponsors = [
-		//- {
-		//- 	name:'Ace Engineering Academy',
-		//- 	img: 'AceAcademy.png',
-		//- 	website: 'https://aceenggacademy.com',
-		//- 	category: 'Education Partner'
-		//- },
+		{
+			name:'GeeksforGeeks',
+			img: 'gfg.png',
+			website: 'https://geeksforgeeks.com',
+			category: 'Education Partner'
+		},
 		// {
 		// 	name:'Grab On',
 		// 	img: 'GrabOn.png',
@@ -54,11 +54,11 @@
 //- 			br
 //- 			a(href="https://istenith.com") Click here to go to our official website.
 
-//- .Oursps Our Sponsors
+.Oursps Our Sponsors
 
-//-.sponsors
-	//-each sponsor in sponsors
-		//-.card
-			//-a(href=sponsor.website)
-				//-img(src = '../assets/img/sponsors/'+sponsor.img)
-			//-.category #{sponsor.category}
+.sponsors
+	each sponsor in sponsors
+		.card
+			a(href=sponsor.website)
+				img(src = '../assets/img/sponsors/'+sponsor.img)
+			.category #{sponsor.category}
