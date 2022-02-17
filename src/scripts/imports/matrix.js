@@ -24,7 +24,7 @@ export function animateMatrix(query, text) {
 		ctx.fillStyle = 'rgba(24, 24, 24, 0.14)';
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-		ctx.fillStyle = '#0F6'; //green text
+		ctx.fillStyle = '#c0c0c0'; //green text
 		ctx.font = font_size + 'px monospace';
 		//looping over drops
 		for (let i = 0; i < drops.length; i++) {

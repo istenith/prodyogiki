@@ -51,8 +51,9 @@
 					height: 100%;
 					backface-visibility: hidden;
 					background-color: @darker;
-					border: 3px solid @accent-green;
-					box-shadow: 0 0 12px rgba(0, 255, 100, 0.24);
+					border: 3px solid @accent-blue;		
+					// text-shadow: 0 0 10px @accent-blue;
+					box-shadow: 0 0 12px @accent-blue;
 					border-radius: 10px;
 					// border: 3px solid transparent;
 					// border-image: linear-gradient(
@@ -69,11 +70,12 @@
 
 				.front {
 					img {
-						width: 80%;
+						width: 100%;
 						height: @card-width;
 					}
 					h3 {
 						font-family: 'Righteous', sans-serif;
+						color: @accent-green;
 						font-size: 21px;
 						padding: 0.9em;
 						font-weight: unset;
