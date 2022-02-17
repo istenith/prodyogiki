@@ -5,8 +5,12 @@
 	top:50%;
 	left:50%;
 	transform: translate(-50%,-50%);
-	font-size: 4vw;
+	font-size: 2vw;
 	color:@accent-green;
+	text-align: center;
+	h1{
+		color: @accent-blue;
+	}
 }
 #events {
 	padding-bottom: 6em;
@@ -22,13 +26,13 @@
 		justify-content: center;
 		flex-wrap: wrap;
 
-		@card-width: 330px;
+		@card-width: 400px;
 		.card {
 			.no-select();
 			perspective: 1000px;
 			background: transparent;
 			width: @card-width;
-			height: 450px;
+			height: 500px;
 			margin: 15px;
 			cursor: pointer;
 
@@ -123,8 +127,8 @@
 						justify-content: center;
 						padding: 8px;
 						border-radius: 3px;
-						background-color: #00e576;
-						background: linear-gradient(to right, #34ff85 , #19c072 , #02fa9f , #1aa05f , #03ff89,#34ff85 , #19c072 );
+						background-color: #3fc1c6;
+						background: linear-gradient(to right, #3fc1c6 ,#3fc1c6 , #07d9e0 , #09e0e7 , #17a8ad,#22a2a7);
 						background-size: 200% 200%;
 						animation: glow 10s linear infinite;
 						width: 50%;
@@ -139,8 +143,8 @@
 						justify-content: center;
 						padding: 8px;
 						border-radius: 3px;
-						border:2px solid rgba(0, 255, 100, 0.24);
-						color: #00e576;
+						border:2px solid #24888b;
+						color: #3fc1c6;
 						width: 50%;
 						left: 1.0em;
 						bottom: 1.4em;
