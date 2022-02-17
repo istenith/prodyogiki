@@ -21,6 +21,7 @@ export function animateMatrix(query, text) {
 	function draw() {
 		//Black BG for the canvas
 		//translucent BG to show trail
+		// ctx.fillStyle = 'rgba(24, 24, 24, 0.14)';
 		ctx.fillStyle = 'rgba(24, 24, 24, 0.14)';
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
