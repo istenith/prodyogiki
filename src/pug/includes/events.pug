@@ -110,11 +110,10 @@
 							else
 								span.abstract.soon Coming Soon!
 
-						a(class="abstract" href=event.abstract) 
-							if registration_open
+						a(class="abstract" href=event.abstract target="_blank") 
+							if event.abstract
 								span |&nbsp&nbsp
-							span Abstract   
-							if !registration_open
+								span Abstract   
 								span &nbsp
 								img(src="../assets/img/download.svg", alt="")
 			
