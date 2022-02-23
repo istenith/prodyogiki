@@ -1,3 +1,46 @@
-.coming_soon
-		h1 Our Sponsors
-		span COMING SOON
+-
+	var sponsors = [
+		{
+			name:'GeeksforGeeks',
+			img: 'gfg.png',
+			website: 'https://geeksforgeeks.org',
+			category: 'Learning Partner'
+		},
+	
+		//- {
+		//- 	name:'Sketch',
+		//- 	img: 'sketch.png',
+		//- 	website:'https://www.sketch.com/',
+		//- 	category: 'Design Partner'
+		//- },
+		{
+			name:'ACE Engineering Academy',
+			img: 'AceAcademy.png',
+			website:'https://www.aceenggacademy.com/',
+			category: 'Traning and Education Partner'
+		},
+	]
+
+//- .header
+//- 	.image
+//- 		img(src="../assets/logos/ISTE_hollow.svg", alt="")
+//- 	.desc
+//- 		p 
+//- 			span#iste The Indian Society for Technical Education (ISTE) 
+//- 			|is a National Professional Non-profit organisation for the upliftment of the Technical Education System in our country. ISTE has the motto of the promoting Career development of Teachers and personality development of students around the country. The major objective of ISTE is to provide quality training programmes for teachers and administrators of various technical Institutions to update their knowledge and skills in their fields of activity and to assist the production and development of high quality professional engineers. The ISTE Students' Chapter NIT Hamirpur promotes such technological culture in our college. We, at NIT Hamirpur, conduct various events, workshops and seminars within the college and also participate in various inter-college fests.
+//- 			br
+//- 			a(href="https://istenith.com") Click here to go to our official website.
+
+
+//- .topic
+//- 	.heading
+//- 		span Our Sponsors!
+
+.sponsors
+	each sponsor in sponsors
+		.card
+			a(href=sponsor.website)
+				img(src = '../assets/img/sponsors/'+sponsor.img)
+			.category #{sponsor.category}
+
+		
